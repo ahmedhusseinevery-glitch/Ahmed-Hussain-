@@ -1,0 +1,2874 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مدرسة الاخصاص الثانوية - تحت إدارة الأستاذ فكري هاشم الزيدي">
+    <meta name="theme-color" content="#1a237e">
+    <title>مدرسة الاخصاص الثانوية | إبداع أحمد حسين منصور</title>
+
+    <!-- خطوط جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;800;900&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800;900&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ================================================
+           متغيرات CSS الأساسية - الألوان والتصميم
+           ================================================ */
+        :root {
+            --primary: #1a237e;
+            --primary-light: #3949ab;
+            --primary-dark: #0d1642;
+            --gold: #ffd700;
+            --gold-light: #ffeb3b;
+            --gold-dark: #b8960c;
+            --green: #2e7d32;
+            --green-light: #4caf50;
+            --red: #c62828;
+            --red-light: #ef5350;
+            --orange: #ef6c00;
+            --orange-light: #ff9800;
+            --purple: #6a1b9a;
+            --purple-light: #ab47bc;
+            --teal: #00897b;
+            --teal-light: #4db6ac;
+            --cyan: #00838f;
+            --cyan-light: #26c6da;
+            --bg: #f0f2f5;
+            --bg-card: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #555555;
+            --text-light: #ffffff;
+            --text-muted: #888888;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.20);
+            --shadow-gold: 0 4px 20px rgba(255,215,0,0.3);
+            --shadow-primary: 0 4px 20px rgba(26,35,126,0.3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+            --transition: 0.3s ease;
+            --font-main: 'Cairo', sans-serif;
+            --font-decorative: 'Aref Ruqaa', serif;
+            --font-heading: 'Reem Kufi', sans-serif;
+            --font-body: 'Tajawal', sans-serif;
+            --font-quran: 'Amiri', serif;
+            --gradient-primary: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #1a237e 100%);
+            --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffeb3b 50%, #ffd700 100%);
+            --gradient-hero: linear-gradient(135deg, #0d1642 0%, #1a237e 25%, #283593 50%, #1a237e 75%, #0d1642 100%);
+            --gradient-ai: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 50%, #6a1b9a 100%);
+        }
+
+        /* ================================================
+           إعادة تعيين الأنماط الأساسية
+           ================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ================================================
+           تنسيق شريط التمرير المخصص
+           ================================================ */
+        ::selection {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+            border: 2px solid var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-light);
+        }
+
+        /* ================================================
+           عناصر النموذج العامة
+           ================================================ */
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-family: var(--font-main);
+            transition: var(--transition);
+        }
+
+        input {
+            font-family: var(--font-main);
+            outline: none;
+            border: none;
+            transition: var(--transition);
+        }
+
+        /* ================================================
+           الحركات والأنيميشن - الجزء الأول
+           ================================================ */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(255,215,0,0.3); }
+            50% { box-shadow: 0 0 20px rgba(255,215,0,0.6); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255,215,0,0.3); }
+            50% { text-shadow: 0 0 20px rgba(255,215,0,0.6); }
+        }
+
+        @keyframes waveHand {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(15deg); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 0.5; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        @keyframes typing {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(106,27,154,0.3); }
+            50% { box-shadow: 0 0 20px rgba(106,27,154,0.6); }
+        }
+
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes flipIn {
+            0% { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+            40% { transform: perspective(400px) rotateY(-10deg); }
+            70% { transform: perspective(400px) rotateY(10deg); }
+            100% { transform: perspective(400px) rotateY(0deg); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInDown {
+            from { visibility: visible; transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { visibility: visible; transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { visibility: visible; transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes slideOutLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        @keyframes slideOutRight {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+
+        @keyframes jelly {
+            0%, 100% { transform: scale(1, 1); }
+            25% { transform: scale(0.9, 1.1); }
+            50% { transform: scale(1.1, 0.9); }
+            75% { transform: scale(0.95, 1.05); }
+        }
+
+        @keyframes tada {
+            0% { transform: scale(1); }
+            10%, 20% { transform: scale(0.9) rotate(-3deg); }
+            30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+            40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+            100% { transform: scale(1) rotate(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-30px); }
+            70% { transform: translateY(-15px); }
+            90% { transform: translateY(-4px); }
+        }
+
+        @keyframes rubberBand {
+            0% { transform: scale(1); }
+            30% { transform: scaleX(1.25) scaleY(0.75); }
+            40% { transform: scaleX(0.75) scaleY(1.25); }
+            50% { transform: scaleX(1.15) scaleY(0.85); }
+            65% { transform: scaleX(0.95) scaleY(1.05); }
+            75% { transform: scaleX(1.05) scaleY(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes headShake {
+            0% { transform: translateX(0); }
+            6.5% { transform: translateX(-6px) rotateY(-9deg); }
+            18.5% { transform: translateX(5px) rotateY(7deg); }
+            31.5% { transform: translateX(-3px) rotateY(-5deg); }
+            43.5% { transform: translateX(2px) rotateY(3deg); }
+            50% { transform: translateX(0); }
+        }
+
+        @keyframes wobble {
+            0% { transform: translateX(0%); }
+            15% { transform: translateX(-25%) rotate(-5deg); }
+            30% { transform: translateX(20%) rotate(3deg); }
+            45% { transform: translateX(-15%) rotate(-3deg); }
+            60% { transform: translateX(10%) rotate(2deg); }
+            75% { transform: translateX(-5%) rotate(-1deg); }
+            100% { transform: translateX(0%); }
+        }
+
+        @keyframes swing {
+            20% { transform: rotate(15deg); }
+            40% { transform: rotate(-10deg); }
+            60% { transform: rotate(5deg); }
+            80% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @keyframes jello {
+            0%, 100% { transform: none; }
+            11.1% { transform: skewX(-12.5%) skewY(-12.5%); }
+            22.2% { transform: skewX(6.25%) skewY(6.25%); }
+            33.3% { transform: skewX(-3.125%) skewY(-3.125%); }
+            44.4% { transform: skewX(1.5625%) skewY(1.5625%); }
+            55.5% { transform: skewX(-0.78125%) skewY(-0.78125%); }
+            66.6% { transform: skewX(0.390625%) skewY(0.390625%); }
+            77.7% { transform: skewX(-0.1953125%) skewY(-0.1953125%); }
+        }
+
+        @keyframes lightSpeedIn {
+            0% { transform: translateX(100%) skewX(-30deg); opacity: 0; }
+            60% { transform: translateX(-20%) skewX(30deg); opacity: 1; }
+            80% { transform: translateX(0%) skewX(-15deg); opacity: 1; }
+            100% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+        }
+
+        @keyframes lightSpeedOut {
+            from { opacity: 1; }
+            to { transform: translateX(100%) skewX(30deg); opacity: 0; }
+        }
+
+        @keyframes flip {
+            0% { transform: perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,-360deg); animation-timing-function: ease-out; }
+            40% { transform: perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-190deg); animation-timing-function: ease-out; }
+            50% { transform: perspective(400px) scale3d(1,1,1) translate3d(0,0,150px) rotate3d(0,1,0,-170deg); animation-timing-function: ease-in; }
+            80% { transform: perspective(400px) scale3d(0.95,0.95,0.95) translate3d(0,0,0) rotate3d(0,1,0,0deg); animation-timing-function: ease-in; }
+            100% { transform: perspective(400px) scale3d(1,1,1) translate3d(0,0,0) rotate3d(0,1,0,0deg); animation-timing-function: ease-in; }
+        }
+
+        @keyframes flipOutX {
+            0% { transform: perspective(400px); }
+            30% { transform: perspective(400px) rotateX(-20deg); opacity: 1; }
+            to { transform: perspective(400px) rotateX(90deg); opacity: 0; }
+        }
+
+        @keyframes flipOutY {
+            0% { transform: perspective(400px); }
+            30% { transform: perspective(400px) rotateY(-15deg); opacity: 1; }
+            to { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+        }
+
+        @keyframes backInDown {
+            0% { opacity: 0; transform: translateY(-1200px) scale(0.7); }
+            80% { opacity: 1; transform: translateY(0px) scale(0.7); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes backInUp {
+            0% { opacity: 0; transform: translateY(1200px) scale(0.7); }
+            80% { opacity: 1; transform: translateY(0px) scale(0.7); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes backInLeft {
+            0% { opacity: 0; transform: translateX(-2000px) scale(0.7); }
+            80% { opacity: 1; transform: translateX(0px) scale(0.7); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes backInRight {
+            0% { opacity: 0; transform: translateX(2000px) scale(0.7); }
+            80% { opacity: 1; transform: translateX(0px) scale(0.7); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes zoomOut {
+            from { opacity: 1; transform: scale(1); }
+            50% { opacity: 0; transform: scale(0.3); }
+            to { opacity: 0; }
+        }
+
+        @keyframes rollOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; transform: translateX(100%) rotate(120deg); }
+        }
+
+        @keyframes hinge {
+            0% { transform: perspective(400px); }
+            40%, 45% { transform: perspective(400px) rotate(80deg); transform-origin: top left; }
+            60%, 75% { transform: perspective(400px) rotate(60deg); transform-origin: top left; }
+            80% { transform: perspective(400px) rotate(60deg) translateY(0); opacity: 1; }
+            100% { transform: perspective(400px) translateY(800px); opacity: 0; }
+        }
+
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ================================================
+           شاشة التحميل
+           ================================================ */
+        #loadingScreen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--gradient-hero);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.15s ease, visibility 0.15s ease;
+        }
+
+        #loadingScreen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px; height: 50px;
+            border: 3px solid rgba(255,215,0,0.2);
+            border-top: 3px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 12px;
+        }
+
+        .loading-text {
+            color: var(--gold);
+            font-family: var(--font-decorative);
+            font-size: 1.2rem;
+            animation: textGlow 2s ease infinite;
+        }
+
+        /* ================================================
+           الجسيمات المتحركة في الخلفية
+           ================================================ */
+        #particlesContainer {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px; height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        /* ================================================
+           نظام الصفحات
+           ================================================ */
+        .page {
+            display: none;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        /* ================================================
+           الصفحة الرئيسية - قسم البطل
+           ================================================ */
+        .hero-section {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 150px;
+            background: linear-gradient(to top, var(--bg), transparent);
+            z-index: 1;
+        }
+
+        /* شريط التاريخ والوقت */
+        .date-bar {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+
+        .date-bar .date-info,
+        .date-bar .time-info {
+            color: var(--gold);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* بسم الله الرحمن الرحيم */
+        .bismillah-container {
+            margin-bottom: 20px;
+            z-index: 2;
+            animation: fadeInDown 0.6s ease forwards;
+        }
+
+        .bismillah-text {
+            font-family: var(--font-decorative);
+            font-size: 2.5rem;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255,215,0,0.3), 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            padding: 0 20px;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+        .bismillah-text::before,
+        .bismillah-text::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        .bismillah-text::before { right: 0; }
+        .bismillah-text::after { left: 0; }
+
+        /* التحية */
+        .greeting-container {
+            margin-bottom: 15px;
+            z-index: 2;
+            animation: fadeIn 0.6s ease 0.15s forwards;
+            opacity: 0;
+        }
+
+        .greeting-text {
+            font-family: var(--font-main);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .greeting-icon { font-size: 2rem; animation: waveHand 2s ease infinite; }
+        .greeting-icon.sun { animation: spin 10s linear infinite; color: #ffd700; }
+        .greeting-icon.moon { animation: pulseGlow 3s ease infinite; color: #e0e0e0; }
+
+        /* اسم المدرسة */
+        .school-name-container {
+            margin-bottom: 10px;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease 0.25s forwards;
+            opacity: 0;
+        }
+
+        .school-name {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .school-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 200px; height: 3px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+
+        /* اسم المدير */
+        .admin-container {
+            margin-bottom: 8px;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease 0.35s forwards;
+            opacity: 0;
+        }
+
+        .admin-name {
+            font-family: var(--font-body);
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.85);
+            font-weight: 400;
+        }
+
+        .admin-name span {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* اسم المبدع */
+        .creator-container {
+            margin-bottom: 25px;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease 0.45s forwards;
+            opacity: 0;
+        }
+
+        .creator-name {
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .creator-name i {
+            color: var(--gold);
+            animation: heartbeat 2s ease infinite;
+        }
+
+        /* حكمة اليوم */
+        .wisdom-container {
+            margin-bottom: 30px;
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
+            animation: fadeInUp 0.6s ease 0.55s forwards;
+            opacity: 0;
+        }
+
+        .wisdom-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: var(--radius-lg);
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wisdom-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.15;
+            font-family: var(--font-decorative);
+        }
+
+        .wisdom-label {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wisdom-text {
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 400;
+            font-family: var(--font-decorative);
+        }
+
+        .wisdom-author {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        /* أزرار الإجراءات */
+        .action-buttons-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease 0.65s forwards;
+            opacity: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 16px 40px;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .action-btn:hover::before { left: 100%; }
+        .action-btn i { font-size: 1.3rem; }
+
+        .btn-school {
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-school:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+        }
+
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        /* الإحصائيات */
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease 0.75s forwards;
+            opacity: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-lg);
+            padding: 20px 30px;
+            text-align: center;
+            min-width: 180px;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        .stat-icon { font-size: 2rem; color: var(--gold); margin-bottom: 8px; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: #ffffff; line-height: 1; margin-bottom: 5px; }
+        .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.7); font-weight: 400; }
+
+        /* التذييل */
+        .home-footer {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease 0.85s forwards;
+            opacity: 0;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .footer-credit { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 5px; }
+        .footer-credit span { color: var(--gold); font-weight: 600; }
+        .footer-contact { color: rgba(255,255,255,0.5); font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .footer-contact i { color: var(--gold); }
+        .footer-contact a { color: var(--gold-light); font-weight: 600; }
+
+        /* ================================================
+           شريط التنقل
+           ================================================ */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(26,35,126,0.95);
+            backdrop-filter: blur(20px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .navbar-brand { display: flex; align-items: center; gap: 12px; }
+        .navbar-logo {
+            width: 45px; height: 45px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            font-weight: 900;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .navbar-title { color: #ffffff; font-size: 1.2rem; font-weight: 700; font-family: var(--font-heading); }
+        .navbar-subtitle { color: var(--gold); font-size: 0.75rem; font-weight: 400; }
+        .navbar-actions { display: flex; align-items: center; gap: 15px; }
+
+        .nav-btn {
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .nav-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .nav-btn.btn-home { background: var(--gradient-gold); color: var(--primary-dark); border: none; }
+        .nav-btn.btn-home:hover { box-shadow: var(--shadow-gold); }
+
+        /* ================================================
+           صفحة الفصول
+           ================================================ */
+        .page-header {
+            background: var(--gradient-primary);
+            padding: 40px 30px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            color: #ffffff;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+
+        .page-header p { color: rgba(255,255,255,0.7); font-size: 1rem; position: relative; z-index: 1; }
+
+        /* مربع البحث */
+        .search-container {
+            position: relative;
+            z-index: 2;
+            margin-top: -30px;
+            padding: 0 30px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            background: var(--bg-card);
+            border-radius: var(--radius-full);
+            padding: 5px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-primary);
+        }
+
+        .search-box input { flex: 1; padding: 12px 20px; font-size: 1rem; background: transparent; color: var(--text); }
+        .search-box input::placeholder { color: var(--text-muted); }
+
+        .search-btn {
+            padding: 12px 25px;
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-radius: var(--radius-full);
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-btn:hover { transform: scale(1.05); box-shadow: var(--shadow-primary); }
+
+        .search-results {
+            max-width: 600px;
+            margin: 15px auto 0;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .search-results.active { display: block; animation: fadeIn 0.3s ease; }
+
+        .search-result-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover { background: rgba(26,35,126,0.05); }
+        .search-result-item i { color: var(--primary); font-size: 1.1rem; }
+        .search-result-item .student-name { font-weight: 600; color: var(--text); }
+        .search-result-item .student-class { color: var(--text-muted); font-size: 0.85rem; margin-right: auto; }
+
+        /* شبكة الفصول */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 30px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .class-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .class-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .class-card-header { padding: 25px; position: relative; overflow: hidden; }
+        .class-card:nth-child(1) .class-card-header { background: linear-gradient(135deg, #1a237e, #3949ab); }
+        .class-card:nth-child(2) .class-card-header { background: linear-gradient(135deg, #c62828, #ef5350); }
+        .class-card:nth-child(3) .class-card-header { background: linear-gradient(135deg, #2e7d32, #4caf50); }
+        .class-card:nth-child(4) .class-card-header { background: linear-gradient(135deg, #ef6c00, #ff9800); }
+        .class-card:nth-child(5) .class-card-header { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+        .class-card:nth-child(6) .class-card-header { background: linear-gradient(135deg, #00838f, #26c6da); }
+        .class-card:nth-child(7) .class-card-header { background: linear-gradient(135deg, #4e342e, #8d6e63); }
+        .class-card:nth-child(8) .class-card-header { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+
+        .class-card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 100%; height: 100%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .class-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -30%;
+            width: 80%; height: 80%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .class-card-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.2);
+            position: absolute;
+            top: 10px; left: 15px;
+            line-height: 1;
+        }
+
+        .class-card-icon { font-size: 2.5rem; color: rgba(255,255,255,0.9); margin-bottom: 10px; position: relative; z-index: 1; }
+        .class-card-title { font-size: 1.3rem; font-weight: 700; color: #ffffff; position: relative; z-index: 1; font-family: var(--font-heading); }
+        .class-card-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.7); position: relative; z-index: 1; margin-top: 5px; }
+        .class-card-body { padding: 20px 25px; }
+        .class-card-stats { display: flex; justify-content: space-between; align-items: center; }
+        .class-stat { text-align: center; }
+        .class-stat-number { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .class-stat-label { font-size: 0.75rem; color: var(--text-muted); }
+
+        .class-card-footer {
+            padding: 15px 25px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .class-card-footer-text { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+        .class-card-footer-icon { color: var(--primary); transition: var(--transition); }
+        .class-card:hover .class-card-footer-icon { transform: translateX(-5px); }
+
+        /* ================================================
+           صفحة تفاصيل الفصل
+           ================================================ */
+        .class-detail-header {
+            background: var(--gradient-primary);
+            padding: 40px 30px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px; right: 30px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.15);
+            color: #ffffff;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+        .class-detail-title { color: #ffffff; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; position: relative; z-index: 1; }
+        .class-detail-subtitle { color: rgba(255,255,255,0.7); font-size: 1rem; position: relative; z-index: 1; margin-top: 5px; }
+
+        /* التبويبات */
+        .tabs-container { max-width: 1200px; margin: 0 auto; padding: 0 30px; position: relative; z-index: 2; margin-top: -30px; }
+        .tabs-nav { display: flex; background: var(--bg-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active { color: var(--primary); background: rgba(26,35,126,0.05); }
+        .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--gradient-primary); }
+        .tab-btn i { margin-left: 8px; }
+        .tab-content { display: none; padding: 30px 0; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+
+        /* قائمة الطلاب */
+        .students-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+
+        .students-section { background: var(--bg-card); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); overflow: hidden; }
+        .students-section-header { padding: 20px 25px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .students-section-header.male { background: linear-gradient(135deg, rgba(26,35,126,0.05), rgba(26,35,126,0.02)); }
+        .students-section-header.female { background: linear-gradient(135deg, rgba(198,40,40,0.05), rgba(198,40,40,0.02)); }
+
+        .section-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #ffffff; }
+        .section-icon.male-icon { background: var(--gradient-primary); }
+        .section-icon.female-icon { background: linear-gradient(135deg, #8e0000, #ef5350); }
+        .section-title { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+        .section-count { font-size: 0.85rem; color: var(--text-muted); }
+        .students-list { padding: 15px 25px; max-height: 500px; overflow-y: auto; }
+
+        .student-item {
+            padding: 10px 15px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+
+        .student-item:hover { background: rgba(26,35,126,0.03); }
+
+        .student-number {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background: rgba(26,35,126,0.08);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .student-name-text { font-size: 0.95rem; color: var(--text); line-height: 1.5; }
+
+        /* الجدول الدراسي */
+        .timetable-container { background: var(--bg-card); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); overflow: hidden; }
+        .timetable-header { padding: 20px 25px; background: var(--gradient-primary); color: #ffffff; display: flex; align-items: center; gap: 12px; }
+        .timetable-header i { font-size: 1.3rem; color: var(--gold); }
+        .timetable-header h3 { font-size: 1.2rem; font-weight: 700; }
+
+        .timetable-table { width: 100%; border-collapse: collapse; }
+        .timetable-table th { padding: 15px 20px; background: rgba(26,35,126,0.05); color: var(--primary); font-weight: 700; font-size: 0.95rem; text-align: center; border-bottom: 2px solid rgba(26,35,126,0.1); }
+        .timetable-table td { padding: 12px 15px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.08); font-size: 0.9rem; color: var(--text); transition: var(--transition); }
+        .timetable-table tr:hover td { background: rgba(26,35,126,0.03); }
+        .timetable-table td:first-child { font-weight: 700; color: var(--primary); background: rgba(26,35,126,0.03); }
+
+        .period-badge { display: inline-block; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; margin: 2px; }
+        .period-arabic { background: rgba(26,35,126,0.1); color: var(--primary); }
+        .period-english { background: rgba(198,40,40,0.1); color: var(--red); }
+        .period-french { background: rgba(46,125,50,0.1); color: var(--green); }
+        .period-math { background: rgba(239,108,0,0.1); color: var(--orange); }
+        .period-science { background: rgba(106,27,154,0.1); color: var(--purple); }
+        .period-history { background: rgba(0,131,143,0.1); color: var(--cyan); }
+        .period-programming { background: rgba(21,101,192,0.1); color: #1565c0; }
+        .period-philosophy { background: rgba(121,85,72,0.1); color: #795548; }
+        .period-religion { background: rgba(46,125,50,0.1); color: var(--green); }
+        .period-sports { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .period-activity { background: rgba(245,158,11,0.1); color: #f59e0b; }
+        .period-games { background: rgba(16,185,129,0.1); color: #10b981; }
+
+        /* ================================================
+           حاسبة النسبة والعد التنازلي
+           ================================================ */
+        .calculator-section { max-width: 1200px; margin: 0 auto; padding: 30px; }
+        .calc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; }
+
+        .calc-card { background: var(--bg-card); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); overflow: hidden; }
+        .calc-card-header { padding: 20px 25px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .calc-card-header.percentage { background: linear-gradient(135deg, rgba(26,35,126,0.05), rgba(26,35,126,0.02)); }
+        .calc-card-header.year { background: linear-gradient(135deg, rgba(239,108,0,0.05), rgba(239,108,0,0.02)); }
+
+        .calc-card-icon { width: 45px; height: 45px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #ffffff; }
+        .calc-card-icon.percentage-icon { background: var(--gradient-primary); }
+        .calc-card-icon.year-icon { background: linear-gradient(135deg, #8e0000, #ef5350); }
+        .calc-card-title { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+        .calc-card-body { padding: 25px; }
+
+        .calc-input-group { margin-bottom: 15px; }
+        .calc-input-group label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
+        .calc-input-group input { width: 100%; padding: 12px 15px; border: 2px solid rgba(0,0,0,0.12); border-radius: var(--radius-md); font-size: 1rem; background: var(--bg); color: var(--text); }
+        .calc-input-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,35,126,0.1); }
+
+        .calc-btn { width: 100%; padding: 12px; border-radius: var(--radius-md); font-size: 1rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .calc-btn.primary { background: var(--gradient-primary); }
+        .calc-btn.primary:hover { box-shadow: var(--shadow-primary); transform: translateY(-2px); }
+
+        .calc-result { margin-top: 15px; padding: 15px 20px; border-radius: var(--radius-md); background: rgba(26,35,126,0.05); display: none; }
+        .calc-result.show { display: block; animation: fadeIn 0.3s ease; }
+        .calc-result-value { font-size: 2rem; font-weight: 900; color: var(--primary); }
+        .calc-result-label { font-size: 0.85rem; color: var(--text-muted); }
+        .calc-result-bar { margin-top: 10px; height: 10px; background: rgba(26,35,126,0.1); border-radius: 5px; overflow: hidden; }
+        .calc-result-bar-fill { height: 100%; border-radius: 5px; transition: width 0.5s ease; }
+        .calc-result-bar-fill.excellent { background: var(--green); }
+        .calc-result-bar-fill.good { background: var(--teal); }
+        .calc-result-bar-fill.average { background: var(--orange); }
+        .calc-result-bar-fill.poor { background: var(--red); }
+
+        .year-result { text-align: center; }
+        .year-days { font-size: 3rem; font-weight: 900; color: var(--orange); line-height: 1; margin-bottom: 10px; }
+        .year-label { font-size: 1rem; color: var(--text-muted); }
+        .year-end-date { margin-top: 15px; padding: 10px 15px; background: rgba(239,108,0,0.05); border-radius: var(--radius-md); color: var(--orange); font-weight: 600; }
+
+        /* ================================================
+           الوضع الليلي
+           ================================================ */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 30px; left: 30px;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dark-mode-toggle:hover { transform: scale(1.1); box-shadow: var(--shadow-xl); }
+
+        body.dark-mode {
+            --bg: #121212;
+            --bg-card: #1e1e1e;
+            --text: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #808080;
+        }
+
+        body.dark-mode .search-box { background: #1e1e1e; }
+        body.dark-mode .search-box input { color: #e0e0e0; }
+        body.dark-mode .student-item:hover { background: rgba(255,255,255,0.03); }
+        body.dark-mode .timetable-table td:first-child { background: rgba(255,255,255,0.03); }
+        body.dark-mode .calc-input-group input { background: #121212; color: #e0e0e0; }
+        body.dark-mode .calc-input-group input:focus { box-shadow: 0 0 0 3px rgba(57,73,171,0.2); }
+
+        /* ================================================
+           زر العودة للأعلى
+           ================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 999;
+            cursor: pointer;
+            box-shadow: var(--shadow-primary);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(26,35,126,0.4); }
+
+        /* ================================================
+           الذكاء الاصطناعي - الشات بوت
+           ================================================ */
+        .ai-chat-trigger {
+            position: fixed;
+            bottom: 30px; right: 100px;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-ai);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 1000;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(106,27,154,0.4);
+            transition: var(--transition);
+            animation: glow 3s ease infinite;
+        }
+
+        .ai-chat-trigger:hover { transform: scale(1.1) rotate(10deg); box-shadow: 0 6px 30px rgba(106,27,154,0.6); }
+        .ai-chat-trigger .notification-dot { position: absolute; top: 5px; right: 5px; width: 12px; height: 12px; background: var(--red-light); border-radius: 50%; border: 2px solid #ffffff; animation: pulse 2s ease infinite; }
+        .ai-chat-trigger .notification-dot.hidden { display: none; }
+
+        .ai-chat-panel {
+            position: fixed;
+            bottom: 100px; right: 100px;
+            width: 400px; height: 550px;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            z-index: 1001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid rgba(106,27,154,0.2);
+        }
+
+        .ai-chat-panel.active { display: flex; animation: slideInUp 0.3s ease forwards; }
+
+        .ai-chat-header {
+            padding: 18px 20px;
+            background: var(--gradient-ai);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .ai-chat-header-info { display: flex; align-items: center; gap: 12px; }
+        .ai-chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+        .ai-chat-header-text h3 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+        .ai-chat-header-text span { font-size: 0.75rem; opacity: 0.8; display: flex; align-items: center; gap: 4px; }
+        .ai-chat-header-text span::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4caf50; display: inline-block; }
+        .ai-chat-close { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1rem; cursor: pointer; transition: var(--transition); }
+        .ai-chat-close:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
+
+        .ai-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(106,27,154,0.02), rgba(171,71,188,0.02));
+        }
+
+        .ai-chat-messages::-webkit-scrollbar { width: 6px; }
+        .ai-chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .ai-chat-messages::-webkit-scrollbar-thumb { background: rgba(106,27,154,0.2); border-radius: 3px; }
+
+        .ai-message { max-width: 85%; padding: 12px 16px; border-radius: var(--radius-lg); font-size: 0.9rem; line-height: 1.6; position: relative; animation: fadeIn 0.3s ease; }
+        .ai-message.bot { align-self: flex-start; background: var(--bg-card); border: 1px solid rgba(106,27,154,0.1); }
+        .ai-message.user { align-self: flex-end; background: var(--gradient-ai); color: #ffffff; }
+        .ai-message.bot .ai-msg-icon { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--purple); margin-bottom: 6px; font-weight: 600; }
+        .ai-message.user .ai-msg-time { font-size: 0.7rem; opacity: 0.7; margin-top: 4px; text-align: left; }
+
+        .ai-typing-indicator { align-self: flex-start; padding: 12px 16px; background: var(--bg-card); border: 1px solid rgba(106,27,154,0.1); border-radius: var(--radius-lg); display: none; align-items: center; gap: 6px; }
+        .ai-typing-indicator.active { display: flex; }
+        .ai-typing-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple-light); animation: typing 1.4s ease infinite; }
+        .ai-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .ai-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        .ai-quick-replies { padding: 10px 20px; display: none; flex-wrap: wrap; gap: 6px; border-top: 1px solid rgba(0,0,0,0.05); background: var(--bg-card); }
+        .ai-quick-reply-btn { padding: 6px 14px; border-radius: var(--radius-full); font-size: 0.75rem; background: rgba(106,27,154,0.08); color: var(--purple); border: 1px solid rgba(106,27,154,0.15); cursor: pointer; transition: var(--transition); font-weight: 500; }
+        .ai-quick-reply-btn:hover { background: var(--purple); color: #ffffff; border-color: var(--purple); }
+
+        .ai-chat-input-area { padding: 15px; background: var(--bg-card); border-top: 1px solid rgba(0,0,0,0.08); display: flex; align-items: center; gap: 10px; }
+        .ai-chat-input { flex: 1; padding: 12px 18px; border: 2px solid rgba(106,27,154,0.15); border-radius: var(--radius-full); font-size: 0.9rem; background: var(--bg); color: var(--text); transition: var(--transition); }
+        .ai-chat-input:focus { border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(106,27,154,0.1); }
+        .ai-chat-input::placeholder { color: var(--text-muted); }
+        .ai-send-btn { width: 45px; height: 45px; border-radius: 50%; background: var(--gradient-ai); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: var(--transition); flex-shrink: 0; }
+        .ai-send-btn:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(106,27,154,0.4); }
+
+        .ai-welcome-card { background: linear-gradient(135deg, rgba(106,27,154,0.08), rgba(171,71,188,0.04)); border: 1px solid rgba(106,27,154,0.15); border-radius: var(--radius-lg); padding: 20px; text-align: center; margin-bottom: 10px; }
+        .ai-welcome-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .ai-welcome-card h4 { color: var(--purple); font-size: 1.1rem; margin-bottom: 8px; }
+        .ai-welcome-card p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; }
+
+        /* ================================================
+           التصميم المتجاوب
+           ================================================ */
+        @media (max-width: 768px) {
+            .bismillah-text { font-size: 1.8rem; }
+            .greeting-text { font-size: 1.3rem; }
+            .school-name { font-size: 2rem; }
+            .admin-name { font-size: 1rem; }
+            .creator-name { font-size: 1.2rem; }
+            .wisdom-text { font-size: 1rem; }
+            .action-buttons-container { flex-direction: column; align-items: center; }
+            .action-btn { width: 100%; max-width: 300px; }
+            .stats-container { flex-direction: column; align-items: center; }
+            .stat-card { width: 100%; max-width: 300px; }
+            .classes-grid { grid-template-columns: 1fr; }
+            .students-grid { grid-template-columns: 1fr; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .navbar-title { font-size: 0.9rem; }
+            .navbar-subtitle { display: none; }
+            .date-bar { flex-direction: column; gap: 5px; padding: 10px 15px; }
+            .tabs-nav { flex-direction: column; }
+            .timetable-table { font-size: 0.75rem; }
+            .timetable-table th, .timetable-table td { padding: 8px 5px; }
+            .period-badge { font-size: 0.7rem; padding: 3px 8px; }
+            .page-header h1, .class-detail-title { font-size: 1.8rem; }
+            .ai-chat-panel { width: calc(100% - 20px); right: 10px; bottom: 90px; height: calc(100% - 120px); }
+            .ai-chat-trigger { right: 80px; bottom: 20px; width: 50px; height: 50px; font-size: 1.2rem; }
+            .dark-mode-toggle { bottom: 20px; left: 20px; width: 45px; height: 45px; }
+            .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+        }
+
+        @media (max-width: 480px) {
+            .bismillah-text { font-size: 1.5rem; }
+            .school-name { font-size: 1.6rem; }
+            .navbar { padding: 10px 15px; }
+            .navbar-logo { width: 35px; height: 35px; font-size: 1rem; }
+            .ai-chat-panel { width: calc(100% - 10px); right: 5px; bottom: 80px; height: calc(100% - 100px); }
+            .ai-chat-trigger { right: 70px; bottom: 15px; }
+        }
+
+        /* ================================================
+           أنماط الطباعة
+           ================================================ */
+        @media print {
+            .navbar, .back-to-top, .dark-mode-toggle, .search-container,
+            .ai-chat-trigger, .ai-chat-panel { display: none !important; }
+            .page { padding-top: 0 !important; }
+            .class-detail-header { padding: 20px !important; }
+            .timetable-container { box-shadow: none !important; border: 1px solid #ddd; }
+        }
+
+        /* ================================================
+           أنماط إمكانية الوصول
+           ================================================ */
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شاشة التحميل -->
+    <div id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">مدرسة الاخصاص الثانوية</div>
+    </div>
+
+    <!-- الجسيمات -->
+    <div id="particlesContainer"></div>
+
+    <!-- زر العودة للأعلى -->
+    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- زر الوضع الليلي -->
+    <div class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></div>
+
+    <!-- ================================================
+         الذكاء الاصطناعي - الشات بوت
+         ================================================ -->
+    <div class="ai-chat-trigger" id="aiChatTrigger" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+        <div class="notification-dot" id="chatDot"></div>
+    </div>
+
+    <div class="ai-chat-panel" id="aiChatPanel">
+        <div class="ai-chat-header">
+            <div class="ai-chat-header-info">
+                <div class="ai-chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="ai-chat-header-text">
+                    <h3>🤖 مساعد المدرسة الذكي</h3>
+                    <span>متصل الآن</span>
+                </div>
+            </div>
+            <div class="ai-chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="ai-chat-messages" id="aiChatMessages"></div>
+        <div class="ai-typing-indicator" id="aiTypingIndicator">
+            <div class="ai-typing-dot"></div>
+            <div class="ai-typing-dot"></div>
+            <div class="ai-typing-dot"></div>
+        </div>
+        <div class="ai-quick-replies" id="aiQuickReplies">
+            <button class="ai-quick-reply-btn" onclick="sendQuickReply('كم عدد الطلاب؟')">كم عدد الطلاب؟</button>
+            <button class="ai-quick-reply-btn" onclick="sendQuickReply('ما هو الجدول؟')">ما هو الجدول؟</button>
+            <button class="ai-quick-reply-btn" onclick="sendQuickReply('من مدير المدرسة؟')">من مدير المدرسة؟</button>
+            <button class="ai-quick-reply-btn" onclick="sendQuickReply('احسب نسبتي')">احسب نسبتي</button>
+            <button class="ai-quick-reply-btn" onclick="sendQuickReply('حكمة اليوم')">حكمة اليوم</button>
+        </div>
+        <div class="ai-chat-input-area">
+            <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key==='Enter')sendMessage()">
+            <button class="ai-send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- ================================================
+         الصفحة الرئيسية
+         ================================================ -->
+    <div class="page active" id="homePage">
+        <div class="hero-section">
+            <div class="date-bar">
+                <div class="date-info"><i class="fas fa-calendar-alt"></i><span id="currentDate"></span></div>
+                <div class="time-info"><i class="fas fa-clock"></i><span id="currentTime"></span></div>
+            </div>
+            <div class="bismillah-container"><div class="bismillah-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div></div>
+            <div class="greeting-container"><div class="greeting-text"><span class="greeting-icon" id="greetingIcon">☀️</span><span id="greetingText"></span></div></div>
+            <div class="school-name-container"><div class="school-name">مدرسة الاخصاص الثانوية</div></div>
+            <div class="admin-container"><div class="admin-name">تحت إشراف الأستاذ الفاضل: <span>أ / فكري هاشم الزيدي</span></div></div>
+            <div class="creator-container"><div class="creator-name"><i class="fas fa-star"></i> إبداع الطالب: أحمد حسين منصور <i class="fas fa-star"></i></div></div>
+            <div class="wisdom-container">
+                <div class="wisdom-card">
+                    <div class="wisdom-label"><i class="fas fa-lightbulb"></i> حكمة اليوم</div>
+                    <div class="wisdom-text" id="dailyWisdom"></div>
+                    <div class="wisdom-author" id="wisdomAuthor"></div>
+                </div>
+            </div>
+            <div class="action-buttons-container">
+                <button class="action-btn btn-school" onclick="navigateTo('classesPage')"><i class="fas fa-school"></i> الدخول للمدرسة</button>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card"><div class="stat-icon"><i class="fas fa-chalkboard"></i></div><div class="stat-number">8</div><div class="stat-label">عدد الفصول</div></div>
+                <div class="stat-card"><div class="stat-icon"><i class="fas fa-user-graduate"></i></div><div class="stat-number" id="totalStudents">0</div><div class="stat-label">إجمالي الطلاب</div></div>
+            </div>
+            <div class="home-footer">
+                <div class="footer-credit">إبداع الطالب <span>أحمد حسين منصور</span></div>
+                <div class="footer-contact"><i class="fas fa-phone-alt"></i> للتواصل: <a href="tel:01027283228" dir="ltr">01027283228</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================
+         صفحة الفصول
+         ================================================ -->
+    <div class="page" id="classesPage">
+        <nav class="navbar">
+            <div class="navbar-brand"><div class="navbar-logo">أ</div><div><div class="navbar-title">مدرسة الاخصاص الثانوية</div><div class="navbar-subtitle">إدارة أ / فكري هاشم الزيدي</div></div></div>
+            <div class="navbar-actions"><button class="nav-btn btn-home" onclick="navigateTo('homePage')"><i class="fas fa-home"></i> الرئيسية</button></div>
+        </nav>
+        <div class="page-header"><h1>فصول المدرسة</h1><p>اختر الفصل لعرض بيانات الطلاب والجدول الدراسي</p></div>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="ابحث عن اسمك..." oninput="searchStudents(this.value)">
+                <button class="search-btn" onclick="searchStudents(document.getElementById('searchInput').value)"><i class="fas fa-search"></i> بحث</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+        <div class="classes-grid" id="classesGrid"></div>
+    </div>
+
+    <!-- ================================================
+         صفحة تفاصيل الفصل
+         ================================================ -->
+    <div class="page" id="classDetailPage">
+        <nav class="navbar">
+            <div class="navbar-brand"><div class="navbar-logo">أ</div><div><div class="navbar-title">مدرسة الاخصاص الثانوية</div><div class="navbar-subtitle">بيانات الفصل</div></div></div>
+            <div class="navbar-actions">
+                <button class="nav-btn btn-home" onclick="navigateTo('homePage')"><i class="fas fa-home"></i> الرئيسية</button>
+                <button class="nav-btn" onclick="navigateTo('classesPage')"><i class="fas fa-chalkboard"></i> الفصول</button>
+            </div>
+        </nav>
+        <div class="class-detail-header">
+            <button class="back-btn" onclick="navigateTo('classesPage')"><i class="fas fa-arrow-right"></i> رجوع للفصول</button>
+            <div class="class-detail-title" id="classDetailTitle"></div>
+            <div class="class-detail-subtitle" id="classDetailSubtitle"></div>
+        </div>
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab('studentsTab', this)"><i class="fas fa-users"></i> قائمة الطلاب</button>
+                <button class="tab-btn" onclick="switchTab('timetableTab', this)"><i class="fas fa-calendar-alt"></i> الجدول الدراسي</button>
+            </div>
+            <div class="tab-content active" id="studentsTab"><div class="students-grid" id="studentsGrid"></div></div>
+            <div class="tab-content" id="timetableTab">
+                <div class="timetable-container">
+                    <div class="timetable-header"><i class="fas fa-calendar-week"></i><h3>الجدول الأسبوعي - <span id="timetableClassName"></span></h3></div>
+                    <div style="overflow-x:auto;"><table class="timetable-table" id="timetableTable"></table></div>
+                </div>
+            </div>
+        </div>
+        <div class="calculator-section">
+            <div class="calc-grid">
+                <div class="calc-card">
+                    <div class="calc-card-header percentage"><div class="calc-card-icon percentage-icon"><i class="fas fa-percentage"></i></div><div class="calc-card-title">حساب النسبة المئوية</div></div>
+                    <div class="calc-card-body">
+                        <div class="calc-input-group"><label>الدرجة الحاصل عليها</label><input type="number" id="gradeObtained" placeholder="أدخل درجتك" min="0" max="100" onchange="saveState()"></div>
+                        <div class="calc-input-group"><label>الدرجة الكلية</label><input type="number" id="gradeTotal" placeholder="أدخل الدرجة الكلية" min="1" value="100" onchange="saveState()"></div>
+                        <button class="calc-btn primary" onclick="calculatePercentage()"><i class="fas fa-calculator"></i> احسب النسبة</button>
+                        <div class="calc-result" id="percentageResult"><div class="calc-result-value" id="percentageValue"></div><div class="calc-result-label" id="percentageLabel"></div><div class="calc-result-bar"><div class="calc-result-bar-fill" id="percentageBar"></div></div></div>
+                    </div>
+                </div>
+                <div class="calc-card">
+                    <div class="calc-card-header year"><div class="calc-card-icon year-icon"><i class="fas fa-hourglass-half"></i></div><div class="calc-card-title">العد التنازلي لنهاية العام الدراسي</div></div>
+                    <div class="calc-card-body"><div class="year-result"><div class="year-days" id="yearDays">0</div><div class="year-label">يوم متبقي على نهاية العام الدراسي</div><div class="year-end-date" id="yearEndDate"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================
+         جافاسكريبت - المحرك الرئيسي
+         ================================================ -->
+    <script>
+        // ================================================
+        // قاعدة بيانات المدرسة - جميع البيانات
+        // ================================================
+        const DB = {
+            classes: {
+                "1/1": { name: "أولى أول (1/1)", icon: "fa-user-graduate",
+                    male: ["إبراهيم أشرف إبراهيم محمد جوهر","إبراهيم علاء إبراهيم صادق أحمد","إبراهيم عمرو منير حسانين أحمد","أحمد إبراهيم ماهر باهى حسانين","أحمد باسم صبرى محمد عبد ربه","أحمد حسن أحمد حسن حسين","أحمد حسين منصور حسين منظور","أحمد سامح أحمد على حسين","أحمد سمير على أحمد خطاب","أحمد شريف فضل محمود محمد","أحمد طارق عبد المنعم عباس سليمان","أحمد عبد الوهاب رمضان عبد الغنى غريب","أحمد عماد الدين عادل هاشم عثمان","أحمد عيد منصور حسين منظور","أحمد مجدى إبراهيم محمد جوهر"],
+                    female: ["إسراء صبرى عبد العال","أسماء سلامة مسعد","أسماء عرفة إبراهيم","أسماء فارس أحمد","أصالة حمدى عبده","آلاء أشرف عبد السلام","الزهراء وهبه محمد","إلهام عبد الباسط عبد العزيز","أمل عمار محمد","أمنية عبد العزيز فصيح","إنجى جورج أنور","إيرينى جورج أنور","آية إبراهيم عبد المنعم","آية أحمد سيد","آية محمد ممدوح","آية سامى عبد الحميد","آية صبرى فتحى","آية محمد ممدوح أبو طالب","أمل عطيه عكاشه","آية أحمد سعيد","بسملة أسامة عبد الحميد","بسملة جبر حسن","بسملة سامح عبد الوهاب","بسملة سامى عبد الغنى","بسملة طارق محمد","بسمة رضا محمد عبد المحسن","بسمة رضا محمد عبد الحميد","بسنت حسانين فاروق","بسنت سعيد فرغل"],
+                    timetable: {"الأحد":["علوم متكاملة","علوم متكاملة","فلسفة","فلسفة","فرنسي","فرنسي","رياضة","رياضة"],"الاثنين":["تاريخ","تاريخ","نشاط تربوي","عربي","عربي","انجليزي","انجليزي","انجليزي"],"الثلاثاء":["انجليزي","انجليزي","البرمجة","البرمجة","عربي","عربي","دين","دين"],"الأربعاء":["عربي","عربي","تاريخ","تاريخ","علوم متكاملة","علوم متكاملة","البرمجة","البرمجة"],"الخميس":["علوم متكاملة","علوم متكاملة","رياضة","رياضة","ألعاب","ألعاب","فلسفة","فلسفة"]}},
+                "1/2": { name: "أولى ثاني (1/2)", icon: "fa-user-graduate",
+                    male: ["أحمد محمد حماد معوض","أحمد محمد عبد الرحمن صبرى","أحمد محمد عبد العزيز إبراهيم","أحمد محمد محمود محمد محمود","أحمد هانى شاكر عبد الجابر","آدم كامل كمال كامل","أدهم عبد السلام ناجى","أدهم محمد شافعى مغاورى","أسامة محمد على سيد","إسلام عبد الله سيد عبد الستار","الحسن رمضان حسن فؤاد","الزيدى وائل هاشم هلال","الفاروق خيرى إبراهيم","أمير سعيد محمد محمود","أمين أحمد أمين شحاته"],
+                    female: ["بسنت مكرم ثابت","بسنت نزيه مرعى","تسنيم عبد العزيز محمد","تسنيم مصطفى زارع","تقوى هاشم باهى","جاسمن وليد صلاح","جأنا مكرم وديع","جميلة صابر فضل","جنا جمال عيد","جنا رضا محمد عبد الحميد","جنا سيد عثمان","جنى أحمد ممدوح","جنى أشرف غريب","جنى سيد زكريا","جنى مجدى هاشم","جنى محمد حسين كامل","جنى محمد رزق سيد","جنى محمد عبده سيد","جنى نصر سالم نصار","جوليا هانى إبراهيم","جومانا طارق عبد الرحيم","جومانا محمد يحيى","جيهان حسين عويس","حبيبة راضى فريد","حبيبة عصمت عبد الحميد","حبيبة محمود شيبوب","حنان عادل محمد","حنين عاطف سيد","خلود عبد الواحد سعيد"],
+                    timetable: {"الأحد":["رياضة","رياضة","تاريخ","تاريخ","البرمجة","البرمجة","علوم متكاملة","علوم متكاملة"],"الاثنين":["علوم متكاملة","علوم متكاملة","فرنسي","فرنسي","نشاط تربوي","عربي","عربي","عربي"],"الثلاثاء":["انجليزي","انجليزي","علوم متكاملة","علوم متكاملة","فلسفة","فلسفة","دين","دين"],"الأربعاء":["تاريخ","تاريخ","البرمجة","البرمجة","عربي","عربي","رياضة","رياضة"],"الخميس":["ألعاب","ألعاب","انجليزي","انجليزي","فلسفة","فلسفة","عربي","عربي"]}},
+                "1/3": { name: "أولى ثالث (1/3)", icon: "fa-user-graduate",
+                    male: ["بلال أحمد سعيد عبد الكريم","بلال ياسر جاد المولى","جورج نجيب إسحاق","حسين حسنى سيد عثمان","حسين دسوقى عبده عبد المنعم","خالد وليد فهمى باهى","زياد سعيد يس عليوه","زياد محمد محمد حسين","سيد أيمن سيد عبد الله","سيف عبد الستار سيد عبد الستار","صلاح محمد صلاح محمود","عبد الرحمن أحمد فوزى","عبد الرحمن حسين ربيع","عبد الرحمن حمدى جاب الله"],
+                    female: ["دعاء رضا عبد المنعم","دعاء صبحى نظير","دينا جرجس نجيب","رحمة أشرف أحمد","رحمة رضا عبد العزيز","رحمة شعبان كمال","رحمة على غريب","رحمة محمد حريش","رحمة محمد رجب","رحمة محمود هندى","رضوى أحمد محمد النويى","رضوى جمال جمعه","رفيدة ريحان عبد السلام","رقية رضا عوض","رميساء محمد رياض","رنا كمال سعد الدين","روان أحمد دسوقى","روان أحمد رضا","روان حسن حسين","رودينا شوقى عبده","روضة أحمد دسوقى","روضة حسين عبد الواحد","روضة عبد إسماعيل أحمد","روضة نزيه فرحات","رؤى طاهر سمير","رؤى محمود عبد العزيز","ريم أحمد صبرى","ريم عربى عدوى","ريماس أحمد إبراهيم"],
+                    timetable: {"الأحد":["تاريخ","تاريخ","عربي","عربي","فلسفة","فلسفة","رياضة","رياضة"],"الاثنين":["عربي","عربي","البرمجة","البرمجة","علوم متكاملة","علوم متكاملة","انجليزي","انجليزي"],"الثلاثاء":["فرنسي","فرنسي","تاريخ","تاريخ","البرمجة","البرمجة","ألعاب","ألعاب"],"الأربعاء":["علوم متكاملة","علوم متكاملة","رياضة","رياضة","نشاط تربوي","فلسفة","فلسفة","فلسفة"],"الخميس":["عربي","عربي","علوم متكاملة","علوم متكاملة","انجليزي","انجليزي","دين","دين"]}},
+                "1/4": { name: "أولى رابع (1/4)", icon: "fa-user-graduate",
+                    male: ["عبد الرحمن صبرى محمد","عبد الرحمن علوانى ماهر","عبد الرحمن عليان محمود","عبد الرحمن محمد سعيد","عبد الرحمن مصطفى عبده","عزام عبد العزيز حميد","على رأفت سليمان","على نزيه عمر عبد الفضيل","على نصر أحمد عباس","عمر أحمد حسانين فهمى","عمر رأفت سليمان يوسف","عمر رشاد محى رشاد","عمر مجدى أحمد بكرى","عمر محمد نبيل صديق"],
+                    female: ["ريهام سعد سيد","زهراء سامح مختار","زينب عايد عياد","زينب ناصر رجب","سارة أحمد عبد الفتاح","سارة رضا رياض","سارة سيد رمضان","سارة مجدى يحيى","سارة مسعود محمد","سجدة وائل عبد الغفار","سعاد سلامة سالم","سلمى طه فوزى","سلمى محمد عيد","سما طارق أحمد","سما محمد فوزى","سما محمود على حسن","سما مصطفى صبرى","سماح صلاح عبد العزيز","سمية رضا صلاح","سهيلة حسين حمد الله","سهيلة عزب هاشم","سهيلة محمد زارع","شاهندا إبراهيم أحمد","شروق أحمد رمضان","شروق حلمى إبراهيم","شروق سيد غريب","شهد أحمد سمير","شهد جمال ماجد","شهد حسن محمد إبراهيم"],
+                    timetable: {"الأحد":["البرمجة","البرمجة","عربي","عربي","انجليزي","انجليزي","تاريخ","تاريخ"],"الاثنين":["فرنسي","فرنسي","علوم متكاملة","علوم متكاملة","عربي","عربي","رياضة","رياضة"],"الثلاثاء":["علوم متكاملة","علوم متكاملة","فلسفة","فلسفة","ألعاب","ألعاب","دين","دين"],"الأربعاء":["البرمجة","البرمجة","تاريخ","تاريخ","انجليزي","انجليزي","عربي","عربي"],"الخميس":["فلسفة","فلسفة","رياضة","رياضة","علوم متكاملة","علوم متكاملة","نشاط تربوي"]}},
+                "1/5": { name: "أولى خامس (1/5)", icon: "fa-user-graduate",
+                    male: ["عمر محمد نصر أحمد","عمر يسن هاشم عبد النبى","فادى رامى سعد شفيق","فارس شعبان محمد فؤاد","فهد شريف هاشم توفيق","فهد عصام سعد محمد","مبارك محمد مبارك على","محسن وليد سالم إبراهيم","محمد إبراهيم عاشور أحمد"],
+                    female: ["شهد سيوفى محمد","شهد نعيم رجب","شهد هانى سعيد","شيماء على سليم","شيماء محمد إبراهيم","عائشة أسامة عتريس","عفاف أحمد محمد سليمان","فاتن عبد الحكيم مراد","فاطمة عبد الواحد عكاشة","فاطمة محسن محروس","فاطمة محمد سليمان زكى","فاطمة محمد على محمد","فاطمة محمد محمد أحمد","فتحية محمد سعد هليل","فدوى فكرى هاشم","فرح رامى حكيم","فرح إسماعيل إبراهيم","فرحة عبد الله عبد الفتاح","فرحة محمد كامل","فرحة محمود ربيع","فيروز محمد فتوح","مارفينا هانى سمير","مارينا عماد برسوم","مارينا هانى حليم","مروة مجدى محمد","مريم إبراهيم فتحى","مريم أيوب كامل","مريم تامر فتحى","مريم جودة حسنى","شيماء أحمد عرابى","فرحة صادق رمضان"],
+                    timetable: {"الأحد":["انجليزي","انجليزي","رياضة","رياضة","علوم متكاملة","علوم متكاملة","عربي","عربي"],"الاثنين":["تاريخ","تاريخ","فلسفة","فلسفة","البرمجة","البرمجة","ألعاب","ألعاب"],"الثلاثاء":["رياضة","رياضة","علوم متكاملة","علوم متكاملة","دين","دين","انجليزي","انجليزي"],"الأربعاء":["تاريخ","تاريخ","فرنسي","فرنسي","فلسفة","فلسفة","عربي","عربي"],"الخميس":["نشاط تربوي","البرمجة","البرمجة","علوم متكاملة","علوم متكاملة","عربي","عربي","عربي"]}},
+                "1/6": { name: "أولى سادس (1/6)", icon: "fa-user-graduate",
+                    male: ["محمد سيد محمد أحمد","محمد شريف شوقى","محمد عاشور سعد أمين","محمد عاطف محمد جاد","محمد عصام محمد حسين","محمد على حسن محمد","محمد على سيد على","محمد على شاهين على","محمد فايز محمد فراج","محمد محمود منصور","محمد مشهور يونس","محمد وحيد عبد المنعم","محمود حسين محمود","محمود حماد حمزة","محمود راضى سعيد"],
+                    female: ["مريم رمضان حسين","مريم رمضان عبد الرحمن","مريم طارق سعيد","مريم عبد المنعم عبد الرؤوف","مريم عصام أحمد","مريم محمد سعيد","مريم محمد زكريا","مريم نشأت إبراهيم","مريم هانى سمير","ملك أحمد أحمد عوض","ملك أحمد جمعة عبد العليم","ملك أحمد صلاح عبد الكريم","ملك أحمد كمال عبد الله","ملك أحمد محمد عبد الغنى","ملك أسامة سيد سلامة","ملك أيمن سلامة سيف","ملك حسين ماضى حسن","ملك رامى أحمد أحمد","ملك زكريا توفيق محمود","ملك سامى عز الدين","ملك سعد محمد حماد","ملك سعيد محمد زناتى","ملك سيد محمد بكرى","ملك شعبان عبد الظاهر","ملك صبرى أحمد مرزوق","ملك عصام محمد عبد الحميد","ملك عماد فتحى محمد","ملك عمرو ثابت عبد العال","ملك محسن عبده إسماعيل"],
+                    timetable: {"الأحد":["علوم متكاملة","علوم متكاملة","عربي","عربي","دين","دين","انجليزي","انجليزي"],"الاثنين":["ألعاب","ألعاب","تاريخ","تاريخ","فلسفة","فلسفة","رياضة","رياضة"],"الثلاثاء":["انجليزي","انجليزي","البرمجة","البرمجة","علوم متكاملة","علوم متكاملة","عربي","عربي"],"الأربعاء":["رياضة","رياضة","فلسفة","فلسفة","فرنسي","فرنسي","نشاط تربوي"],"الخميس":["تاريخ","تاريخ","علوم متكاملة","علوم متكاملة","البرمجة","البرمجة","عربي","عربي"]}},
+                "1/7": { name: "أولى سابع (1/7)", icon: "fa-user-graduate",
+                    male: ["محمود ماجد عاشور","محمود وائل محمود","مدثر زغلول عليوه","مروان حسن ماجد","مروان محمد سيد محمد","مروان محمد محمد عبد الحميد","مصطفى رمضان عبده محمود","مصطفى محمد أبو السعود","مصطفى هانى مصطفى عباس","معاذ عيد عبد الرؤوف","معتصم عمرو فتوح","ممتاز رمضان سلامة","ممدوح فرج وديع","مؤمن أحمد راشد"],
+                    female: ["ملك محمد أحمد عبد الوهاب","ملك محمد رمضان عبد الظاهر","ملك محمد عبد الحليم فؤاد","ملك محمد هاشم جمعة","ملك محمود محسن محمد","ملك هانى فصيح","ملك هانى قرنى","ملك وليد سمير","منة سيد محمد","منة عبد الله محمد","منيرة صابر عويس","مها صلاح محمد","مهتاب محمد محمد عبد الحميد","مودة ضاحى محمد","مى أحمد أحمد محمد","مى شعبان أحمد","مى مدحت ربيع","نادية شعبان عبد النبى","نجاة فهمى محمد","ندا عصام قرنى","ندى بسيونى حمزة","ندى صلاح أنور","ندى عارف إسماعيل","ندى عامر عيد","ندى على فضل","ندى محمد سعد","ندى محمد عبد الرحمن","ندى ناصر محمد","ندين محمود السيد"],
+                    timetable: {"الأحد":["انجليزي","انجليزي","البرمجة","البرمجة","عربي","عربي","تاريخ","تاريخ"],"الاثنين":["علوم متكاملة","علوم متكاملة","البرمجة","البرمجة","رياضة","رياضة","دين","دين"],"الثلاثاء":["فرنسي","فرنسي","علوم متكاملة","علوم متكاملة","انجليزي","انجليزي","نشاط تربوي"],"الأربعاء":["فلسفة","فلسفة","تاريخ","تاريخ","ألعاب","ألعاب","عربي","عربي"],"الخميس":["علوم متكاملة","علوم متكاملة","فلسفة","فلسفة","رياضة","رياضة","عربي","عربي"]}},
+                "1/8": { name: "أولى ثامن (1/8)", icon: "fa-user-graduate",
+                    male: ["مؤمن محمد عبد الكريم","نبيل محمد نبيل","هادى ناجح بسيونى","ياسين أحمد بشير","ياسين أيمن شعبان","يوسف أحمد قرنى","يوسف رمضان شعبان","يوسف سيد سمير","يوسف سيد قدرى","يوسف عاطف سليمان","يوسف عز الدين فضل","يوسف محمد قرنى","يوسف محمود محمد محمود"],
+                    female: ["نرمين عبد الغفار عبد الكريم","نهلة محمود صلاح","نور توبة راتب","نور خالد جابر","نورا سعيد محمد سالم","نورا مسعود محمد","نوران أسامة رضا","نوران صادق إبراهيم","نورهان زينهم رجب","نورهان محمد محمد عطية","نورهان محمود سيد","نورهان هانى إسماعيل","نيجار محمد محمد","هاجر رجب قرنى","هاجر عامر عبد الرحمن","هاجر ممدوح محمد","هاتم حسام فوزى","هدى سمير سعد","هدير سمير عبد القادر","هنا سامى رمضان","هنا عمرو مسعد","هنا مصطفى محمد","هند شوقى يونس","وفاء إبراهيم رجب","ولاء سعيد أحمد","يارا عادل زكريا","ياسمين رضى خيرى","ياسمين صبرى عويس","يوانا عزيز إسحاق","يوستينا أيمن نجيب","هادية محمد على سليمان","هنا سويلم رجب"],
+                    timetable: {"الأحد":["فلسفة","فلسفة","تاريخ","تاريخ","رياضة","رياضة","فرنسي","فرنسي"],"الاثنين":["نشاط تربوي","علوم متكاملة","علوم متكاملة","انجليزي","انجليزي","عربي","عربي","عربي"],"الثلاثاء":["البرمجة","البرمجة","ألعاب","ألعاب","تاريخ","تاريخ","فلسفة","فلسفة"],"الأربعاء":["عربي","عربي","رياضة","رياضة","دين","دين","علوم متكاملة","علوم متكاملة"],"الخميس":["انجليزي","انجليزي","البرمجة","البرمجة","عربي","عربي","علوم متكاملة","علوم متكاملة"]}}
+            }
+        };
+
+        // ================================================
+        // حكم وأقوال متغيرة يومياً
+        // ================================================
+        const wisdoms = [
+            {text:"العلم نور والجهل ظلام",author:"حكمة عربية"},
+            {text:"من جد وجد ومن زرع حصد",author:"حكمة عربية"},
+            {text:"الوقت كالسيف إن لم تقطعه قطعك",author:"حكمة عربية"},
+            {text:"اطلبوا العلم من المهد إلى اللحد",author:"حديث شريف"},
+            {text:"خير الناس أنفعهم للناس",author:"حديث شريف"},
+            {text:"العلم يرفع بيتاً لا عماد له والجهل يهدم بيت العز والكرم",author:"حكمة عربية"},
+            {text:"لا تؤجل عمل اليوم إلى الغد",author:"حكمة عربية"},
+            {text:"الصبر مفتاح الفرج",author:"حكمة عربية"},
+            {text:"من ترك شيئاً لله عوضه الله خيراً منه",author:"حديث شريف"},
+            {text:"التعليم هو السلاح الأقوى لتغيير العالم",author:"نيلسون مانديلا"},
+            {text:"اقرأ بسم ربك الذي خلق",author:"القرآن الكريم"},
+            {text:"إن مع العسر يسرا",author:"القرآن الكريم"},
+            {text:"وقل رب زدني علماً",author:"القرآن الكريم"},
+            {text:"النجاح ليس نهاية الطريق بل بداية طريق جديد",author:"حكمة"},
+            {text:"الإنسان بلا تعليم كالجسم بلا روح",author:"حكمة"},
+            {text:"العلم دون عمل كالشجرة بلا ثمر",author:"حكمة عربية"},
+            {text:"التواضع يرفع صاحبه والكبر يضعه",author:"حكمة عربية"},
+            {text:"أفضل استثمار هو استثمارك في نفسك",author:"حكمة"},
+            {text:"لا شيء مستحيل مع الإرادة والعزيمة",author:"حكمة"},
+            {text:"كن كالنخلة عالية ونقية وتلقى بالحجارة فترد بأجمل الثمر",author:"حكمة عربية"},
+            {text:"العلم في الصغر كالنقش على الحجر",author:"حكمة عربية"},
+            {text:"من سار على الدرب وصل",author:"حكمة عربية"},
+            {text:"الكتاب هو أفضل صديق للإنسان",author:"حكمة"},
+            {text:"الفشل هو فرصة للبدء من جديد بذكاء أكبر",author:"هنري فورد"},
+            {text:"العقل زينة والأدب أحسن من الذهب",author:"حكمة عربية"},
+            {text:"لا تقل مستحيل بل قل سأحاول",author:"حكمة"},
+            {text:"من طلب العلا سهر الليالي",author:"حكمة عربية"},
+            {text:"أعطِ كل ذي حق حقه",author:"حديث شريف"},
+            {text:"الإنسان بلا أهداف كسفينة بلا دفّة",author:"حكمة"},
+            {text:"الأم مدرسة إذا أعددتها أعددت شعباً طيب الأعراق",author:"حافظ إبراهيم"},
+            {text:"العلم يرفع أشخاصاً لا حد لهم والجهل يضع أشخاصاً لا حد لهم",author:"حكمة"}
+        ];
+
+        // ================================================
+        // نظام التخزين المحلي - حفظ واسترجاع الحالة
+        // هذا هو الجزء المسؤول عن حفظ كل شيء في المتصفح
+        // ================================================
+        const Storage = {
+            /**
+             * استرجاع قيمة من التخزين المحلي
+             * @param {string} key - المفتاح
+             * @param {*} def - القيمة الافتراضية
+             * @returns {*} القيمة المخزنة أو الافتراضية
+             */
+            get(key, def = null) {
+                try {
+                    const v = localStorage.getItem('school_' + key);
+                    return v !== null ? JSON.parse(v) : def;
+                } catch(e) {
+                    console.warn('Error reading storage:', e);
+                    return def;
+                }
+            },
+
+            /**
+             * حفظ قيمة في التخزين المحلي
+             * @param {string} key - المفتاح
+             * @param {*} val - القيمة
+             */
+            set(key, val) {
+                try {
+                    localStorage.setItem('school_' + key, JSON.stringify(val));
+                } catch(e) {
+                    console.warn('Error writing storage:', e);
+                }
+            },
+
+            /**
+             * حذف قيمة من التخزين المحلي
+             * @param {string} key - المفتاح
+             */
+            remove(key) {
+                try {
+                    localStorage.removeItem('school_' + key);
+                } catch(e) {
+                    console.warn('Error removing storage:', e);
+                }
+            },
+
+            /**
+             * مسح كل البيانات المخزنة
+             */
+            clearAll() {
+                try {
+                    const keys = Object.keys(localStorage).filter(k => k.startsWith('school_'));
+                    keys.forEach(k => localStorage.removeItem(k));
+                } catch(e) {
+                    console.warn('Error clearing storage:', e);
+                }
+            }
+        };
+
+        // ================================================
+        // متغيرات عامة
+        // ================================================
+        let chatOpen = false;
+        let chatHistory = [];
+        let currentPage = 'homePage';
+        let scrollTimeout = null;
+
+        // ================================================
+        // التهيئة الرئيسية - تعمل فور تحميل الصفحة
+        // ================================================
+        function init() {
+            // استرجاع الوضع الليلي فوراً
+            if (Storage.get('darkMode')) {
+                document.body.classList.add('dark-mode');
+                const icon = document.querySelector('#darkModeToggle i');
+                if (icon) icon.className = 'fas fa-sun';
+            }
+
+            // إخفاء شاشة التحميل فوراً بدون تأخير
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const ls = document.getElementById('loadingScreen');
+                    if (ls) ls.classList.add('hidden');
+                });
+            });
+
+            // تحديث التاريخ والوقت
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+
+            // تعيين التحية حسب الوقت
+            setGreeting();
+
+            // تعيين حكمة اليوم
+            setDailyWisdom();
+
+            // حساب إجمالي الطلاب
+            countTotalStudents();
+
+            // استرجاع الصفحة النشطة
+            const savedPage = Storage.get('activePage', 'homePage');
+            navigateTo(savedPage, true);
+
+            // استرجاع الحالة المحفوظة
+            restoreState();
+
+            // عرض الفصول
+            renderClassesGrid();
+
+            // حساب أيام العام الدراسي
+            calculateYearDays();
+
+            // إنشاء الجسيمات
+            createParticles();
+
+            // استرجاع موضع السكرول
+            const savedScroll = Storage.get('scrollPos');
+            if (savedScroll) {
+                setTimeout(() => window.scrollTo(0, savedScroll), 50);
+            }
+
+            // حفظ موضع السكرول عند التمرير
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    Storage.set('scrollPos', window.scrollY);
+                }, 200);
+
+                // إظهار/إخفاء زر العودة للأعلى
+                const btn = document.getElementById('backToTop');
+                if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+            });
+
+            // حفظ الحالة عند مغادرة الصفحة
+            window.addEventListener('beforeunload', () => {
+                saveState();
+            });
+
+            // حفظ الحالة عند إغلاق التبويب
+            window.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    saveState();
+                }
+            });
+        }
+
+        // ================================================
+        // حفظ الحالة الحالية
+        // ================================================
+        function saveState() {
+            // حفظ الصفحة النشطة
+            Storage.set('activePage', currentPage);
+
+            // حفظ درجات الحاسبة
+            const go = document.getElementById('gradeObtained');
+            const gt = document.getElementById('gradeTotal');
+            if (go) Storage.set('gradeObtained', go.value);
+            if (gt) Storage.set('gradeTotal', gt.value);
+
+            // حفظ نص البحث
+            const si = document.getElementById('searchInput');
+            if (si) Storage.set('searchInput', si.value);
+
+            // حفظ محادثات الشات
+            if (chatHistory.length > 0) {
+                Storage.set('chatHistory', chatHistory.slice(-50));
+            }
+            Storage.set('chatOpen', chatOpen);
+
+            // حفظ موضع السكرول
+            Storage.set('scrollPos', window.scrollY);
+
+            // حفظ الوضع الليلي
+            Storage.set('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // ================================================
+        // استرجاع الحالة المحفوظة
+        // ================================================
+        function restoreState() {
+            // استرجاع درجات الحاسبة
+            const go = Storage.get('gradeObtained', '');
+            const gt = Storage.get('gradeTotal', '100');
+            const goEl = document.getElementById('gradeObtained');
+            const gtEl = document.getElementById('gradeTotal');
+            if (go && goEl) goEl.value = go;
+            if (gt && gtEl) gtEl.value = gt;
+
+            // استرجاع نص البحث
+            const si = Storage.get('searchInput', '');
+            const siEl = document.getElementById('searchInput');
+            if (si && siEl) {
+                siEl.value = si;
+                searchStudents(si);
+            }
+
+            // استرجاع محادثات الشات
+            const savedChat = Storage.get('chatHistory', []);
+            if (savedChat.length > 0) {
+                savedChat.forEach(msg => {
+                    if (msg.role === 'bot') addBotMessageSilent(msg.text);
+                    else addUserMessageSilent(msg.text);
+                });
+            }
+
+            // استرجاع حالة فتح الشات
+            const wasOpen = Storage.get('chatOpen', false);
+            if (wasOpen) {
+                chatOpen = true;
+                const panel = document.getElementById('aiChatPanel');
+                const dot = document.getElementById('chatDot');
+                if (panel) panel.classList.add('active');
+                if (dot) dot.classList.add('hidden');
+                if (chatHistory.length === 0) {
+                    setTimeout(() => addBotMessage("أهلاً بك! 👋 أنا مساعد المدرسة الذكي."), 300);
+                }
+            }
+
+            // إعادة حساب النسبة إذا كانت هناك قيم محفوظة
+            if (go && gt && parseFloat(gt) > 0) {
+                calculatePercentageSilent();
+            }
+        }
+
+        // ================================================
+        // تحديث التاريخ والوقت
+        // ================================================
+        function updateDateTime() {
+            const now = new Date();
+            const dateEl = document.getElementById('currentDate');
+            const timeEl = document.getElementById('currentTime');
+
+            if (dateEl) {
+                dateEl.textContent = now.toLocaleDateString('ar-EG', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+
+            if (timeEl) {
+                timeEl.textContent = now.toLocaleTimeString('ar-EG', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+            }
+        }
+
+        // ================================================
+        // تعيين التحية حسب وقت اليوم
+        // ================================================
+        function setGreeting() {
+            const h = new Date().getHours();
+            let greeting, icon, cls;
+
+            if (h >= 5 && h < 12) {
+                greeting = "صباح الخير والنور ☀️";
+                icon = "☀️";
+                cls = "sun";
+            } else if (h >= 12 && h < 17) {
+                greeting = "مبارك يومك 🌤️";
+                icon = "🌤️";
+                cls = "sun";
+            } else if (h >= 17 && h < 21) {
+                greeting = "مساء الخير والسعادة 🌅";
+                icon = "🌅";
+                cls = "";
+            } else {
+                greeting = "مساؤك نور وهدوء 🌙";
+                icon = "🌙";
+                cls = "moon";
+            }
+
+            const gt = document.getElementById('greetingText');
+            if (gt) gt.textContent = greeting;
+
+            const gi = document.getElementById('greetingIcon');
+            if (gi) {
+                gi.textContent = icon;
+                gi.className = 'greeting-icon ' + cls;
+            }
+        }
+
+        // ================================================
+        // تعيين حكمة اليوم
+        // ================================================
+        function setDailyWisdom() {
+            const now = new Date();
+            const startOfYear = new Date(now.getFullYear(), 0, 0);
+            const dayOfYear = Math.floor((now - startOfYear) / (1000 * 60 * 60 * 24));
+            const wisdom = wisdoms[dayOfYear % wisdoms.length];
+
+            const wisdomEl = document.getElementById('dailyWisdom');
+            const authorEl = document.getElementById('wisdomAuthor');
+
+            if (wisdomEl) wisdomEl.textContent = wisdom.text;
+            if (authorEl) authorEl.textContent = "— " + wisdom.author;
+        }
+
+        // ================================================
+        // حساب إجمالي الطلاب
+        // ================================================
+        function countTotalStudents() {
+            let total = 0;
+            for (const key in DB.classes) {
+                const cls = DB.classes[key];
+                total += cls.male.length + cls.female.length;
+            }
+            const el = document.getElementById('totalStudents');
+            if (el) el.textContent = total;
+            return total;
+        }
+
+        // ================================================
+        // عرض شبكة الفصول
+        // ================================================
+        function renderClassesGrid() {
+            const grid = document.getElementById('classesGrid');
+            if (!grid) return;
+            if (grid.children.length > 0) return; // تم العرض مسبقاً
+
+            grid.innerHTML = '';
+
+            for (const key in DB.classes) {
+                const cls = DB.classes[key];
+                const totalStudents = cls.male.length + cls.female.length;
+                const classNum = key.split('/')[1];
+
+                const card = document.createElement('div');
+                card.className = 'class-card animate-fadeInUp';
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-label', `فتح تفاصيل فصل ${cls.name}`);
+                card.onclick = () => openClassDetail(key);
+                card.onkeydown = (e) => { if (e.key === 'Enter') openClassDetail(key); };
+
+                card.innerHTML = `
+                    <div class="class-card-header">
+                        <div class="class-card-number">${classNum}</div>
+                        <div class="class-card-icon"><i class="fas ${cls.icon}"></i></div>
+                        <div class="class-card-title">${cls.name}</div>
+                        <div class="class-card-subtitle">الصف الأول الثانوي</div>
+                    </div>
+                    <div class="class-card-body">
+                        <div class="class-card-stats">
+                            <div class="class-stat">
+                                <div class="class-stat-number">${cls.male.length}</div>
+                                <div class="class-stat-label">بنين</div>
+                            </div>
+                            <div class="class-stat">
+                                <div class="class-stat-number">${cls.female.length}</div>
+                                <div class="class-stat-label">بنات</div>
+                            </div>
+                            <div class="class-stat">
+                                <div class="class-stat-number">${totalStudents}</div>
+                                <div class="class-stat-label">الإجمالي</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="class-card-footer">
+                        <div class="class-card-footer-text">
+                            <i class="fas fa-table"></i>
+                            جدول دراسي متاح
+                        </div>
+                        <div class="class-card-footer-icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            }
+        }
+
+        // ================================================
+        // البحث عن الطلاب
+        // ================================================
+        function searchStudents(query) {
+            const results = document.getElementById('searchResults');
+            if (!results) return;
+
+            if (!query || query.trim().length < 2) {
+                results.classList.remove('active');
+                return;
+            }
+
+            query = query.trim().toLowerCase();
+            let found = [];
+
+            for (const key in DB.classes) {
+                const cls = DB.classes[key];
+                const allStudents = [...cls.male, ...cls.female];
+                allStudents.forEach(name => {
+                    if (name.toLowerCase().includes(query)) {
+                        found.push({ name: name, class: key, className: cls.name });
+                    }
+                });
+            }
+
+            if (found.length === 0) {
+                results.innerHTML = `
+                    <div class="search-result-item">
+                        <i class="fas fa-search" style="color:var(--text-muted)"></i>
+                        <span style="color:var(--text-muted)">لا توجد نتائج</span>
+                    </div>
+                `;
+            } else {
+                results.innerHTML = found.map(f => `
+                    <div class="search-result-item" onclick="openClassDetail('${f.class}')">
+                        <i class="fas fa-user"></i>
+                        <span class="student-name">${f.name}</span>
+                        <span class="student-class">فصل ${f.className}</span>
+                    </div>
+                `).join('');
+            }
+
+            results.classList.add('active');
+        }
+
+        // ================================================
+        // فتح صفحة تفاصيل الفصل
+        // ================================================
+        function openClassDetail(classKey) {
+            const cls = DB.classes[classKey];
+            if (!cls) return;
+
+            const total = cls.male.length + cls.female.length;
+
+            const titleEl = document.getElementById('classDetailTitle');
+            const subtitleEl = document.getElementById('classDetailSubtitle');
+
+            if (titleEl) titleEl.textContent = cls.name;
+            if (subtitleEl) subtitleEl.textContent = `${total} طالب وطالبة - ${cls.male.length} بنين | ${cls.female.length} بنات`;
+
+            renderStudents(cls);
+            renderTimetable(cls, classKey);
+            navigateTo('classDetailPage');
+        }
+
+        // ================================================
+        // عرض قائمة الطلاب
+        // ================================================
+        function renderStudents(cls) {
+            const grid = document.getElementById('studentsGrid');
+            if (!grid) return;
+
+            const createSection = (title, count, names, icon, headerCls, iconCls) => {
+                return `
+                    <div class="students-section">
+                        <div class="students-section-header ${headerCls}">
+                            <div class="section-icon ${iconCls}"><i class="fas ${icon}"></i></div>
+                            <div>
+                                <div class="section-title">${title}</div>
+                                <div class="section-count">${count}</div>
+                            </div>
+                        </div>
+                        <div class="students-list">
+                            ${names.map((name, i) => `
+                                <div class="student-item">
+                                    <div class="student-number">${i + 1}</div>
+                                    <div class="student-name-text">${name}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            };
+
+            grid.innerHTML =
+                createSection('البنين', cls.male.length + ' طالب', cls.male, 'fa-mars', 'male', 'male-icon') +
+                createSection('البنات', cls.female.length + ' طالبة', cls.female, 'fa-venus', 'female', 'female-icon');
+        }
+
+        // ================================================
+        // عرض الجدول الدراسي
+        // ================================================
+        function renderTimetable(cls, classKey) {
+            const nameEl = document.getElementById('timetableClassName');
+            const table = document.getElementById('timetableTable');
+
+            if (nameEl) nameEl.textContent = cls.name;
+            if (!table) return;
+
+            const days = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس"];
+
+            let html = '<thead><tr><th>اليوم</th>';
+            for (let i = 1; i <= 8; i++) {
+                html += `<th>الحصة ${i}</th>`;
+            }
+            html += '</tr></thead><tbody>';
+
+            days.forEach(day => {
+                html += `<tr><td>${day}</td>`;
+                if (cls.timetable[day]) {
+                    cls.timetable[day].forEach(subject => {
+                        const badgeClass = getSubjectBadgeClass(subject);
+                        html += `<td><span class="period-badge ${badgeClass}">${subject}</span></td>`;
+                    });
+                }
+                html += '</tr>';
+            });
+
+            html += '</tbody>';
+            table.innerHTML = html;
+        }
+
+        // ================================================
+        // تحديد لون المادة
+        // ================================================
+        function getSubjectBadgeClass(subject) {
+            if (!subject) return '';
+            if (subject.includes('عربي')) return 'period-arabic';
+            if (subject.includes('انجليزي')) return 'period-english';
+            if (subject.includes('فرنسي')) return 'period-french';
+            if (subject.includes('رياضة')) return 'period-math';
+            if (subject.includes('علوم')) return 'period-science';
+            if (subject.includes('تاريخ')) return 'period-history';
+            if (subject.includes('برمجة')) return 'period-programming';
+            if (subject.includes('فلسفة')) return 'period-philosophy';
+            if (subject.includes('دين')) return 'period-religion';
+            if (subject.includes('ألعاب')) return 'period-games';
+            if (subject.includes('نشاط')) return 'period-activity';
+            return '';
+        }
+
+        // ================================================
+        // تبديل التبويبات
+        // ================================================
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // ================================================
+        // التنقل بين الصفحات
+        // ================================================
+        function navigateTo(pageId, silent) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById(pageId);
+            if (target) target.classList.add('active');
+            currentPage = pageId;
+
+            if (!silent) {
+                Storage.set('activePage', pageId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                Storage.set('activePage', pageId);
+            }
+        }
+
+        // ================================================
+        // حساب النسبة المئوية
+        // ================================================
+        function calculatePercentage() {
+            const obtained = parseFloat(document.getElementById('gradeObtained').value);
+            const total = parseFloat(document.getElementById('gradeTotal').value);
+
+            if (isNaN(obtained) || isNaN(total) || total <= 0) {
+                alert('يرجى إدخال درجات صحيحة');
+                return;
+            }
+
+            const percentage = ((obtained / total) * 100).toFixed(1);
+            const resultEl = document.getElementById('percentageResult');
+            const valueEl = document.getElementById('percentageValue');
+            const labelEl = document.getElementById('percentageLabel');
+            const barEl = document.getElementById('percentageBar');
+
+            if (valueEl) valueEl.textContent = percentage + '%';
+
+            let label, barClass;
+            if (percentage >= 90) { label = 'ممتاز 🌟'; barClass = 'excellent'; }
+            else if (percentage >= 75) { label = 'جيد جداً 👍'; barClass = 'good'; }
+            else if (percentage >= 60) { label = 'جيد 📚'; barClass = 'average'; }
+            else if (percentage >= 50) { label = 'مقبول 📖'; barClass = 'average'; }
+            else { label = 'يحتاج تحسين 💪'; barClass = 'poor'; }
+
+            if (labelEl) labelEl.textContent = label;
+            if (barEl) {
+                barEl.style.width = Math.min(percentage, 100) + '%';
+                barEl.className = 'calc-result-bar-fill ' + barClass;
+            }
+            if (resultEl) resultEl.classList.add('show');
+
+            saveState();
+        }
+
+        // حساب النسبة بدون إظهار (للاسترجاع)
+        function calculatePercentageSilent() {
+            const obtained = parseFloat(document.getElementById('gradeObtained').value);
+            const total = parseFloat(document.getElementById('gradeTotal').value);
+
+            if (isNaN(obtained) || isNaN(total) || total <= 0) return;
+
+            const percentage = ((obtained / total) * 100).toFixed(1);
+            const valueEl = document.getElementById('percentageValue');
+            const labelEl = document.getElementById('percentageLabel');
+            const barEl = document.getElementById('percentageBar');
+            const resultEl = document.getElementById('percentageResult');
+
+            if (valueEl) valueEl.textContent = percentage + '%';
+
+            let label, barClass;
+            if (percentage >= 90) { label = 'ممتاز 🌟'; barClass = 'excellent'; }
+            else if (percentage >= 75) { label = 'جيد جداً 👍'; barClass = 'good'; }
+            else if (percentage >= 60) { label = 'جيد 📚'; barClass = 'average'; }
+            else if (percentage >= 50) { label = 'مقبول 📖'; barClass = 'average'; }
+            else { label = 'يحتاج تحسين 💪'; barClass = 'poor'; }
+
+            if (labelEl) labelEl.textContent = label;
+            if (barEl) {
+                barEl.style.width = Math.min(percentage, 100) + '%';
+                barEl.className = 'calc-result-bar-fill ' + barClass;
+            }
+            if (resultEl) resultEl.classList.add('show');
+        }
+
+        // ================================================
+        // العد التنازلي لنهاية العام الدراسي
+        // ================================================
+        function calculateYearDays() {
+            const now = new Date();
+            let yearEnd = new Date(now.getFullYear(), 4, 31); // 31 مايو
+            if (now > yearEnd) {
+                yearEnd.setFullYear(yearEnd.getFullYear() + 1);
+            }
+
+            const daysLeft = Math.ceil((yearEnd - now) / (1000 * 60 * 60 * 24));
+            const daysEl = document.getElementById('yearDays');
+            const dateEl = document.getElementById('yearEndDate');
+
+            if (daysEl) daysEl.textContent = daysLeft;
+            if (dateEl) {
+                dateEl.textContent = 'نهاية العام الدراسي: ' + yearEnd.toLocaleDateString('ar-EG', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+        }
+
+        // ================================================
+        // إنشاء الجسيمات المتحركة
+        // ================================================
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            if (!container || container.children.length > 0) return;
+
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                const size = 2 + Math.random() * 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.opacity = 0.1 + Math.random() * 0.3;
+                container.appendChild(particle);
+            }
+        }
+
+        // ================================================
+        // تبديل الوضع الليلي
+        // ================================================
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            const icon = document.querySelector('#darkModeToggle i');
+            if (icon) {
+                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            }
+            Storage.set('darkMode', isDark);
+        }
+
+        // ================================================
+        // تأثير التموج على الأزرار
+        // ================================================
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('.action-btn');
+            if (!btn) return;
+
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            const rect = btn.getBoundingClientRect();
+            ripple.style.left = (e.clientX - rect.left) + 'px';
+            ripple.style.top = (e.clientY - rect.top) + 'px';
+            btn.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        });
+
+        // ================================================
+        // الذكاء الاصطناعي - الشات بوت
+        // ================================================
+
+        /**
+         * فتح/إغلاق نافذة الشات
+         */
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            const panel = document.getElementById('aiChatPanel');
+            const dot = document.getElementById('chatDot');
+
+            if (chatOpen) {
+                if (panel) panel.classList.add('active');
+                if (dot) dot.classList.add('hidden');
+                if (chatHistory.length === 0) {
+                    setTimeout(() => addBotMessage(
+                        "أهلاً بك! 👋 أنا مساعد المدرسة الذكي.\n\n" +
+                        "يمكنني مساعدتك في:\n" +
+                        "📚 معلومات عن المدرسة والفصول\n" +
+                        "👨‍🎓 البحث عن الطلاب\n" +
+                        "📅 الجداول الدراسية\n" +
+                        "📊 حساب النسب المئوية\n" +
+                        "💡 حكم وأقوال\n" +
+                        "🌍 معلومات عامة\n\n" +
+                        "اسألني عن أي شيء!"
+                    ), 300);
+                }
+            } else {
+                if (panel) panel.classList.remove('active');
+            }
+
+            saveState();
+        }
+
+        /**
+         * إضافة رسالة من البوت
+         */
+        function addBotMessage(text) {
+            const container = document.getElementById('aiChatMessages');
+            if (!container) return;
+
+            const msg = document.createElement('div');
+            msg.className = 'ai-message bot';
+            msg.innerHTML = `
+                <div class="ai-msg-icon"><i class="fas fa-robot"></i> المساعد الذكي</div>
+                <div style="white-space:pre-wrap">${escapeHtml(text)}</div>
+            `;
+            container.appendChild(msg);
+            container.scrollTop = container.scrollHeight;
+            chatHistory.push({ role: 'bot', text: text });
+        }
+
+        /**
+         * إضافة رسالة من البوت بدون تمرير
+         */
+        function addBotMessageSilent(text) {
+            const container = document.getElementById('aiChatMessages');
+            if (!container) return;
+
+            const msg = document.createElement('div');
+            msg.className = 'ai-message bot';
+            msg.innerHTML = `
+                <div class="ai-msg-icon"><i class="fas fa-robot"></i> المساعد الذكي</div>
+                <div style="white-space:pre-wrap">${escapeHtml(text)}</div>
+            `;
+            container.appendChild(msg);
+            chatHistory.push({ role: 'bot', text: text });
+        }
+
+        /**
+         * إضافة رسالة من المستخدم
+         */
+        function addUserMessage(text) {
+            const container = document.getElementById('aiChatMessages');
+            if (!container) return;
+
+            const msg = document.createElement('div');
+            msg.className = 'ai-message user';
+            const time = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+            msg.innerHTML = `${escapeHtml(text)}<div class="ai-msg-time">${time}</div>`;
+            container.appendChild(msg);
+            container.scrollTop = container.scrollHeight;
+            chatHistory.push({ role: 'user', text: text });
+        }
+
+        /**
+         * إضافة رسالة من المستخدم بدون تمرير
+         */
+        function addUserMessageSilent(text) {
+            const container = document.getElementById('aiChatMessages');
+            if (!container) return;
+
+            const msg = document.createElement('div');
+            msg.className = 'ai-message user';
+            msg.innerHTML = escapeHtml(text);
+            container.appendChild(msg);
+            chatHistory.push({ role: 'user', text: text });
+        }
+
+        /**
+         * إظهار مؤشر الكتابة
+         */
+        function showTyping() {
+            const el = document.getElementById('aiTypingIndicator');
+            if (el) el.classList.add('active');
+        }
+
+        /**
+         * إخفاء مؤشر الكتابة
+         */
+        function hideTyping() {
+            const el = document.getElementById('aiTypingIndicator');
+            if (el) el.classList.remove('active');
+        }
+
+        /**
+         * إرسال رسالة
+         */
+        function sendMessage() {
+            const input = document.getElementById('aiChatInput');
+            if (!input) return;
+            const text = input.value.trim();
+            if (!text) return;
+
+            input.value = '';
+            addUserMessage(text);
+            showTyping();
+
+            const qr = document.getElementById('aiQuickReplies');
+            if (qr) qr.style.display = 'none';
+
+            const delay = 500 + Math.random() * 800;
+            setTimeout(() => {
+                hideTyping();
+                const response = processAI(text);
+                addBotMessage(response);
+                updateQuickReplies(text);
+                saveState();
+            }, delay);
+        }
+
+        /**
+         * إرسال رد سريع
+         */
+        function sendQuickReply(text) {
+            addUserMessage(text);
+            showTyping();
+
+            const qr = document.getElementById('aiQuickReplies');
+            if (qr) qr.style.display = 'none';
+
+            const delay = 500 + Math.random() * 800;
+            setTimeout(() => {
+                hideTyping();
+                const response = processAI(text);
+                addBotMessage(response);
+                updateQuickReplies(text);
+                saveState();
+            }, delay);
+        }
+
+        /**
+         * تحديث الردود السريعة
+         */
+        function updateQuickReplies(lastMsg) {
+            const container = document.getElementById('aiQuickReplies');
+            if (!container) return;
+
+            let buttons = [];
+
+            if (lastMsg.includes('حكمة')) {
+                buttons = ['حكمة جديدة', 'من مدير المدرسة؟', 'كم عدد الطلاب؟'];
+            } else if (lastMsg.includes('طالب') || lastMsg.includes('فصل')) {
+                buttons = ['جدول الفصل 1/1', 'احسب نسبتي', 'كم عدد الفصول؟'];
+            } else if (lastMsg.includes('نسبة') || lastMsg.includes('حساب')) {
+                buttons = ['كم يوم باقي؟', 'حكمة اليوم', 'من مدير المدرسة؟'];
+            } else if (lastMsg.includes('يوم') || lastMsg.includes('باقي')) {
+                buttons = ['احسب نسبتي', 'جدول الفصل', 'حكمة اليوم'];
+            } else if (lastMsg.includes('مدير') || lastMsg.includes('مشرف')) {
+                buttons = ['كم عدد الطلاب؟', 'جدول الفصل 1/1', 'حكمة اليوم'];
+            } else {
+                buttons = ['كم عدد الطلاب؟', 'ما هو الجدول؟', 'من مدير المدرسة؟', 'احسب نسبتي', 'حكمة اليوم', 'كم يوم باقي؟'];
+            }
+
+            container.innerHTML = buttons.map(b =>
+                `<button class="ai-quick-reply-btn" onclick="sendQuickReply('${b}')">${b}</button>`
+            ).join('');
+            container.style.display = 'flex';
+        }
+
+        /**
+         * حماية النص من XSS
+         */
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // ================================================
+        // محرك الذكاء الاصطناعي - معالجة الأسئلة
+        // ================================================
+        function processAI(input) {
+            const text = input.toLowerCase().trim();
+
+            // حساب إجمالي الطلاب
+            let totalStudents = 0;
+            for (const k in DB.classes) {
+                totalStudents += DB.classes[k].male.length + DB.classes[k].female.length;
+            }
+
+            // --- معلومات المدرسة ---
+            if (text.includes('مدرسه') || text.includes('مدرسة') || text.includes('اسم المدرسه') || text.includes('اسم المدرسة')) {
+                return `🏫 اسم المدرسة هو:\n\n**مدرسة الاخصاص الثانوية**\n\nوهي من المدارس الرائدة في المنطقة 🌟`;
+            }
+
+            if (text.includes('مدير') || text.includes('مشرف') || text.includes('اداره') || text.includes('إدارة') || text.includes('فكري')) {
+                return `👨‍💼 مدير المدرسة هو:\n\n**الأستاذ الفاضل: فكري هاشم الزيدي**\n\nبارك الله فيه وجزاه خيراً 🤲`;
+            }
+
+            if (text.includes('مبدع') || text.includes('صاحب') || text.includes('من عمل') || text.includes('مين عمل') || text.includes('أحمد حسين')) {
+                return `✨ المبدع الذي صمم هذا الموقع هو:\n\n**الطالب: أحمد حسين منصور**\n\n📱 للتواصل: 01027283228\n\nجزاه الله خيراً على هذا الإبداع! 🌟`;
+            }
+
+            if (text.includes('تواصل') || text.includes('رقم') || text.includes('هاتف') || text.includes('اتصل')) {
+                return `📞 للتواصل مع المبدع أحمد حسين منصور:\n\n📱 الرقم: **01027283228**\n\nلا تتردد في التواصل! 😊`;
+            }
+
+            // --- عدد الطلاب ---
+            if (text.includes('كم طالب') || text.includes('عدد الطلاب') || text.includes('عدد الطالبات') || text.includes('اجمالي الطلاب') || text.includes('إجمالي الطلاب')) {
+                let breakdown = '';
+                for (const k in DB.classes) {
+                    const c = DB.classes[k];
+                    breakdown += `📌 فصل ${c.name}: ${c.male.length} بنين + ${c.female.length} بنات = ${c.male.length + c.female.length} طالب\n`;
+                }
+                return `📊 إجمالي الطلاب في المدرسة: **${totalStudents} طالب وطالبة**\n\n📝 التفصيل:\n\n${breakdown}\n✅ المجموع: ${totalStudents} طالب وطالبة`;
+            }
+
+            // --- عدد الفصول ---
+            if (text.includes('كم فصل') || text.includes('عدد الفصول') || text.includes('فصول')) {
+                return `🏫 عدد الفصول في المدرسة: **8 فصول**\n\n📋 الفصول هي:\n1️⃣ أولى أول (1/1)\n2️⃣ أولى ثاني (1/2)\n3️⃣ أولى ثالث (1/3)\n4️⃣ أولى رابع (1/4)\n5️⃣ أولى خامس (1/5)\n6️⃣ أولى سادس (1/6)\n7️⃣ أولى سابع (1/7)\n8️⃣ أولى ثامن (1/8)\n\nكل فصل يحتوي على جدول دراسي كامل وقائمة بالطلاب 📚`;
+            }
+
+            // --- بحث عن فصل محدد ---
+            const classMatch = text.match(/1[/\/]([1-8])/);
+            if (classMatch) {
+                const classKey = '1/' + classMatch[1];
+                if (DB.classes[classKey]) {
+                    const c = DB.classes[classKey];
+                    const total = c.male.length + c.female.length;
+                    let info = `📋 معلومات عن فصل **${c.name}**:\n\n👨‍🎓 عدد البنين: ${c.male.length}\n👩‍🎓 عدد البنات: ${c.female.length}\n📊 الإجمالي: ${total} طالب\n\n📅 الجدول الأسبوعي:\n`;
+                    for (const day in c.timetable) {
+                        info += `\n📌 **${day}**: ${c.timetable[day].join(' - ')}\n`;
+                    }
+                    info += `\n💡 يمكنك الدخول لصفحة الفصل لعرض كل التفاصيل!`;
+                    return info;
+                }
+            }
+
+            // --- بحث عن طالب ---
+            if (text.includes('اسم') && (text.includes('فين') || text.includes('أين') || text.includes('بحث') || text.includes('ابحث') || text.includes('دور') || text.includes('موجود'))) {
+                const studentName = text.replace(/اسم|فين|أين|بحث|ابحث|دور|موجود|الطالب|الطالبة|هو|هي/gi, '').trim();
+                if (studentName.length > 1) {
+                    let found = [];
+                    for (const k in DB.classes) {
+                        const c = DB.classes[k];
+                        [...c.male, ...c.female].forEach(n => {
+                            if (n.includes(studentName)) {
+                                found.push({ name: n, class: k, className: c.name });
+                            }
+                        });
+                    }
+                    if (found.length > 0) {
+                        let result = `🔍 نتائج البحث عن "${studentName}":\n\n`;
+                        found.forEach((f, i) => {
+                            result += `${i + 1}. **${f.name}**\n   📚 في فصل: ${f.className}\n\n`;
+                        });
+                        return result;
+                    } else {
+                        return `🔍 لم يتم العثور على طالب باسم "${studentName}"\n\n💡 تأكد من كتابة الاسم بشكل صحيح`;
+                    }
+                }
+            }
+
+            // --- الجدول الدراسي ---
+            if (text.includes('جدول') || text.includes('حصه') || text.includes('حصة') || text.includes('مواعيد')) {
+                let info = `📅 الجداول الدراسية متاحة لكل الفصول الثمانية!\n\n`;
+                for (const k in DB.classes) {
+                    const c = DB.classes[k];
+                    info += `📌 **${c.name}**: من الأحد إلى الخميس - 8 حصص يومياً\n`;
+                }
+                info += `\n💡 اضغط على أي فصل في صفحة الفصول لعرض الجدول الكامل!`;
+                return info;
+            }
+
+            // --- جدول يوم محدد ---
+            const dayKeywords = { 'احد': 'الأحد', 'اثنين': 'الاثنين', 'ثلاثاء': 'الثلاثاء', 'اربعاء': 'الأربعاء', 'خميس': 'الخميس' };
+            for (const [key, dayName] of Object.entries(dayKeywords)) {
+                if (text.includes('يوم') && text.includes(key)) {
+                    let info = `📅 جدول يوم **${dayName}**:\n\n`;
+                    for (const k in DB.classes) {
+                        const c = DB.classes[k];
+                        if (c.timetable[dayName]) {
+                            info += `📌 ${c.name}: ${c.timetable[dayName].join(' - ')}\n`;
+                        }
+                    }
+                    return info;
+                }
+            }
+
+            // --- حساب النسبة ---
+            if (text.includes('نسبة') || text.includes('حساب') || text.includes('درجه') || text.includes('درجة')) {
+                return `📊 لحساب النسبة المئوية:\n\n1️⃣ انزل لأسفل صفحة أي فصل\n2️⃣ ستجد أداة **حساب النسبة المئوية**\n3️⃣ أدخل درجتك والدرجة الكلية\n\n💡 أو أخبرني درجتك والدرجة الكلية وسأحسبها لك!\n\nمثال: "درجتي 85 من 100"`;
+            }
+
+            // --- حساب فعلي للنسبة ---
+            const gradeMatch = text.match(/(\d+)\s*(من|\/)\s*(\d+)/);
+            if (gradeMatch) {
+                const obtained = parseFloat(gradeMatch[1]);
+                const total = parseFloat(gradeMatch[3]);
+                if (total > 0) {
+                    const pct = ((obtained / total) * 100).toFixed(1);
+                    let grade;
+                    if (pct >= 90) grade = 'ممتاز 🌟';
+                    else if (pct >= 75) grade = 'جيد جداً 👍';
+                    else if (pct >= 60) grade = 'جيد 📚';
+                    else if (pct >= 50) grade = 'مقبول 📖';
+                    else grade = 'يحتاج تحسين 💪';
+                    return `📊 حساب النسبة المئوية:\n\n📝 الدرجة: ${obtained} من ${total}\n📊 النسبة: **${pct}%**\n🏆 التقدير: **${grade}**\n\n${pct >= 75 ? '🎉 أحسنت!' : pct >= 50 ? '👍 جيد!' : '💪 حاول أكثر!'}`;
+                }
+            }
+
+            // --- العد التنازلي ---
+            if (text.includes('يوم باقي') || text.includes('نهاية العام') || text.includes('امتحان') || text.includes('اجازة') || text.includes('إجازة')) {
+                const now = new Date();
+                let end = new Date(now.getFullYear(), 4, 31);
+                if (now > end) end.setFullYear(end.getFullYear() + 1);
+                const days = Math.ceil((end - now) / (1000 * 60 * 60 * 24));
+                return `⏳ العد التنازلي:\n\n📅 باقي **${days} يوم**\n\n🎯 تاريخ النهاية: ${end.toLocaleDateString('ar-EG', {weekday:'long',year:'numeric',month:'long',day:'numeric'})}\n\n💪 استغل الوقت! 📚`;
+            }
+
+            // --- حكمة ---
+            if (text.includes('حكمه') || text.includes('حكمة') || text.includes('حكمة جديدة')) {
+                const now = new Date();
+                const doy = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+                const w = wisdoms[(doy + Math.floor(Math.random() * wisdoms.length)) % wisdoms.length];
+                return `💡 **حكمة اليوم:**\n\n"${w.text}"\n\n— ${w.author}`;
+            }
+
+            // --- تحية ---
+            if (text.includes('سلام') || text.includes('مرحبا') || text.includes('اهلا') || text.includes('أهلا') || text.includes('هلا') || text.includes('هاي') || text.includes('صباح') || text.includes('مساء') || text.includes('كيف')) {
+                const h = new Date().getHours();
+                let greeting = h < 12 ? 'صباح الخير ☀️' : h < 17 ? 'مبارك يومك 🌤️' : 'مساء الخير 🌙';
+                return `وعليكم السلام! 😊\n${greeting}\n\nكيف أقدر أساعدك؟\n\n💡 اسأل عن:\n• المدرسة والفصول\n• الطلاب والجداول\n• حساب النسب\n• حكم وأقوال\n• أو أي سؤال!`;
+            }
+
+            // --- شكر ---
+            if (text.includes('شكرا') || text.includes('شكراً') || text.includes('ممتاز') || text.includes('حلو')) {
+                return `العفو! 😊 سعيد إني ساعدتك! 💪\n🌟 بالتوفيق والنجاح!`;
+            }
+
+            // --- الوقت ---
+            if (text.includes('وقت') || text.includes('ساعة') || text.includes('كام ساعة')) {
+                const now = new Date();
+                return `🕐 الساعة: ${now.toLocaleTimeString('ar-EG')}\n📅 ${now.toLocaleDateString('ar-EG', {weekday:'long',year:'numeric',month:'long',day:'numeric'})}`;
+            }
+
+            // --- عمليات حسابية ---
+            const calcMatch = text.match(/(\d+)\s*([\+\-\*\/x×÷])\s*(\d+)/);
+            if (calcMatch) {
+                const a = parseFloat(calcMatch[1]);
+                const b = parseFloat(calcMatch[3]);
+                let result, op;
+                switch(calcMatch[2]) {
+                    case '+': result = a + b; op = 'جمع'; break;
+                    case '-': result = a - b; op = 'طرح'; break;
+                    case '*': case 'x': case '×': result = a * b; op = 'ضرب'; break;
+                    case '/': case '÷': result = b !== 0 ? a / b : 'خطأ'; op = 'قسمة'; break;
+                }
+                return `🔢 ${a} ${calcMatch[2]} ${b} = **${result}**`;
+            }
+
+            // --- معلومات عامة ---
+            if (text.includes('محمد صلاح') || text.includes('صلاح')) {
+                return `⚽ محمد صلاح:\n📍 من نجريج، مصر\n🏆 يلعب لليفربول\n🥇 من أفضل اللاعبين في العالم\n🇪🇬 فخر مصر!`;
+            }
+
+            if (text.includes('كوكب') || text.includes('فضاء') || text.includes('شمس') || text.includes('قمر') || text.includes('نجوم')) {
+                return `🌍 معلومات عن الفضاء:\n🔹 8 كواكب في المجموعة الشمسية\n🔹 أكبر كوكب: المشتري\n🔹 القمر يبعد 384,400 كم\n🌟 الكون مذهل!`;
+            }
+
+            if (text.includes('نكتة') || text.includes('ضحك') || text.includes('فرفشني')) {
+                const jokes = [
+                    `😂 واحد: "أنا حفظت القرآن في يوم!"\nصاحبه: "إزاي؟"\nقاله: "قرأت الإخلاص 100 مرة!" 😅`,
+                    `😄 مدرس: "قولي 5 حيوانات من أفريقيا"\nطالب: "نفس اللي من آسيا بس مسافرين!" 😂`
+                ];
+                return jokes[Math.floor(Math.random() * jokes.length)];
+            }
+
+            // --- رد افتراضي ---
+            return `🤔 سؤال مثير للاهتمام!\n\n💡 جرب تسأل عن:\n🏫 معلومات المدرسة\n👨‍🎓 الطلاب والفصول\n📅 الجداول\n📊 حساب النسب\n💡 حكم وأقوال\n🌍 معلومات عامة`;
+        }
+
+        // ================================================
+        // بدء التطبيق
+        // ================================================
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
