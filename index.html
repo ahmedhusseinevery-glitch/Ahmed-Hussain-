@@ -1,0 +1,3839 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="البوابة الإلكترونية لمدرسة الاخصاص الثانوية - إدارة أ/ فكري هاشم الزادي">
+    <title>🏫 مدرسة الاخصاص الثانوية - البوابة الإلكترونية</title>
+    <style>
+        /* ==========================================
+           01. GOOGLE FONTS IMPORT
+        ========================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap');
+
+        /* ==========================================
+           02. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+        ========================================== */
+        :root {
+            /* Primary Palette */
+            --primary-900: #071a33;
+            --primary-800: #0c2340;
+            --primary-700: #0f3355;
+            --primary-600: #1a5276;
+            --primary-500: #2173a9;
+            --primary-400: #2980b9;
+            --primary-300: #5dade2;
+            --primary-200: #85c1e9;
+            --primary-100: #d4e6f1;
+            --primary-50: #eaf2f8;
+
+            /* Secondary Palette */
+            --secondary-700: #0e6655;
+            --secondary-600: #148f77;
+            --secondary-500: #1abc9c;
+            --secondary-400: #48c9b0;
+            --secondary-300: #76d7c4;
+            --secondary-200: #a3e4d7;
+            --secondary-100: #d1f2eb;
+
+            /* Accent Palette */
+            --accent-600: #d68910;
+            --accent-500: #f39c12;
+            --accent-400: #f5b041;
+            --accent-300: #f7c948;
+            --accent-200: #f9e176;
+            --accent-100: #fdf2d0;
+
+            /* Functional Colors */
+            --success-600: #1e8449;
+            --success-500: #27ae60;
+            --success-400: #58d68d;
+            --success-100: #d5f5e3;
+
+            --danger-600: #c0392b;
+            --danger-500: #e74c3c;
+            --danger-400: #ec7063;
+            --danger-100: #fadbd8;
+
+            --warning-500: #e67e22;
+            --warning-400: #eb984e;
+
+            --info-500: #3498db;
+            --info-400: #5dade2;
+
+            /* Neutral Palette */
+            --dark-900: #0a0a0a;
+            --dark-800: #1a1a2e;
+            --dark-700: #16213e;
+            --dark-600: #2c3e50;
+            --dark-500: #34495e;
+            --dark-400: #4a5568;
+            --dark-300: #718096;
+            --dark-200: #a0aec0;
+            --dark-100: #cbd5e0;
+            --dark-50: #e2e8f0;
+
+            --light-900: #d4d4d4;
+            --light-800: #e8e8e8;
+            --light-700: #ecf0f1;
+            --light-600: #f5f5f5;
+            --light-500: #f8f9fa;
+            --light-400: #fafafa;
+            --light-300: #fcfcfc;
+            --light-200: #fdfdfd;
+            --light-100: #fefefe;
+
+            /* Islamic Palette */
+            --islamic-green: #00b894;
+            --islamic-gold: #fdcb6e;
+            --islamic-dark: #2d3436;
+            --islamic-cream: #ffeaa7;
+
+            /* Shadows */
+            --shadow-2xs: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-xs: 0 2px 5px rgba(0,0,0,0.08);
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.1);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 15px 50px rgba(0,0,0,0.15);
+            --shadow-xl: 0 25px 80px rgba(0,0,0,0.2);
+            --shadow-2xl: 0 40px 100px rgba(0,0,0,0.25);
+            --shadow-glow: 0 0 40px rgba(243, 156, 18, 0.3);
+            --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
+
+            /* Border Radius */
+            --radius-2xs: 4px;
+            --radius-xs: 6px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-3xl: 48px;
+            --radius-full: 9999px;
+
+            /* Typography */
+            --font-primary: 'Cairo', 'Segoe UI', sans-serif;
+            --font-secondary: 'Amiri', 'Georgia', serif;
+            --font-mono: 'Courier New', monospace;
+
+            /* Sizing */
+            --header-height: 72px;
+            --sidebar-width: 280px;
+            --footer-height: 250px;
+
+            /* Transitions */
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --trans-fast: 150ms var(--ease-smooth);
+            --trans-normal: 300ms var(--ease-smooth);
+            --trans-slow: 500ms var(--ease-smooth);
+            --trans-bounce: 400ms var(--ease-bounce);
+
+            /* Z-Index Scale */
+            --z-base: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-modal-backdrop: 500;
+            --z-modal: 600;
+            --z-toast: 700;
+            --z-tooltip: 800;
+            --z-loading: 9999;
+        }
+
+        /* ==========================================
+           03. GLOBAL RESET & BASE STYLES
+        ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--light-500);
+            color: var(--dark-800);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--trans-fast);
+        }
+
+        a:hover {
+            color: var(--primary-400);
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-family: var(--font-primary);
+            transition: all var(--trans-normal);
+        }
+
+        input, textarea, select {
+            font-family: var(--font-primary);
+            outline: none;
+            border: none;
+        }
+
+        ::selection {
+            background: var(--primary-400);
+            color: var(--white);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-700);
+            border-radius: var(--radius-full);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-600), var(--secondary-500));
+            border-radius: var(--radius-full);
+            border: 2px solid var(--light-700);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--primary-500), var(--secondary-400));
+        }
+
+        /* ==========================================
+           04. LOADING SCREEN
+        ========================================== */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary-900) 0%, var(--dark-800) 40%, var(--primary-700) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--z-loading);
+            transition: opacity 0.8s var(--ease-smooth), visibility 0.8s;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loading-logo {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+            margin-bottom: 35px;
+            animation: loadPulse 1.5s ease-in-out infinite;
+            border: 3px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(15px);
+            position: relative;
+        }
+
+        .loading-logo::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.08);
+            animation: spinSlow 12s linear infinite;
+        }
+
+        .loading-logo::after {
+            content: '';
+            position: absolute;
+            inset: -24px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255,255,255,0.05);
+            animation: spinSlow 18s linear infinite reverse;
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes loadPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.25); }
+            50% { transform: scale(1.08); box-shadow: 0 0 60px 20px rgba(243, 156, 18, 0.15); }
+        }
+
+        .loading-title {
+            color: var(--white);
+            font-size: 1.8em;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .loading-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        .loading-bar-track {
+            width: 320px;
+            max-width: 80vw;
+            height: 5px;
+            background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-500), var(--accent-300), var(--secondary-400));
+            border-radius: var(--radius-full);
+            width: 0%;
+            animation: loadProgress 3s ease-in-out forwards;
+            position: relative;
+        }
+
+        .loading-bar-fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            width: 11px;
+            height: 11px;
+            background: var(--accent-400);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-500);
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            20% { width: 25%; }
+            40% { width: 45%; }
+            60% { width: 70%; }
+            80% { width: 90%; }
+            100% { width: 100%; }
+        }
+
+        .loading-dots {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .loading-dots span {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            animation: dotBounce 1.4s ease-in-out infinite;
+        }
+
+        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes dotBounce {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.2; }
+            40% { transform: scale(1); opacity: 1; background: var(--accent-400); }
+        }
+
+        .loading-footer {
+            position: absolute;
+            bottom: 40px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85em;
+        }
+
+        /* ==========================================
+           05. PAGE TRANSITION SYSTEM
+        ========================================== */
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+            min-height: 100vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================
+           06. LANDING PAGE (PAGE 1)
+        ========================================== */
+        .landing-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #071a33 0%, #0c2340 15%, #0f3355 35%, #148f77 65%, #0f3355 85%, #0c2340 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+
+        .landing-bg-shapes {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.04;
+            animation: floatShape 25s ease-in-out infinite;
+        }
+
+        .bg-shape:nth-child(1) { width: 500px; height: 500px; background: var(--accent-500); top: -150px; right: -150px; animation-duration: 20s; }
+        .bg-shape:nth-child(2) { width: 350px; height: 350px; background: var(--secondary-400); bottom: -80px; left: -100px; animation-delay: -5s; }
+        .bg-shape:nth-child(3) { width: 250px; height: 250px; background: var(--primary-400); top: 40%; left: 15%; animation-delay: -10s; }
+        .bg-shape:nth-child(4) { width: 200px; height: 200px; background: var(--accent-300); bottom: 25%; right: 10%; animation-delay: -15s; }
+        .bg-shape:nth-child(5) { width: 300px; height: 300px; background: var(--success-500); top: 10%; left: 50%; animation-delay: -8s; opacity: 0.03; }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(40px, -40px) rotate(90deg) scale(1.15); }
+            50% { transform: translate(-30px, 30px) rotate(180deg) scale(0.9); }
+            75% { transform: translate(20px, 20px) rotate(270deg) scale(1.08); }
+        }
+
+        .landing-grid-overlay {
+            position: absolute;
+            inset: 0;
+            width: 200%;
+            height: 200%;
+            background:
+                linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-size: 70px 70px;
+            animation: gridMove 40s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-70px, -70px); }
+        }
+
+        #particles-canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .landing-content {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .school-emblem {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.04));
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255,255,255,0.2);
+            animation: emblemGlow 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes emblemGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(243, 156, 18, 0.15), 0 0 60px rgba(243, 156, 18, 0.08); }
+            50% { box-shadow: 0 0 50px rgba(243, 156, 18, 0.25), 0 0 100px rgba(243, 156, 18, 0.12); }
+        }
+
+        .daily-greeting {
+            font-size: 1.5em;
+            color: var(--accent-400);
+            font-weight: 800;
+            margin-bottom: 8px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .bismillah-text {
+            font-family: var(--font-secondary);
+            font-size: 1.8em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 5px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .landing-content h1 {
+            font-size: 3em;
+            color: var(--white);
+            margin-bottom: 12px;
+            font-weight: 900;
+            text-shadow: 0 3px 20px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+            line-height: 1.3;
+            animation: fadeInUp 0.8s ease 0.3s both;
+            background: linear-gradient(135deg, #fff, #f0f0f0, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .landing-content h2 {
+            font-size: 1.35em;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 15px;
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .manager-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-3xl);
+            color: var(--accent-400);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.12);
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .wisdom-box {
+            background: rgba(255,255,255,0.06);
+            border-radius: var(--radius-lg);
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            border-right: 4px solid var(--accent-500);
+            animation: fadeInUp 0.8s ease 0.6s both;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .wisdom-box::before {
+            content: '❝';
+            position: absolute;
+            top: -5px;
+            right: 15px;
+            font-size: 3em;
+            color: var(--accent-500);
+            opacity: 0.3;
+            font-family: var(--font-secondary);
+        }
+
+        .wisdom-box .title {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85em;
+            margin-bottom: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .wisdom-box .quote {
+            color: var(--white);
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .landing-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.7s both;
+        }
+
+        .btn-enter {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--accent-500), #e67e22);
+            color: var(--white);
+            border-radius: var(--radius-3xl);
+            font-size: 1.25em;
+            font-weight: 800;
+            transition: all 0.4s var(--ease-bounce);
+            box-shadow: 0 10px 40px rgba(243, 156, 18, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-enter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-enter:hover::before { left: 100%; }
+        .btn-enter:hover { transform: translateY(-6px) scale(1.04); box-shadow: 0 15px 50px rgba(243, 156, 18, 0.6), 0 0 0 8px rgba(243, 156, 18, 0.08); }
+        .btn-enter:active { transform: translateY(-2px) scale(0.98); }
+
+        .btn-islamic {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--islamic-green), #00a885);
+            color: var(--white);
+            border-radius: var(--radius-3xl);
+            font-size: 1.25em;
+            font-weight: 800;
+            box-shadow: 0 10px 40px rgba(0, 184, 148, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-islamic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-islamic:hover::before { left: 100%; }
+        .btn-islamic:hover { transform: translateY(-6px) scale(1.04); box-shadow: 0 15px 50px rgba(0, 184, 148, 0.6); }
+
+        .btn-islamic .new-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--danger-500);
+            color: white;
+            font-size: 0.5em;
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .landing-stats {
+            display: flex;
+            gap: 45px;
+            margin-top: 40px;
+            animation: fadeInUp 0.8s ease 0.8s both;
+            justify-content: center;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .stat-item:last-child::after { display: none; }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: var(--accent-400);
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .landing-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85em;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeInUp 0.8s ease 1s both;
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-3xl);
+        }
+
+        .landing-footer .heart {
+            color: var(--danger-500);
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+        }
+
+        /* ==========================================
+           07. ISLAMIC MODAL
+        ========================================== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--z-modal-backdrop);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-box {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 520px;
+            max-height: 85vh;
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            animation: modalSlide 0.5s var(--ease-bounce);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes modalSlide {
+            from { transform: scale(0.85) translateY(30px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--islamic-green), #00a885);
+            color: var(--white);
+            padding: 22px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header h3 {
+            font-weight: 800;
+            font-size: 1.5em;
+        }
+
+        .modal-header .subtitle {
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.15);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--trans-fast);
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--light-700);
+            background: var(--light-500);
+        }
+
+        .modal-tab {
+            flex: 1;
+            padding: 15px 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.9em;
+            color: var(--dark-300);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--trans-normal);
+            position: relative;
+        }
+
+        .modal-tab.active {
+            background: var(--white);
+            color: var(--islamic-green);
+        }
+
+        .modal-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background: var(--islamic-green);
+            border-radius: var(--radius-full);
+        }
+
+        .modal-tab:hover:not(.active) {
+            background: var(--light-600);
+            color: var(--dark-500);
+        }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+            max-height: 50vh;
+        }
+
+        .tab-panel {
+            display: none;
+            animation: tabFadeIn 0.3s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Quran List */
+        .quran-list {
+            display: grid;
+            gap: 6px;
+        }
+
+        .quran-item {
+            padding: 10px 14px;
+            background: var(--light-500);
+            border-radius: var(--radius-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--trans-fast);
+            border-right: 3px solid transparent;
+        }
+
+        .quran-item:hover {
+            background: var(--success-100);
+            border-right-color: var(--success-500);
+            transform: translateX(-5px);
+        }
+
+        .quran-num {
+            width: 32px;
+            height: 32px;
+            background: var(--success-500);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .quran-name {
+            flex: 1;
+            margin: 0 12px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .quran-link {
+            color: var(--success-500);
+            font-weight: 700;
+            font-size: 0.85em;
+            text-decoration: none;
+            padding: 5px 12px;
+            background: var(--success-100);
+            border-radius: var(--radius-full);
+            transition: var(--trans-fast);
+        }
+
+        .quran-link:hover {
+            background: var(--success-500);
+            color: white;
+        }
+
+        /* Tasbeeh */
+        .tasbeeh-container {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .tasbeeh-dhikr {
+            font-family: var(--font-secondary);
+            font-size: 1.4em;
+            color: var(--islamic-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tasbeeh-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--islamic-green), #00a885);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 15px 40px rgba(0, 184, 148, 0.3);
+            cursor: pointer;
+            transition: var(--trans-normal);
+            user-select: none;
+            position: relative;
+        }
+
+        .tasbeeh-circle:active {
+            transform: scale(0.93);
+        }
+
+        .tasbeeh-circle::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            border: 2px dashed rgba(0, 184, 148, 0.2);
+            border-radius: 50%;
+            animation: spin 10s linear infinite;
+        }
+
+        .tasbeeh-circle::after {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            border: 1px dashed rgba(0, 184, 148, 0.1);
+            border-radius: 50%;
+            animation: spin 15s linear infinite reverse;
+        }
+
+        .tasbeeh-count {
+            font-size: 4em;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .tasbeeh-target-text {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .tasbeeh-target {
+            font-weight: 700;
+            color: var(--islamic-green);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .tasbeeh-target.completed {
+            color: var(--success-500);
+        }
+
+        .tasbeeh-progress {
+            width: 180px;
+            height: 6px;
+            background: var(--light-700);
+            border-radius: var(--radius-full);
+            margin: 0 auto 15px;
+            overflow: hidden;
+        }
+
+        .tasbeeh-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--islamic-green), var(--success-400));
+            border-radius: var(--radius-full);
+            transition: width 0.3s ease;
+        }
+
+        .tasbeeh-controls {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tasbeeh-btn {
+            padding: 10px 24px;
+            border-radius: var(--radius-3xl);
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .tasbeeh-btn.reset {
+            background: var(--light-700);
+            color: var(--dark-500);
+        }
+
+        .tasbeeh-btn.reset:hover {
+            background: var(--danger-100);
+            color: var(--danger-600);
+        }
+
+        .tasbeeh-btn.target-33 { background: var(--primary-100); color: var(--primary-600); }
+        .tasbeeh-btn.target-33:hover { background: var(--primary-400); color: white; }
+        .tasbeeh-btn.target-100 { background: var(--accent-100); color: var(--accent-600); }
+        .tasbeeh-btn.target-100:hover { background: var(--accent-500); color: white; }
+
+        /* Quiz */
+        .quiz-container {
+            text-align: center;
+        }
+
+        .quiz-question {
+            font-size: 1.2em;
+            font-weight: 800;
+            color: var(--dark-800);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            background: linear-gradient(135deg, var(--primary-50), var(--light-500));
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--primary-100);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .quiz-option {
+            padding: 14px;
+            background: var(--light-500);
+            border: 2px solid var(--light-700);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--trans-fast);
+            text-align: right;
+        }
+
+        .quiz-option:hover {
+            background: var(--primary-50);
+            border-color: var(--primary-300);
+            transform: translateX(-3px);
+        }
+
+        .quiz-option.correct {
+            background: var(--success-100) !important;
+            border-color: var(--success-500) !important;
+            color: var(--success-600) !important;
+        }
+
+        .quiz-option.wrong {
+            background: var(--danger-100) !important;
+            border-color: var(--danger-500) !important;
+            color: var(--danger-600) !important;
+        }
+
+        .quiz-result {
+            margin-top: 10px;
+            font-weight: 800;
+            font-size: 1.1em;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* ==========================================
+           08. CLASS ANNOUNCEMENTS TICKER
+        ========================================== */
+        .ticker-bar {
+            background: linear-gradient(90deg, var(--warning-500), var(--accent-400), var(--warning-500));
+            color: var(--white);
+            padding: 10px 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            animation: tickerScroll 30s linear infinite;
+            white-space: nowrap;
+            width: max-content;
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .ticker-item {
+            padding: 0 50px;
+            font-weight: 600;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ==========================================
+           09. PAGE 2: CLASSES PAGE
+        ========================================== */
+        .classes-page {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #e8ecf1 0%, var(--light-500) 100%);
+        }
+
+        .sticky-header {
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-600) 100%);
+            color: var(--white);
+            padding: 0 30px;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            font-size: 1.8em;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+        }
+
+        .header-title {
+            font-size: 1.25em;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-time {
+            font-size: 0.85em;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: var(--radius-3xl);
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-theme-toggle {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--trans-normal);
+        }
+
+        .header-theme-toggle:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(180deg);
+        }
+
+        .btn-nav {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: var(--radius-3xl);
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Search Section */
+        .search-section {
+            padding: 35px 30px 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 20px 28px 20px 58px;
+            border: 2px solid var(--light-900);
+            border-radius: var(--radius-3xl);
+            font-size: 1.15em;
+            font-family: var(--font-primary);
+            transition: all var(--trans-normal);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-400);
+            box-shadow: 0 0 0 6px rgba(41, 128, 185, 0.12), var(--shadow-md);
+        }
+
+        .search-input::placeholder {
+            color: var(--dark-200);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3em;
+            color: var(--dark-300);
+            transition: var(--trans-fast);
+        }
+
+        .search-input:focus ~ .search-icon {
+            color: var(--primary-400);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--light-700);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.9em;
+            color: var(--dark-300);
+            transition: var(--trans-fast);
+        }
+
+        .search-clear.show {
+            display: flex;
+        }
+
+        .search-clear:hover {
+            background: var(--danger-500);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .search-results-container {
+            margin-top: 15px;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .search-result-card {
+            background: var(--white);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 8px;
+            box-shadow: var(--shadow-xs);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideInRight 0.4s ease both;
+            border-right: 4px solid var(--primary-400);
+            transition: var(--trans-fast);
+        }
+
+        .search-result-card:hover {
+            box-shadow: var(--shadow-sm);
+            transform: translateX(-6px);
+            border-right-color: var(--accent-500);
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(35px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .search-result-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .search-result-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        .search-result-avatar.male {
+            background: linear-gradient(135deg, var(--info-500), var(--primary-400));
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .search-result-avatar.female {
+            background: linear-gradient(135deg, #e91e63, #c2185b);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+        }
+
+        .search-result-name {
+            font-weight: 700;
+            font-size: 1em;
+        }
+
+        .search-result-class {
+            font-size: 0.85em;
+            color: var(--dark-300);
+            margin-top: 2px;
+        }
+
+        .btn-view {
+            padding: 8px 20px;
+            background: var(--primary-400);
+            color: var(--white);
+            border-radius: var(--radius-3xl);
+            font-size: 0.85em;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .btn-view:hover {
+            background: var(--primary-600);
+            transform: scale(1.05);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 35px;
+            color: var(--dark-300);
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xs);
+        }
+
+        .no-results .icon {
+            font-size: 3.5em;
+            margin-bottom: 12px;
+        }
+
+        /* Classes Grid */
+        .classes-section {
+            padding: 30px 30px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 900;
+            color: var(--primary-700);
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-500), var(--secondary-500));
+            margin: 10px auto 0;
+            border-radius: var(--radius-full);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--dark-300);
+            margin-bottom: 35px;
+            font-size: 1em;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .class-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 35px 20px 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--trans-normal);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--ease-smooth);
+        }
+
+        .class-card:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(41, 128, 185, 0.15);
+        }
+
+        .class-card:active {
+            transform: translateY(-5px) scale(0.98);
+        }
+
+        .class-card-icon {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            display: block;
+            transition: transform 0.4s var(--ease-bounce);
+        }
+
+        .class-card:hover .class-card-icon {
+            transform: scale(1.2) rotate(-8deg);
+        }
+
+        .class-card-number {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .class-card-name {
+            font-size: 1.1em;
+            color: var(--dark-400);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .class-card-count {
+            padding-top: 12px;
+            border-top: 1px dashed var(--light-900);
+            font-size: 0.85em;
+            color: var(--dark-300);
+        }
+
+        .class-card-count span {
+            font-weight: 800;
+        }
+
+        .class-card-count .male-count { color: var(--info-500); }
+        .class-card-count .female-count { color: #e91e63; }
+
+        .class-card-status {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            background: var(--success-500);
+            border-radius: 50%;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ==========================================
+           10. PAGE 3: CLASS DETAIL
+        ========================================== */
+        .class-detail-page {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #e0e6ed 0%, var(--light-500) 100%);
+        }
+
+        .class-detail-header {
+            background: linear-gradient(135deg, var(--secondary-600) 0%, var(--primary-600) 50%, var(--primary-800) 100%);
+            color: var(--white);
+            padding: 0 30px;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+        }
+
+        .class-title-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .class-title-icon {
+            font-size: 1.6em;
+        }
+
+        .class-title-text {
+            font-size: 1.35em;
+            font-weight: 800;
+        }
+
+        .class-stats-bar {
+            display: flex;
+            gap: 10px;
+        }
+
+        .class-stat-badge {
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.12);
+            border-radius: var(--radius-3xl);
+            font-size: 0.85em;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tabs-container {
+            padding: 25px 30px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--light-900);
+        }
+
+        .tab-button {
+            padding: 12px 28px;
+            background: var(--white);
+            color: var(--dark-400);
+            border-radius: var(--radius-3xl);
+            font-weight: 700;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-xs);
+            border: 2px solid transparent;
+        }
+
+        .tab-button:hover {
+            background: var(--primary-400);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-button.active {
+            background: var(--primary-600);
+            color: var(--white);
+            border-color: var(--primary-700);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-panels-container {
+            padding: 25px 30px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tab-panel {
+            display: none;
+            animation: tabFadeIn 0.4s var(--ease-smooth);
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* Schedule Table */
+        .schedule-table-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--light-900);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table thead th {
+            background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+            color: var(--white);
+            padding: 18px 14px;
+            font-weight: 800;
+            font-size: 1em;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .schedule-table tbody tr {
+            transition: background var(--trans-fast);
+        }
+
+        .schedule-table tbody tr:nth-child(even) {
+            background: var(--light-500);
+        }
+
+        .schedule-table tbody tr:hover {
+            background: var(--primary-50);
+        }
+
+        .schedule-table td {
+            padding: 16px 14px;
+            text-align: center;
+            border-bottom: 1px solid var(--light-800);
+            font-size: 0.93em;
+            font-weight: 600;
+        }
+
+        .schedule-table .day-cell {
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+            color: var(--white);
+            font-weight: 800;
+            white-space: nowrap;
+            font-size: 1em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        }
+
+        .subject-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: var(--primary-50);
+            color: var(--primary-700);
+            border-radius: var(--radius-sm);
+            font-size: 0.9em;
+            font-weight: 700;
+            margin: 3px;
+            border: 1px solid var(--primary-100);
+            transition: var(--trans-fast);
+        }
+
+        .subject-tag:hover {
+            background: var(--primary-400);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Students Grid */
+        .students-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .students-box {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--light-900);
+        }
+
+        .students-box-header {
+            padding: 20px 25px;
+            color: var(--white);
+            font-size: 1.25em;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .students-box-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .students-box-header.boys {
+            background: linear-gradient(135deg, var(--primary-400), var(--primary-700));
+        }
+
+        .students-box-header.girls {
+            background: linear-gradient(135deg, #e91e63, #ad1457);
+        }
+
+        .students-count-badge {
+            padding: 5px 14px;
+            background: rgba(255,255,255,0.2);
+            border-radius: var(--radius-3xl);
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .students-filter {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--light-800);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .students-filter input {
+            flex: 1;
+            padding: 8px 14px;
+            border: 1px solid var(--light-900);
+            border-radius: var(--radius-3xl);
+            font-size: 0.85em;
+            transition: var(--trans-fast);
+        }
+
+        .students-filter input:focus {
+            border-color: var(--primary-400);
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+        }
+
+        .students-list-container {
+            padding: 15px 20px;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+
+        .students-grid-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .student-item {
+            padding: 12px 14px;
+            background: var(--light-500);
+            border-radius: var(--radius-sm);
+            font-size: 0.88em;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--trans-fast);
+            border-right: 3px solid transparent;
+        }
+
+        .student-item:hover {
+            background: var(--primary-50);
+            border-right-color: var(--primary-400);
+            transform: translateX(-4px);
+            box-shadow: var(--shadow-xs);
+        }
+
+        .student-number {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-400);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .girls-section .student-item:hover {
+            background: #fce4ec;
+            border-right-color: #e91e63;
+        }
+
+        .girls-section .student-number {
+            background: #e91e63;
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--success-500), #219a52);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+            z-index: var(--z-dropdown);
+            transition: var(--trans-normal);
+        }
+
+        .print-btn:hover {
+            transform: scale(1.1) rotate(12deg);
+            box-shadow: 0 12px 35px rgba(39, 174, 96, 0.5);
+        }
+
+        /* ==========================================
+           11. AI CHAT COMPONENT
+        ========================================== */
+        .ai-chat-trigger {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--accent-500), #e67e22);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.6em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5);
+            z-index: var(--z-dropdown);
+            animation: chatTriggerPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes chatTriggerPulse {
+            0%, 100% { box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5), 0 0 0 0 rgba(243, 156, 18, 0.3); }
+            50% { box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5), 0 0 0 18px rgba(243, 156, 18, 0); }
+        }
+
+        .ai-chat-trigger:hover {
+            transform: scale(1.12) rotate(-5deg);
+        }
+
+        .ai-chat-trigger .notif-dot {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--danger-500);
+            border-radius: 50%;
+            border: 3px solid var(--accent-500);
+            animation: dotBounce 1.5s ease-in-out infinite;
+        }
+
+        .ai-chat-panel {
+            position: fixed;
+            bottom: 110px;
+            left: 30px;
+            width: 420px;
+            max-height: 580px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2xl);
+            z-index: var(--z-dropdown);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--light-900);
+        }
+
+        .ai-chat-panel.show {
+            display: flex;
+            animation: chatSlide 0.5s var(--ease-bounce);
+        }
+
+        @keyframes chatSlide {
+            from { opacity: 0; transform: translateY(25px) scale(0.93); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .chat-panel-header {
+            background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+            color: var(--white);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-panel-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-panel-avatar {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+        }
+
+        .chat-panel-info h4 {
+            font-weight: 800;
+            font-size: 1em;
+        }
+
+        .chat-panel-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75em;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            animation: statusPulse 1.5s ease-in-out infinite;
+        }
+
+        .chat-close-btn {
+            background: rgba(255,255,255,0.12);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-close-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: rotate(90deg);
+        }
+
+        .chat-messages-area {
+            flex: 1;
+            padding: 18px;
+            overflow-y: auto;
+            background: var(--light-500);
+            max-height: 350px;
+        }
+
+        .chat-msg {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+            animation: msgIn 0.3s ease;
+        }
+
+        .chat-msg.user { flex-direction: row-reverse; }
+
+        @keyframes msgIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-msg-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+            flex-shrink: 0;
+        }
+
+        .chat-msg.bot .chat-msg-avatar {
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+            color: white;
+        }
+
+        .chat-msg.user .chat-msg-avatar {
+            background: linear-gradient(135deg, var(--accent-500), #e67e22);
+            color: white;
+        }
+
+        .chat-msg-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 0.9em;
+            line-height: 1.7;
+        }
+
+        .chat-msg.bot .chat-msg-bubble {
+            background: var(--white);
+            border-top-right-radius: 4px;
+            box-shadow: var(--shadow-xs);
+        }
+
+        .chat-msg.user .chat-msg-bubble {
+            background: var(--primary-600);
+            color: white;
+            border-top-left-radius: 4px;
+        }
+
+        .chat-msg-time {
+            font-size: 0.7em;
+            opacity: 0.5;
+            margin-top: 4px;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 5px;
+            padding: 5px 0;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: var(--dark-200);
+            border-radius: 50%;
+            animation: typeBounce 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typeBounce {
+            0%, 60%, 100% { transform: translateY(0); background: var(--dark-200); }
+            30% { transform: translateY(-8px); background: var(--primary-400); }
+        }
+
+        .chat-input-bar {
+            padding: 14px 16px;
+            border-top: 1px solid var(--light-900);
+            display: flex;
+            gap: 10px;
+            background: var(--white);
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 2px solid var(--light-800);
+            border-radius: var(--radius-3xl);
+            font-size: 0.9em;
+            transition: var(--trans-fast);
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary-400);
+            box-shadow: 0 0 0 4px rgba(41, 128, 185, 0.08);
+        }
+
+        .chat-send-btn {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-600);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .chat-send-btn:hover {
+            background: var(--primary-500);
+            transform: scale(1.1);
+        }
+
+        .chat-send-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ==========================================
+           12. BACK TO TOP & FLOATING ACTIONS
+        ========================================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 35px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-600);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            z-index: var(--z-dropdown);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--trans-normal);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--primary-500);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ==========================================
+           13. NOTIFICATION TOAST
+        ========================================== */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: var(--z-toast);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .toast {
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 300px;
+            animation: toastIn 0.5s var(--ease-bounce);
+            border-right: 4px solid var(--success-500);
+        }
+
+        .toast.error { border-right-color: var(--danger-500); }
+        .toast.warning { border-right-color: var(--warning-500); }
+        .toast.info { border-right-color: var(--info-500); }
+
+        .toast.removing {
+            animation: toastOut 0.4s ease forwards;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes toastOut {
+            to { opacity: 0; transform: translateX(100%); }
+        }
+
+        .toast-icon {
+            font-size: 1.5em;
+        }
+
+        .toast-message {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .toast-close {
+            background: var(--light-700);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            color: var(--dark-400);
+        }
+
+        .toast-close:hover {
+            background: var(--danger-100);
+            color: var(--danger-500);
+        }
+
+        /* ==========================================
+           14. CONFIRM DIALOG
+        ========================================== */
+        .dialog-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--z-modal);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+        }
+
+        .dialog-overlay.show {
+            display: flex;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .dialog-box {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-2xl);
+            animation: dialogSlide 0.4s var(--ease-bounce);
+        }
+
+        @keyframes dialogSlide {
+            from { transform: scale(0.7) translateY(25px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .dialog-icon { font-size: 3.5em; margin-bottom: 18px; }
+        .dialog-title { font-size: 1.35em; font-weight: 800; margin-bottom: 12px; color: var(--dark-800); }
+        .dialog-message { color: var(--dark-400); margin-bottom: 25px; line-height: 1.7; }
+        .dialog-actions { display: flex; gap: 12px; justify-content: center; }
+        .dialog-btn { padding: 12px 28px; border-radius: var(--radius-3xl); font-weight: 700; font-size: 0.95em; }
+        .dialog-btn.primary { background: var(--primary-600); color: white; }
+        .dialog-btn.primary:hover { background: var(--primary-500); transform: translateY(-2px); }
+        .dialog-btn.secondary { background: var(--light-700); color: var(--dark-600); }
+        .dialog-btn.secondary:hover { background: var(--light-900); }
+
+        /* ==========================================
+           15. COUNTDOWN TIMER
+        ========================================== */
+        .countdown-section {
+            padding: 25px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .countdown-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid var(--light-900);
+        }
+
+        .countdown-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--dark-600);
+            margin-bottom: 15px;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-unit {
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--radius-md);
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 2em;
+            font-weight: 900;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.75em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        /* ==========================================
+           16. ABOUT SCHOOL SECTION
+        ========================================== */
+        .about-section {
+            padding: 25px 30px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--light-900);
+        }
+
+        .about-card h3 {
+            font-size: 1.4em;
+            font-weight: 800;
+            color: var(--primary-700);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-card p {
+            line-height: 1.9;
+            color: var(--dark-500);
+            margin-bottom: 12px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: var(--light-500);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .about-feature-icon {
+            font-size: 1.5em;
+        }
+
+        /* ==========================================
+           17. POMODORO TIMER
+        ========================================== */
+        .pomodoro-section {
+            padding: 25px 30px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .pomodoro-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid var(--light-900);
+        }
+
+        .pomodoro-wrapper h3 {
+            font-size: 1.2em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark-700);
+        }
+
+        .pomodoro-display {
+            font-size: 4em;
+            font-weight: 900;
+            color: var(--primary-600);
+            font-family: var(--font-mono);
+            margin-bottom: 15px;
+        }
+
+        .pomodoro-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .pomodoro-btn {
+            padding: 10px 25px;
+            border-radius: var(--radius-3xl);
+            font-weight: 700;
+        }
+
+        .pomodoro-btn.start { background: var(--success-500); color: white; }
+        .pomodoro-btn.start:hover { background: var(--success-600); }
+        .pomodoro-btn.pause { background: var(--warning-500); color: white; }
+        .pomodoro-btn.reset { background: var(--light-700); color: var(--dark-500); }
+
+        /* ==========================================
+           18. GRADE CALCULATOR
+        ========================================== */
+        .grade-section {
+            padding: 25px 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grade-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--light-900);
+        }
+
+        .grade-wrapper h3 {
+            font-size: 1.2em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark-700);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grade-input-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .grade-input {
+            padding: 12px;
+            border: 2px solid var(--light-800);
+            border-radius: var(--radius-sm);
+            font-size: 0.95em;
+            width: 100%;
+            transition: var(--trans-fast);
+        }
+
+        .grade-input:focus {
+            border-color: var(--primary-400);
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+        }
+
+        .grade-btn {
+            padding: 12px 30px;
+            background: var(--primary-600);
+            color: white;
+            border-radius: var(--radius-3xl);
+            font-weight: 700;
+            width: 100%;
+        }
+
+        .grade-btn:hover { background: var(--primary-500); }
+
+        .grade-result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .grade-result.excellent { background: var(--success-100); color: var(--success-600); }
+        .grade-result.good { background: var(--info-100); color: var(--info-500); }
+        .grade-result.average { background: var(--warning-500); color: white; opacity: 0.9; }
+        .grade-result.fail { background: var(--danger-100); color: var(--danger-600); }
+
+        /* ==========================================
+           19. DAILY AZKAR
+        ========================================== */
+        .azkar-section {
+            padding: 25px 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .azkar-wrapper {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--light-900);
+        }
+
+        .azkar-wrapper h3 {
+            font-size: 1.3em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--islamic-green);
+            text-align: center;
+        }
+
+        .azkar-item {
+            padding: 18px;
+            background: var(--light-500);
+            border-radius: var(--radius-md);
+            margin-bottom: 10px;
+            border-right: 4px solid var(--islamic-green);
+        }
+
+        .azkar-text {
+            font-family: var(--font-secondary);
+            font-size: 1.15em;
+            line-height: 2;
+            color: var(--dark-700);
+            margin-bottom: 8px;
+        }
+
+        .azkar-count {
+            font-size: 0.85em;
+            color: var(--dark-300);
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           20. RESPONSIVE DESIGN
+        ========================================== */
+        @media (max-width: 1200px) {
+            .classes-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .classes-grid { grid-template-columns: repeat(2, 1fr); }
+            .students-grid { grid-template-columns: 1fr; }
+            .landing-stats { gap: 30px; }
+            .stat-item::after { height: 30px; left: -15px; }
+            .header-time { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .landing-content h1 { font-size: 2.2em; }
+            .landing-content h2 { font-size: 1.1em; }
+            .school-emblem { width: 120px; height: 120px; font-size: 55px; }
+            .btn-enter, .btn-islamic { padding: 16px 35px; font-size: 1.1em; }
+            .landing-stats { flex-wrap: wrap; gap: 20px; justify-content: center; }
+            .stat-item::after { display: none; }
+            .sticky-header, .class-detail-header { padding: 0 15px; height: 60px; }
+            .header-title { font-size: 1em; }
+            .classes-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 15px; }
+            .class-card { padding: 20px 12px; }
+            .class-card-number { font-size: 2.2em; }
+            .tabs-nav { gap: 8px; }
+            .tab-button { padding: 10px 15px; font-size: 0.85em; }
+            .tab-button span.tab-text { display: none; }
+            .students-grid-list { grid-template-columns: 1fr; }
+            .ai-chat-panel { width: calc(100% - 30px); left: 15px; max-height: 70vh; bottom: 100px; }
+            .modal-box { max-width: 95%; }
+            .tab-panels-container, .tabs-container, .classes-section, .search-section { padding-left: 15px; padding-right: 15px; }
+            .schedule-table th, .schedule-table td { padding: 10px 6px; font-size: 0.82em; }
+            .wisdom-box { padding: 15px 18px; }
+            .wisdom-box .quote { font-size: 1.05em; }
+            .daily-greeting { font-size: 1.3em; }
+            .countdown-display { gap: 8px; }
+            .countdown-unit { min-width: 65px; padding: 10px 12px; }
+            .countdown-value { font-size: 1.6em; }
+            .grade-input-group { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .landing-content h1 { font-size: 1.7em; }
+            .landing-content h2 { font-size: 0.95em; }
+            .manager-badge { font-size: 0.9em; padding: 8px 18px; }
+            .btn-enter, .btn-islamic { padding: 14px 25px; font-size: 1em; }
+            .classes-grid { gap: 10px; }
+            .class-card { padding: 15px 10px; }
+            .class-card-number { font-size: 1.8em; }
+            .class-card-icon { font-size: 2em; }
+            .class-card-name { font-size: 0.9em; }
+            .section-title { font-size: 1.3em; }
+            .modal-tabs { flex-direction: column; }
+            .modal-tab { border-bottom: 1px solid var(--light-700); }
+        }
+
+        /* ==========================================
+           21. PRINT STYLES
+        ========================================== */
+        @media print {
+            .sticky-header, .class-detail-header, .ai-chat-trigger, .ai-chat-panel,
+            .print-btn, .tabs-nav, .btn-nav, .ticker-bar, .back-to-top,
+            .toast-container { display: none !important; }
+            .tab-panel { display: block !important; page-break-inside: avoid; margin-bottom: 30px; }
+            body { background: white; }
+            .class-detail-page { background: white; }
+            .schedule-table, .lesson-table { box-shadow: none; border: 1px solid #ccc; }
+            .schedule-table th { background: #eee !important; color: #333 !important; }
+        }
+
+        /* ==========================================
+           22. UTILITY CLASSES
+        ========================================== */
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-left { text-align: left; }
+        .text-primary { color: var(--primary-600); }
+        .text-accent { color: var(--accent-500); }
+        .text-success { color: var(--success-500); }
+        .text-danger { color: var(--danger-500); }
+        .fw-light { font-weight: 300; }
+        .fw-normal { font-weight: 400; }
+        .fw-medium { font-weight: 500; }
+        .fw-bold { font-weight: 700; }
+        .fw-black { font-weight: 900; }
+        .mt-5 { margin-top: 5px; }
+        .mt-10 { margin-top: 10px; }
+        .mt-15 { margin-top: 15px; }
+        .mt-20 { margin-top: 20px; }
+        .mt-25 { margin-top: 25px; }
+        .mt-30 { margin-top: 30px; }
+        .mb-5 { margin-bottom: 5px; }
+        .mb-10 { margin-bottom: 10px; }
+        .mb-15 { margin-bottom: 15px; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-25 { margin-bottom: 25px; }
+        .mb-30 { margin-bottom: 30px; }
+        .p-10 { padding: 10px; }
+        .p-15 { padding: 15px; }
+        .p-20 { padding: 20px; }
+        .p-25 { padding: 25px; }
+        .p-30 { padding: 30px; }
+        .hidden { display: none !important; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); }
+
+        /* ==========================================
+           23. SCROLL ANIMATIONS
+        ========================================== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================
+           24. TOOLTIP
+        ========================================== */
+        .tooltip { position: relative; }
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background: var(--dark-800);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all var(--trans-fast);
+        }
+        .tooltip:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        /* ==========================================
+           25. WEATHER WIDGET
+        ========================================== */
+        .weather-widget {
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+            color: white;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .weather-temp {
+            font-size: 3em;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .weather-info {
+            text-align: left;
+        }
+
+        .weather-desc {
+            font-size: 1.1em;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .weather-location {
+            font-size: 0.85em;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">🏫</div>
+    <div class="loading-title">مدرسة الاخصاص الثانوية</div>
+    <div class="loading-subtitle">جاري تحميل البوابة الإلكترونية...</div>
+    <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+    <div class="loading-dots"><span></span><span></span><span></span></div>
+    <div class="loading-footer">تصميم الطالب احمد حسين منصور ❤</div>
+</div>
+
+<!-- TOAST NOTIFICATIONS -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- PAGE 1: LANDING -->
+<div class="page" id="page-landing">
+    <div class="landing-page">
+        <div class="landing-bg-shapes">
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+        </div>
+        <div class="landing-grid-overlay"></div>
+        <canvas id="particles-canvas"></canvas>
+
+        <div class="landing-content">
+            <div class="school-emblem">🏫</div>
+            <div class="bismillah-text">بسم الله الرحمن الرحيم</div>
+            <div class="daily-greeting" id="dailyGreeting"></div>
+            <h1>مدرسة الاخصاص الثانوية</h1>
+            <h2>بوابة الطالب الإلكترونية المتكاملة</h2>
+            <div class="manager-badge">
+                <span>👨‍💼</span>
+                <span>إدارة أ/ فكري هاشم الزادي</span>
+            </div>
+
+            <div class="wisdom-box">
+                <div class="title"><span>✨</span> حكمة اليوم</div>
+                <div class="quote" id="dailyWisdom"></div>
+            </div>
+
+            <div class="landing-actions">
+                <button class="btn-enter" onclick="navigateTo('page-classes')">
+                    <span>🚪</span>
+                    <span>الدخول للمدرسة</span>
+                    <span>←</span>
+                </button>
+                <button class="btn-islamic" onclick="openIslamicModal()">
+                    <span>🕌</span>
+                    <span>الركن الإسلامي</span>
+                    <span class="new-badge" id="islamicBadge">جديد</span>
+                </button>
+            </div>
+
+            <div class="landing-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="8">0</span>
+                    <div class="stat-label">فصل دراسي</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="375">0</span>
+                    <div class="stat-label">طالب وطالبة</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span>
+                    <div class="stat-label">أيام دراسية</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-footer">
+            <span>تصميم وإبداع الطالب</span>
+            <span class="fw-bold">احمد حسين منصور</span>
+            <span class="heart">❤️</span>
+            <span>| مدرسة الاخصاص الثانوية</span>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 2: CLASSES -->
+<div class="page" id="page-classes">
+    <div class="classes-page">
+        <div class="sticky-header">
+            <div class="header-right">
+                <span class="header-logo">🏫</span>
+                <span class="header-title">مدرسة الاخصاص الثانوية</span>
+            </div>
+            <div class="header-left">
+                <span class="header-time" id="headerTime"></span>
+                <button class="btn-nav" onclick="navigateTo('page-landing')"><span>🏠</span> الرئيسية</button>
+            </div>
+        </div>
+
+        <div class="ticker-bar">
+            <div class="ticker-wrapper">
+                <span class="ticker-item">📢 مرحباً بكم في البوابة الإلكترونية لمدرسة الاخصاص الثانوية</span>
+                <span class="ticker-item">📅 جداول الحصص متاحة لجميع الفصول من 1/1 إلى 1/8</span>
+                <span class="ticker-item">🔍 ابحث عن اسمك لمعرفة فصلك وجدولك</span>
+                <span class="ticker-item">🕌 لا تنسوا زيارة الركن الإسلامي للمصحف والسبحة</span>
+                <span class="ticker-item">📚 بالتوفيق لجميع الطلاب في دراستهم</span>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 ابحث عن اسم الطالب أو الطالبة..." oninput="handleSearch(this.value)" autocomplete="off">
+                <span class="search-icon">🔍</span>
+                <span class="search-clear" id="searchClear" onclick="clearSearch()">✕</span>
+            </div>
+            <div class="search-results-container" id="searchResults"></div>
+        </div>
+
+        <div class="classes-section">
+            <h2 class="section-title">الفصول الدراسية</h2>
+            <p class="section-subtitle">اختر الفصل لعرض جدول الحصص وأسماء الطلاب</p>
+
+            <div class="classes-grid">
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(1)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/1</div>
+                    <div class="class-card-name">أولى أول</div>
+                    <div class="class-card-count">👦 <span class="male-count">15</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">29</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(2)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/2</div>
+                    <div class="class-card-name">أولى ثاني</div>
+                    <div class="class-card-count">👦 <span class="male-count">15</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">29</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(3)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/3</div>
+                    <div class="class-card-name">أولى ثالث</div>
+                    <div class="class-card-count">👦 <span class="male-count">14</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">29</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(4)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/4</div>
+                    <div class="class-card-name">أولى رابع</div>
+                    <div class="class-card-count">👦 <span class="male-count">14</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">29</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(5)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/5</div>
+                    <div class="class-card-name">أولى خامس</div>
+                    <div class="class-card-count">👦 <span class="male-count">15</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">31</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(6)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/6</div>
+                    <div class="class-card-name">أولى سادس</div>
+                    <div class="class-card-count">👦 <span class="male-count">15</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">29</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(7)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/7</div>
+                    <div class="class-card-name">أولى سابع</div>
+                    <div class="class-card-count">👦 <span class="male-count">14</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">30</span> طالبة</div>
+                </div>
+                <div class="class-card animate-on-scroll" onclick="openClassDetail(8)">
+                    <div class="class-card-status"></div>
+                    <span class="class-card-icon">📚</span>
+                    <div class="class-card-number">1/8</div>
+                    <div class="class-card-name">أولى ثامن</div>
+                    <div class="class-card-count">👦 <span class="male-count">13</span> طالب &nbsp;|&nbsp; 👧 <span class="female-count">32</span> طالبة</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-section">
+            <div class="countdown-wrapper">
+                <div class="countdown-title">⏳ الوقت المتبقي لنهاية العام الدراسي</div>
+                <div class="countdown-display" id="countdownDisplay"></div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="about-section">
+            <div class="about-card">
+                <h3><span>🏫</span> عن المدرسة</h3>
+                <p>مدرسة الاخصاص الثانوية هي إحدى المدارس الرائدة في تقديم التعليم المتميز، وتهدف إلى بناء جيل واعٍ ومثقف قادر على مواجهة تحديات المستقبل.</p>
+                <p>تضم المدرسة 8 فصول دراسية وحوالي 375 طالب وطالبة موزعين على الصف الأول الثانوي.</p>
+                <div class="about-features">
+                    <div class="about-feature"><span class="about-feature-icon">📚</span> مناهج تعليمية حديثة</div>
+                    <div class="about-feature"><span class="about-feature-icon">💻</span> معامل حاسب آلي</div>
+                    <div class="about-feature"><span class="about-feature-icon">⚽</span> ملاعب رياضية</div>
+                    <div class="about-feature"><span class="about-feature-icon">📖</span> مكتبة مدرسية</div>
+                    <div class="about-feature"><span class="about-feature-icon">🔬</span> معمل علوم</div>
+                    <div class="about-feature"><span class="about-feature-icon">🎯</span> أنشطة متنوعة</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pomodoro -->
+        <div class="pomodoro-section">
+            <div class="pomodoro-wrapper">
+                <h3>⏰ مؤقت المذاكرة (بومودورو)</h3>
+                <div class="pomodoro-display" id="pomodoroDisplay">25:00</div>
+                <div class="pomodoro-controls">
+                    <button class="pomodoro-btn start" onclick="startPomodoro()">بدء</button>
+                    <button class="pomodoro-btn pause" onclick="pausePomodoro()">إيقاف</button>
+                    <button class="pomodoro-btn reset" onclick="resetPomodoro()">إعادة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grade Calculator -->
+        <div class="grade-section">
+            <div class="grade-wrapper">
+                <h3><span>📊</span> حاسبة النسبة المئوية</h3>
+                <div class="grade-input-group">
+                    <input type="number" class="grade-input" id="gradeObtained" placeholder="الدرجة المحصلة" min="0">
+                    <input type="number" class="grade-input" id="gradeTotal" placeholder="الدرجة الكلية" min="1">
+                </div>
+                <button class="grade-btn" onclick="calculateGrade()">احسب النسبة</button>
+                <div class="grade-result hidden" id="gradeResult"></div>
+            </div>
+        </div>
+
+        <!-- Azkar -->
+        <div class="azkar-section">
+            <div class="azkar-wrapper">
+                <h3>🤲 أذكار مختارة</h3>
+                <div id="azkarList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 3: CLASS DETAIL -->
+<div class="page" id="page-class-detail">
+    <div class="class-detail-page">
+        <div class="class-detail-header">
+            <div class="class-title-group">
+                <span class="class-title-icon">📖</span>
+                <span class="class-title-text" id="classTitleText">فصل 1/1</span>
+            </div>
+            <div class="class-stats-bar">
+                <span class="class-stat-badge" id="classBoysCount">👦 0</span>
+                <span class="class-stat-badge" id="classGirlsCount">👧 0</span>
+            </div>
+            <button class="btn-nav" onclick="navigateTo('page-classes')"><span>→</span> رجوع للفصول</button>
+        </div>
+
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-button active" onclick="switchTab('tab-schedule', this)"><span>📅</span><span class="tab-text">جدول الحصص</span></button>
+                <button class="tab-button" onclick="switchTab('tab-students', this)"><span>👨‍🎓</span><span class="tab-text">أسماء الطلاب</span></button>
+            </div>
+        </div>
+
+        <div class="tab-panels-container">
+            <div class="tab-panel active" id="tab-schedule">
+                <div class="schedule-table-wrapper">
+                    <table class="schedule-table">
+                        <thead><tr><th>اليوم</th><th>الحصة 1</th><th>الحصة 2</th><th>الحصة 3</th><th>الحصة 4</th><th>الحصة 5</th><th>الحصة 6</th></tr></thead>
+                        <tbody id="lessonsScheduleBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-students">
+                <div class="students-grid">
+                    <div class="students-box">
+                        <div class="students-box-header boys"><span>👦</span><span>أسماء البنين</span><span class="students-count-badge" id="boysCountBadge">0</span></div>
+                        <div class="students-filter"><input type="text" placeholder="🔍 بحث في الأسماء..." oninput="filterStudents(this, 'boysList')"></div>
+                        <div class="students-list-container"><div class="students-grid-list" id="boysList"></div></div>
+                    </div>
+                    <div class="students-box girls-section">
+                        <div class="students-box-header girls"><span>👧</span><span>أسماء البنات</span><span class="students-count-badge" id="girlsCountBadge">0</span></div>
+                        <div class="students-filter"><input type="text" placeholder="🔍 بحث في الأسماء..." oninput="filterStudents(this, 'girlsList')"></div>
+                        <div class="students-list-container"><div class="students-grid-list" id="girlsList"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="print-btn tooltip" data-tooltip="طباعة الجدول" onclick="window.print()">🖨️</button>
+</div>
+
+<!-- ISLAMIC MODAL -->
+<div class="modal-overlay" id="islamicModal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeIslamicModal()">✕</button>
+            <h3>🕌 الركن الإسلامي</h3>
+            <div class="subtitle">المصحف · السبحة · سؤال اليوم</div>
+        </div>
+        <div class="modal-tabs">
+            <div class="modal-tab active" onclick="switchIslamicTab('tab-quran', this)">📖 المصحف</div>
+            <div class="modal-tab" onclick="switchIslamicTab('tab-tasbeeh', this)">📿 السبحة</div>
+            <div class="modal-tab" onclick="switchIslamicTab('tab-quiz', this)">❓ سؤال اليوم</div>
+        </div>
+        <div class="modal-body">
+            <div class="tab-panel active" id="tab-quran">
+                <ul class="quran-list" id="quranList"></ul>
+            </div>
+            <div class="tab-panel" id="tab-tasbeeh">
+                <div class="tasbeeh-container">
+                    <div class="tasbeeh-dhikr">سبحان الله وبحمده، سبحان الله العظيم</div>
+                    <div class="tasbeeh-circle" id="tasbeehDisplay" onclick="incrementTasbeeh()">
+                        <span class="tasbeeh-count" id="tasbeehCount">0</span>
+                        <span class="tasbeeh-target-text" id="tasbeehTargetText">اضغط للتسبيح</span>
+                    </div>
+                    <div class="tasbeeh-target" id="tasbeehTargetMsg">الهدف: <span id="tasbeehGoal">33</span> تسبيحة</div>
+                    <div class="tasbeeh-progress"><div class="tasbeeh-progress-fill" id="tasbeehProgressFill" style="width:0%"></div></div>
+                    <div class="tasbeeh-controls">
+                        <button class="tasbeeh-btn reset" onclick="resetTasbeeh()">🔄 إعادة</button>
+                        <button class="tasbeeh-btn target-33" onclick="setTasbeehGoal(33)">33</button>
+                        <button class="tasbeeh-btn target-100" onclick="setTasbeehGoal(100)">100</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-quiz">
+                <div class="quiz-container">
+                    <div class="quiz-question" id="quizQuestion"></div>
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <div class="quiz-result" id="quizResult"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI CHAT -->
+<button class="ai-chat-trigger" onclick="toggleChat()">
+    🤖
+    <span class="notif-dot"></span>
+</button>
+<div class="ai-chat-panel" id="aiChatPanel">
+    <div class="chat-panel-header">
+        <div class="chat-panel-title">
+            <div class="chat-panel-avatar">🤖</div>
+            <div class="chat-panel-info">
+                <h4>المساعد الذكي</h4>
+                <div class="chat-panel-status"><span class="status-dot"></span><span>متصل الآن</span></div>
+            </div>
+        </div>
+        <button class="chat-close-btn" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-messages-area" id="chatMessagesArea">
+        <div class="chat-msg bot">
+            <div class="chat-msg-avatar">🤖</div>
+            <div>
+                <div class="chat-msg-bubble">أهلاً بيك! 👋 أنا المساعد الذكي لمدرسة الاخصاص الثانوية. ممكن تسألني عن:<br>📅 الجداول · 📚 الفصول · 👨‍🎓 الأسماء · 🏫 معلومات المدرسة</div>
+                <div class="chat-msg-time">الآن</div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input-bar">
+        <input type="text" class="chat-input" id="chatInputField" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key==='Enter')sendChatMessage()">
+        <button class="chat-send-btn" onclick="sendChatMessage()">📤</button>
+    </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<!-- CONFIRM DIALOG -->
+<div class="dialog-overlay" id="confirmDialog">
+    <div class="dialog-box">
+        <div class="dialog-icon">🚪</div>
+        <div class="dialog-title">هل تريد الرجوع للرئيسية؟</div>
+        <div class="dialog-message">سيتم الرجوع إلى الصفحة الرئيسية للمدرسة</div>
+        <div class="dialog-actions">
+            <button class="dialog-btn primary" onclick="confirmDialogAction()">نعم، متأكد</button>
+            <button class="dialog-btn secondary" onclick="closeDialog()">إلغاء</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/* ==========================================
+    STUDENTS DATABASE (Complete)
+========================================== */
+const studentsDB = {
+    1: { name: "أولى أول", boys: ["إبراهيم أشرف إبراهيم محمد جوهر","إبراهيم علاء إبراهيم صادق أحمد","إبراهيم عمرو منير حسانين أحمد","أحمد إبراهيم ماهر باهي حسانين","أحمد باسم صبري محمد عبد ربه","أحمد حسن أحمد حسن حسين","أحمد حسين منصور حسين منظور","أحمد سامح أحمد علي حسين","أحمد سمير علي أحمد خطاب","أحمد شريف فضل محمود محمد","أحمد طارق عبد المنعم عباس سليمان","أحمد عبد الوهاب رمضان عبد الغني غريب","أحمد عماد الدين عادل هاشم عثمان","أحمد عيد منصور حسين منظور","أحمد مجدي إبراهيم محمد جوهر"], girls: ["إسراء صبري عبد العال عبد الفضيل محمد","أسماء سلامة مسعد حسن منصور","أسماء عرفه إبراهيم محمد إبراهيم","أسماء فارس أحمد عبد الباقي","أصالة حمدي عبده محمد عيسوي","آلاء أشرف عبد السلام سليمان محمد","الزهراء وهبه محمد عبد العزيز موسى","إلهام عبد الباسط عبد العزيز سالم سيد","أمل عمار محمد قرني دهشان","أمنية عبد العزيز فصيح عبد العزيز أحمد عمار","أنجي جورج أنور جرجس فرج","إيرينى جورج أنور جرجس فرج","آية إبراهيم عبد المنعم محمد السعيد","آية أحمد سيد إسماعيل محمد","آية رسمي محمد رياض محمود","آية سامي عبد الحميد حامد محمد","آية صبري فتحي عبد الفضيل","آية محمد ممدوح أبو طالب كاسب","أمل عطيه عكاشه عبد الله محمد","آية أحمد سعيد أحمد أبوريه","بسملة أسامة عبد الحميد شحاتة سيد","بسملة جبر حسن محمد حسن","بسملة سامح علي أحمد عبد الوهاب","بسملة سامي عبد الغني حامد","بسملة طارق محمد قرني محمد","بسمة رضا عبد المحسن حسانين","بسمة رضا محمد عبد الحميد محمد","بسنت حسانين فاروق محمد حسانين","بسنت سعيد فرغل إمام"] },
+    2: { name: "أولى ثاني", boys: ["أحمد محمد حماد معوض خليفه","أحمد محمد عبد الرحمن صبره سليمان","أحمد محمد عبد العزيز إبراهيم محمد","أحمد محمد محمود محمد محمود","أحمد هاني شاكر عبد الجابر أحمد","آدم كامل كمال كامل أحمد","أدهم عبد السلام ناجي عبد السلام يوسف","أدهم محمد شافعي مغاوري يوسف","أسامة محمد علي سيد محمد","إسلام عبد الله سيد عبد الستار عبد المطلب","الحسن رمضان حسن فؤاد إبراهيم","الزيدي وائل هاشم هلال محمد الزيدي","الفاروق خيري إبراهيم محمد عيد","أمير سعيد محمد محمود سليمان","أمين أحمد أمين شحاته حسين"], girls: ["بسنت مكرم ثابت عبد العال","بسنت نزيه مرعي علام","تسنيم عبد العزيز محمد محمود طه","تسنيم مصطفى زارع رمضان سيد","تقوى هاشم باهي عبد العزيز","جاسمين وليد صلاح إبراهيم محمد","جانا مكرم وديع سعد فرج","جميلة صابر فضل عبد العزيز عويس","جنا جمال عيد سيف عزوز","جنا رضا محمد عبد الحميد محمد","جنا سيد عثمان أحمد","جنى أحمد ممدوح عبد العزيز مرسي","جنى أشرف غريب عبد السميع محمد","جنى سيد زكريا عبد الله عوض","جنى مجدي هاشم محمد عبد العاطي","جنى محمد حسين كامل أنيس","جنى محمد رزق سيد أحمد","جنى محمد عبده سيد مصطفى","جنى نصار سالم نصار سالم","جوليا هاني إبراهيم ونيس يسا","جومانا طارق عبد الرحيم عبده سليمان","جومانا محمد يحيى محمد حسن","جيهان حسين عويس يوسف مصطفى","حبيبة راضي فريد سيد سيد","حبيبة عصمت عبد الحميد فرغلي حمد الله","حبيبة محمود شيبوب عبد الرازق محمد","حنان عادل محمد إسماعيل إبراهيم","حنين عاطف سيد يوسف مازن","خلود عبد الواحد سعيد عرفان محمد"] },
+    3: { name: "أولى ثالث", boys: ["بلال أحمد سعيد عبد الكريم درويش","بلال ياسر جاد المولى أحمد جاد المولى","جورج نجيب إسحاق توفيق زكي","حسين حسني سيد عثمان","حسين دسوقي عبده عبد المنعم دسوقي","خالد وليد فهمي باهي الزيدي","زياد سعيد يس عليوه سيد","زياد محمد محمد حسين محمد","سيد أيمن سيد عبد الله بشير","سيف عبد الستار عبد الستار عبد المطلب","صلاح محمد صلاح محمود فيصل","عبد الرحمن أحمد فوزي عبد النبي سيد","عبد الرحمن حسين ربيع حسين","عبد الرحمن حمدي جاب الله أبو طالب"], girls: ["دعاء رضا عبد المنعم عيد سيد","دعاء صبحي نظير سيد محمد","دينا جرجس نجيب فرج الله أبو السعد","رحمة أشرف أحمد محمد سليمان","رحمة رضا عبد العزيز محمد سليمان","رحمة شعبان كمال عبد العزيز مرسي","رحمة علي غريب عبد السميع محمد القاضي","رحمة محمد حريش محمد حسن","رحمة محمد رجب بدر","رحمة محمود هندي قرني محمد","رضوى أحمد محمد النووي حجي","رضوى جمال جمعة عبد التواب علي","رفيدة ريحان عبد السلام عبد المقصود","رقية رضا عوض محمود","رميساء محمد رياض حسانين محمد","رنا كمال سعد الدين محمد حلمي","روان أحمد دسوقي عبد الغفار خليفه","روان أحمد رضا منصور","روان حسن حسين كامل هليل","رودينا شوقي عبده عبد المنعم","روضة أحمد دسوقي عبد الغفار خليفه","روضة حسين عبد الواحد عبد الحميد إبراهيم","روضة عيد إسماعيل أحمد بدوي","روضة نزيه فرحات علي عبد المجيد","رؤى طاهر سمير سعيد عبد العزيز","رؤى محمود عبد العزيز عبد النبي","ريم أحمد صبري بسيوني عبد العزيز","ريم عربي عدوي حسن حسين","ريماس أحمد إبراهيم توفيق محمد"] },
+    4: { name: "أولى رابع", boys: ["عبد الرحمن صبري محمد أحمد حسن","عبد الرحمن علواني ماهر سعيد سليمان","عبد الرحمن عليان محمود محمد سليمان","عبد الرحمن محمد محمد إبراهيم","عبد الرحمن مصطفى عبده سليمان أبو طالب","عزام عبد العزيز حميد محمد نافع","علي رأفت سليمان يوسف","علي نزيه عمر عبد الفضيل علي","علي نصر أحمد عباس إسماعيل","عمر أحمد حسانين فهمي صالح","عمر رأفت سليمان يوسف","عمر رشاد محي رشاد علي","عمر مجدي أحمد بكري محمد","عمر محمد نبيل صديق محمد"], girls: ["ريهام سعد سيد محمود سيد","زهراء سامح مختار عبد الواحد","زينب عايد عياد سليم عايد","زينب ناصر رجب علي محمد","سارة أحمد عبد الفتاح سليمان حسن","سارة رضا رياض حسانين عبد الحميد","سارة سيد رمضان كامل عكاشه","سارة مجدي يحيى حسين محمد","سارة مسعود محمد المنشاوي سلطان","سجدة وائل عبد الغفار عبد الحكيم عثمان","سعاد سلامة سالم سليمان حسين","سلمى طه فوزي عبد الفتاح طنطاوي","سلمى محمد عيد عبده أبو خزيم","سما طارق أحمد خليفه عوض","سما محمد فوزي فايد محمد","سما محمود علي حسن القاضي","سما مصطفى صبري عبد المجيد أحمد","سماح صلاح عبد العزيز أحمد إبراهيم","سمية رضا صلاح سليمان حسين","سهيلة حسين حمد الله عبد النبي حسن","سهيلة عزب هاشم سعد خليل","سهيلة محمد زارع رمضان سيد","شاهندا إبراهيم أحمد علي صالح","شروق أحمد رمضان عابدين","شروق حلمي إبراهيم جمعة محمد","شروق سيد غريب حسن مطلوب","شهد أحمد سمير حسن أبو طالب","شهد جمال ماجد علي عباس","شهد حسن محمد إبراهيم الشيمي"] },
+    5: { name: "أولى خامس", boys: ["عمر محمد نصر أحمد صابر","عمر يس هاشم عبد النبي","فادي رامي سعد شفيق زكي","فارس شعبان محمد فؤاد إبراهيم","فهد شريف هاشم توفيق محمد","فهد عصام سعد محمد حماد","مبارك محمد مبارك عيد علي","محسن وليد سالم إبراهيم أحمد","محمد إبراهيم عاشور أحمد قرني نجم","محمد أحمد وحيد مرسي وهيب","محمد أسامة سعيد محمد نور الدين","محمد تامر بدوي حميد حسن","محمد جمال محمود علي إبراهيم","محمد رضا مسعد محمد عبد النبي","محمد سيد جنيدي حامد قطب"], girls: ["شهد سيوفي محمد محمد سيوفي طه","شهد نعيم رجب عبد النبي عون","شهد هاني سعيد عبد اللطيف الخولي","شيماء علي سليم محمود سيد","شيماء محمد إبراهيم عبده إبراهيم","عائشة اسامه عتريس محمد حسن","عفاف أحمد محمد محمد سليمان عليان","فاتن عبد الحكيم مراد سيد مراد","فاطمة عبد الواحد عكاشه عزوز سليمان","فاطمة محسن محروس حسن سليمان","فاطمة محمد سليمان زكي عويس","فاطمة محمد علي محمد عون","فاطمة محمد محمد أحمد سكر","فتحيه محمد سعد هليل ساعد","فدوى فكري هاشم هلال محمد الزيدي","فرح رامي حكيم نصيف عبد السيد","فرحة إسماعيل إبراهيم عبد الهادي إبراهيم","فرحة عبد الله عبد الفتاح عبد الله عوض","فرحة محمد كامل أمين علي","فرحة محمود ربيع حسن أبو طالب","فيروز محمد فتوح أحمد أحمد","مارفينا هاني سمير عبده سعيد","مارينا عماد برسوم حنا نورا","مارينا هاني حليم خليل روفائيل","مروه مجدي محمد نبيه محمد","مريم إبراهيم فتحي عوض إبراهيم","مريم ايوب كامل ايوب سليمان","مريم تامر فتحي حامد","مريم جوده حسني جوده عبد الفضيل","شيماء أحمد عرابي إبراهيم","فرحه صادق رمضان راشد"] },
+    6: { name: "أولى سادس", boys: ["محمد سيد محمد أحمد حسن","محمد شريف شوقي علي محمود","محمد عاشور سعد أمين غريب","محمد عاطف محمد جاد محمد","محمد عصام رمضان أحمد حسين","محمد علي حسن محمد مشحوت","محمد علي سيد علي إبراهيم","محمد علي شاهين علي محمود","محمد فايز محمد فراج عبد الكريم","محمد محمود منصور حسين منظور","محمد مشهور يونس أبو زيد جبر","محمد وحيد عبد المنعم بيومي","محمود حسين محمود محمد حسانين","محمود حماد حمزه محمد عوض الله","محمود راضي سعيد سيف محمد"], girls: ["مريم رمضان حسين عبد ربه محمود","مريم رمضان عبد الرحمن أبو سريع داود","مريم طارق سعيد أحمد سيد","مريم عبد المنعم عبد الرؤوف مشرف الحاج","مريم عصام رمضان أحمد حسين","مريم محمود سعيد عبد الونيس سعيد","مريم محمود زكريا سيد محمد","مريم نشأت إبراهيم توفيق محمد","مريم هاني سمير أمين برسوم","ملك أحمد أحمد عوض الله عبد المقصود","ملك أحمد جمعه عبد العليم إسماعيل","ملك أحمد صلاح عبد الكريم درويش","ملك أحمد كمال عبد الله علي","ملك أحمد محمد عبد الغني علي","ملك اسامه سيد سلامه قاسم","ملك أيمن سلامه سيف محمد","ملك حسين ماضي حسن محمد","ملك رامي أحمد أحمد درغام","ملك زكريا توفيق محمود أحمد","ملك سامي عز الدين عبد الفتاح خطاب","ملك سعد محمد حماد محمد","ملك سعيد محمد زناتي","ملك سيد محمد بكري شافعي","ملك شعبان عبد الظاهر حسن عويس","ملك صبري أحمد مرزوق عويس","ملك عصام محمد عبد الحميد","ملك عماد فتحي محمد عبود","ملك عمرو ثابت عبد العال","ملك محسن عبده إسماعيل عبد ربه"] },
+    7: { name: "أولى سابع", boys: ["محمود ماجد عاشور أحمد محمد","محمود وائل محمود عبد السلام","مدثر زغلول عليوه محمد عامر","مروان حسن ماجد علي عباس","مروان محمد سيد محمد خليل","مروان محمد محمد عبد الحميد سليمان","مصطفى رمضان عبده محمود سيد","مصطفى محمد أبو السعود محمد","مصطفى هاني مصطفى عباس أبو غنايم","معاذ عبد الرؤوف موسى","معتصم عمرو فتوح أحمد أحمد مشهور","ممتاز رمضان سلامه حامد أحمد","ممدوح فرج وديع سعد فرج","مؤمن أحمد راشد محمد أحمد"], girls: ["ملك محمد أحمد عبد الوهاب علي","ملك محمد رمضان عبد الظاهر مبروك","ملك محمد عبد الحليم فؤاد سليمان","ملك محمد هاشم جمعه قرني","ملك محمود محسن أحمد مصطفى","ملك هاني فصيح عبد العزيز أحمد","ملك هاني قرني علي مصطفى","ملك وليد سمير عبد العزيز عبد الله","منه سيد محمد عبد الرحمن ريه","منه عبد الله محمد عبد المجيد","منيره صابر عويس صابر محمد","مها صلاح محمد فؤاد إبراهيم","مهتاب محمد عبد الحميد ميهوب","مودة ضاحي محمد يوسف","مي أحمد أحمد محمد محمد","مي شعبان أحمد عطيه","مي مدحت ربيع فاضل محمود","ناديه شعبان عبد النبي شعراوي درويش","نجاه فهمي محمد عبد النبي","ندا عصام قرني عبد الفضيل عيسوي","ندى بسيوني حمزه محمود جمعه","ندى صلاح انور أمين زهران","ندى عارف إسماعيل محمد مبروك","ندى عامر عيد علي عامر","ندى علي فضل منصور علي","ندى محمد سعد عبد الفتاح","ندى محمد عبد الرحمن عثمان محمد","ندى ناصر محمد سليم امين","ندين محمود السيد عبد الرحيم","ندى نبيل جمال أحمد"] },
+    8: { name: "أولى ثامن", boys: ["مؤمن محمد عبد الكريم حنفي إبراهيم","نبيل محمد نبيل عبد الموجود عبد المطلب","هادي ناجح بسيوني محمود بسيوني","ياسين أحمد بشير علي إبراهيم","ياسين أيمن شعبان محمد ربيع","يوسف أحمد عبد النبي عبد النبي سيد","يوسف رمضان شعبان كامل عكاشه","يوسف سيد سمير حسن إبراهيم","يوسف سيد قدري سيد مراد","يوسف عاطف سليمان حسن محمد","يوسف عز الدين فضل جمعه خليل","يوسف محمد قرني عرابي يوسف","يوسف محمود محمد محمود محمد"], girls: ["نرمين عبد الغفار عبد الكريم فيهم سليمان","نهله محمود صلاح محمود محمد","نور توبه راتب منصور محمد","نور خالد جابر شعيب داود","نورا سعيد محمد سالم محمد","نورا مسعود محمد المنشاوي سلطان","نوران اسامه رضا عبد الحميد","نوران صادق إبراهيم صادق","نورهان زينهم رجب محمد محمد","نورهان محمد محمد عطيه خلاف","نورهان محمود سيد عقيل محمد","نورهان هاني إسماعيل إبراهيم","نيجار محمد رمضان محمد المنير","هاجر رجب قرني عيد عبد النبي","هاجر عامر عبد الرحمن امين حسن","هاجر ممدوح محمد راشد عثمان","هاتم حسام فوزي حامد","هدى سمير سعد حامد","هدير سمير عبد القادر محمود عبد اللطيف","هنا سامي رمضان محمد مصطفى","هنا عمرو مسعد سعيد","هنا مصطفى محمد شعراوي","هند شوقي يونس حسن","وفاء إبراهيم رجب محمد إسماعيل","ولاء سعيد أحمد محمد","يارا عادل زكريا محمد عبد الباقي","ياسمين رضى خيري أحمد عبد الجليل","ياسمين صبري عويس امام عباس","يوانا عزيز اسحاق توفيق زكي","يوستينا ايمن نجيب فرج الله ابو سعد","هاديه محمد علي سليمان محمد","هنا سويلم رجب حسان"] }
+};
+
+/* ==========================================
+    SCHEDULE DATA (Merged - Once Only)
+========================================== */
+const scheduleData = {
+    1: { lessons: { "الأحد": ["لغة عربية","لغة عربية","كيمياء","لغة إنجليزية","رياضيات","جغرافيا"], "الاثنين": ["لغة إنجليزية","لغة إنجليزية","أحياء","تاريخ","لغة عربية","فيزياء"], "الثلاثاء": ["لغة فرنسية","رياضيات","رياضيات","كيمياء","فلسفة","لغة عربية"], "الأربعاء": ["رياضيات","لغة إنجليزية","فيزياء","أحياء","لغة فرنسية","فلسفة"], "الخميس": ["تاريخ","جغرافيا","تربية دينية","لغة عربية","رياضيات","لغة إنجليزية"] } },
+    2: { lessons: { "الأحد": ["رياضيات","لغة إنجليزية","لغة عربية","لغة عربية","كيمياء","جغرافيا"], "الاثنين": ["لغة عربية","أحياء","فيزياء","لغة إنجليزية","لغة إنجليزية","تاريخ"], "الثلاثاء": ["فلسفة","كيمياء","رياضيات","رياضيات","لغة عربية","لغة فرنسية"], "الأربعاء": ["لغة إنجليزية","رياضيات","لغة فرنسية","فيزياء","أحياء","فلسفة"], "الخميس": ["جغرافيا","تربية دينية","تاريخ","رياضيات","لغة إنجليزية","لغة عربية"] } },
+    3: { lessons: { "الأحد": ["كيمياء","لغة عربية","لغة عربية","رياضيات","جغرافيا","لغة إنجليزية"], "الاثنين": ["لغة إنجليزية","لغة إنجليزية","لغة عربية","تاريخ","فيزياء","أحياء"], "الثلاثاء": ["رياضيات","رياضيات","فلسفة","لغة فرنسية","لغة عربية","كيمياء"], "الأربعاء": ["لغة فرنسية","فيزياء","رياضيات","فلسفة","لغة إنجليزية","أحياء"], "الخميس": ["لغة عربية","رياضيات","لغة إنجليزية","جغرافيا","تاريخ","تربية دينية"] } },
+    4: { lessons: { "الأحد": ["لغة عربية","لغة عربية","لغة إنجليزية","جغرافيا","رياضيات","كيمياء"], "الاثنين": ["أحياء","تاريخ","لغة إنجليزية","لغة إنجليزية","لغة عربية","فيزياء"], "الثلاثاء": ["رياضيات","رياضيات","لغة فرنسية","لغة عربية","كيمياء","فلسفة"], "الأربعاء": ["فيزياء","أحياء","فلسفة","رياضيات","لغة فرنسية","لغة إنجليزية"], "الخميس": ["تربية دينية","جغرافيا","تاريخ","لغة إنجليزية","لغة عربية","رياضيات"] } },
+    5: { lessons: { "الأحد": ["لغة إنجليزية","كيمياء","لغة عربية","لغة عربية","جغرافيا","رياضيات"], "الاثنين": ["لغة عربية","لغة إنجليزية","لغة إنجليزية","فيزياء","أحياء","تاريخ"], "الثلاثاء": ["لغة عربية","فلسفة","لغة فرنسية","رياضيات","رياضيات","كيمياء"], "الأربعاء": ["أحياء","فلسفة","لغة إنجليزية","لغة فرنسية","رياضيات","فيزياء"], "الخميس": ["لغة إنجليزية","رياضيات","لغة عربية","تربية دينية","جغرافيا","تاريخ"] } },
+    6: { lessons: { "الأحد": ["جغرافيا","رياضيات","كيمياء","لغة عربية","لغة عربية","لغة إنجليزية"], "الاثنين": ["فيزياء","أحياء","تاريخ","لغة عربية","لغة إنجليزية","لغة إنجليزية"], "الثلاثاء": ["كيمياء","لغة عربية","فلسفة","لغة فرنسية","رياضيات","رياضيات"], "الأربعاء": ["رياضيات","فيزياء","أحياء","فلسفة","لغة إنجليزية","لغة فرنسية"], "الخميس": ["لغة عربية","لغة إنجليزية","رياضيات","تاريخ","تربية دينية","جغرافيا"] } },
+    7: { lessons: { "الأحد": ["لغة عربية","لغة عربية","رياضيات","كيمياء","جغرافيا","لغة إنجليزية"], "الاثنين": ["تاريخ","لغة عربية","أحياء","فيزياء","لغة إنجليزية","لغة إنجليزية"], "الثلاثاء": ["لغة فرنسية","كيمياء","لغة عربية","فلسفة","رياضيات","رياضيات"], "الأربعاء": ["لغة إنجليزية","لغة فرنسية","فيزياء","أحياء","فلسفة","رياضيات"], "الخميس": ["رياضيات","تاريخ","جغرافيا","لغة عربية","لغة إنجليزية","تربية دينية"] } },
+    8: { lessons: { "الأحد": ["رياضيات","جغرافيا","لغة عربية","لغة عربية","لغة إنجليزية","كيمياء"], "الاثنين": ["أحياء","فيزياء","لغة إنجليزية","لغة إنجليزية","تاريخ","لغة عربية"], "الثلاثاء": ["لغة عربية","لغة فرنسية","كيمياء","رياضيات","رياضيات","فلسفة"], "الأربعاء": ["فلسفة","رياضيات","فيزياء","أحياء","لغة فرنسية","لغة إنجليزية"], "الخميس": ["لغة إنجليزية","لغة عربية","تاريخ","جغرافيا","تربية دينية","رياضيات"] } }
+};
+
+/* ==========================================
+    PAGE NAVIGATION SYSTEM
+========================================== */
+let currentPage = 'page-landing';
+let pendingAction = null;
+
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => { p.classList.remove('active'); p.classList.remove('visible'); });
+    const target = document.getElementById(pageId);
+    if (target) {
+        target.classList.add('active');
+        setTimeout(() => target.classList.add('visible'), 50);
+        currentPage = pageId;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        animateOnScroll();
+    }
+}
+
+function navigateTo(pageId) {
+    if (pageId === 'page-landing' && currentPage !== 'page-landing') {
+        showDialog(() => showPage(pageId));
+    } else {
+        showPage(pageId);
+    }
+}
+
+function showDialog(action) {
+    pendingAction = action;
+    document.getElementById('confirmDialog').classList.add('show');
+}
+
+function closeDialog() {
+    document.getElementById('confirmDialog').classList.remove('show');
+    pendingAction = null;
+}
+
+function confirmDialogAction() {
+    closeDialog();
+    if (pendingAction) pendingAction();
+}
+
+/* ==========================================
+    LOADING SCREEN
+========================================== */
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+        showPage('page-landing');
+        initAllSystems();
+    }, 3000);
+});
+
+function initAllSystems() {
+    initDynamicContent();
+    animateCounters();
+    initParticles();
+    startClock();
+    initCountdown();
+    initAzkar();
+    initPomodoro();
+    initIslamicModal();
+    showToast('مرحباً بك في البوابة الإلكترونية! 🎉', 'info');
+}
+
+/* ==========================================
+    DYNAMIC CONTENT (GREETING + WISDOM)
+========================================== */
+function initDynamicContent() {
+    const hour = new Date().getHours();
+    let greeting = '';
+    if (hour >= 5 && hour < 12) greeting = '🌅 صباح الخير والنجاح';
+    else if (hour >= 12 && hour < 17) greeting = '☀️ مساء التفاؤل والبركة';
+    else if (hour >= 17 && hour < 21) greeting = '🌇 مساء الراحة والسكينة';
+    else greeting = '🌙 طابت ليلتك ودمت بخير';
+    document.getElementById('dailyGreeting').textContent = greeting;
+
+    const day = new Date().getDate();
+    const wisdoms = [
+        "العلم نور والجهل ظلام", "من طلب العلا سهر الليالي", "الوقت كالسيف إن لم تقطعه قطعك",
+        "الكتاب خير جليس", "من جد وجد ومن زرع حصد", "الصبر مفتاح الفرج", "لا تؤجل عمل اليوم إلى الغد",
+        "العلم في الصغر كالنقش على الحجر", "خير الناس أنفعهم للناس", "التواضع يرفع صاحبه",
+        "الكلمة الطيبة صدقة", "من سلك طريقاً يلتمس فيه علماً سهل الله له به طريقاً إلى الجنة", "العلم بلا عمل كالشجر بلا ثمر",
+        "من لا يشكر الناس لا يشكر الله", "العقل زينة والأدب أحسن من الذهب", "العمل يبعد عن الإنسان ثلاثة شرور",
+        "الضمير هو صوت الله في داخل الإنسان", "إذا أتاك أحد الطرفين فلا تقض حتى يأتيك الآخر", "خير الأمور أوسطها",
+        "التأني من الله والعجلة من الشيطان", "من ترك شيئاً لله عوضه الله خيراً منه", "الرفيق قبل الطريق",
+        "من حسن إسلام المرء تركه ما لا يعنيه", "الجار قبل الدار", "من كان يؤمن بالله واليوم الآخر فليقل خيراً أو ليصمت",
+        "لا ضرر ولا ضرار", "تبسمك في وجه أخيك صدقة", "الدين المعاملة", "إن الله لا يغير ما بقوم حتى يغيروا ما بأنفسهم", "اطلبوا العلم من المهد إلى اللحد"
+    ];
+    document.getElementById('dailyWisdom').textContent = `"${wisdoms[(day - 1) % wisdoms.length]}"`;
+}
+
+/* ==========================================
+    CLOCK
+========================================== */
+function startClock() {
+    function update() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const date = now.toLocaleDateString('ar-EG', options);
+        const time = now.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+        const el = document.getElementById('headerTime');
+        if (el) el.textContent = `${date} | ${time}`;
+    }
+    update();
+    setInterval(update, 30000);
+}
+
+/* ==========================================
+    COUNTDOWN TIMER
+========================================== */
+function initCountdown() {
+    function update() {
+        const now = new Date();
+        let endYear = now.getFullYear();
+        let target = new Date(endYear, 6, 15);
+        if (now > target) target = new Date(endYear + 1, 6, 15);
+
+        const diff = target - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const el = document.getElementById('countdownDisplay');
+        if (el) {
+            el.innerHTML = `
+                <div class="countdown-unit"><span class="countdown-value">${days}</span><div class="countdown-label">يوم</div></div>
+                <div class="countdown-unit"><span class="countdown-value">${hours}</span><div class="countdown-label">ساعة</div></div>
+                <div class="countdown-unit"><span class="countdown-value">${minutes}</span><div class="countdown-label">دقيقة</div></div>
+                <div class="countdown-unit"><span class="countdown-value">${seconds}</span><div class="countdown-label">ثانية</div></div>
+            `;
+        }
+    }
+    update();
+    setInterval(update, 1000);
+}
+
+/* ==========================================
+    POMODORO TIMER
+========================================== */
+let pomodoroInterval = null;
+let pomodoroTime = 25 * 60;
+let pomodoroRunning = false;
+
+function initPomodoro() { updatePomodoroDisplay(); }
+
+function updatePomodoroDisplay() {
+    const el = document.getElementById('pomodoroDisplay');
+    if (!el) return;
+    const mins = Math.floor(pomodoroTime / 60).toString().padStart(2, '0');
+    const secs = (pomodoroTime % 60).toString().padStart(2, '0');
+    el.textContent = `${mins}:${secs}`;
+}
+
+function startPomodoro() {
+    if (pomodoroRunning) return;
+    pomodoroRunning = true;
+    pomodoroInterval = setInterval(() => {
+        pomodoroTime--;
+        updatePomodoroDisplay();
+        if (pomodoroTime <= 0) {
+            clearInterval(pomodoroInterval);
+            pomodoroRunning = false;
+            showToast('⏰ انتهى وقت المذاكرة! خذ استراحة', 'success');
+            pomodoroTime = 25 * 60;
+            updatePomodoroDisplay();
+        }
+    }, 1000);
+}
+
+function pausePomodoro() {
+    clearInterval(pomodoroInterval);
+    pomodoroRunning = false;
+}
+
+function resetPomodoro() {
+    clearInterval(pomodoroInterval);
+    pomodoroRunning = false;
+    pomodoroTime = 25 * 60;
+    updatePomodoroDisplay();
+}
+
+/* ==========================================
+    GRADE CALCULATOR
+========================================== */
+function calculateGrade() {
+    const obtained = parseFloat(document.getElementById('gradeObtained').value);
+    const total = parseFloat(document.getElementById('gradeTotal').value);
+    const result = document.getElementById('gradeResult');
+
+    if (isNaN(obtained) || isNaN(total) || total <= 0) {
+        result.className = 'grade-result hidden';
+        showToast('⚠️ الرجاء إدخال درجات صحيحة', 'warning');
+        return;
+    }
+
+    const percentage = ((obtained / total) * 100).toFixed(1);
+    let grade = '', cls = '';
+
+    if (percentage >= 90) { grade = 'ممتاز 🌟'; cls = 'excellent'; }
+    else if (percentage >= 75) { grade = 'جيد جداً 👍'; cls = 'good'; }
+    else if (percentage >= 60) { grade = 'جيد ✅'; cls = 'average'; }
+    else { grade = 'يحتاج تحسين ⚠️'; cls = 'fail'; }
+
+    result.className = `grade-result ${cls}`;
+    result.textContent = `النسبة: ${percentage}% - التقدير: ${grade}`;
+    result.classList.remove('hidden');
+}
+
+/* ==========================================
+    AZKAR
+========================================== */
+function initAzkar() {
+    const azkar = [
+        { text: "سبحان الله وبحمده، سبحان الله العظيم", count: "100 مرة" },
+        { text: "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير", count: "10 مرات" },
+        { text: "اللهم صلِّ وسلم على نبينا محمد", count: "100 مرة" },
+        { text: "أستغفر الله العظيم وأتوب إليه", count: "100 مرة" },
+        { text: "لا حول ولا قوة إلا بالله", count: "100 مرة" },
+        { text: "اللهم إني أسألك الهدى والتقى والعفاف والغنى", count: "بعد كل صلاة" }
+    ];
+
+    document.getElementById('azkarList').innerHTML = azkar.map(a => `
+        <div class="azkar-item">
+            <div class="azkar-text">${a.text}</div>
+            <div class="azkar-count">📿 عدد التكرار: ${a.count}</div>
+        </div>
+    `).join('');
+}
+
+/* ==========================================
+    COUNTER ANIMATION
+========================================== */
+function animateCounters() {
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+        const target = parseInt(el.getAttribute('data-count'));
+        let current = 0;
+        const inc = target / 60;
+        const timer = setInterval(() => {
+            current += inc;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current) + '+';
+        }, 30);
+    });
+}
+
+/* ==========================================
+    SCROLL ANIMATIONS
+========================================== */
+function animateOnScroll() {
+    document.querySelectorAll('.animate-on-scroll').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animated'), i * 100);
+    });
+}
+
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    if (btn) btn.classList.toggle('show', window.scrollY > 300);
+    animateOnScroll();
+});
+
+/* ==========================================
+    CLASS DETAIL
+========================================== */
+function openClassDetail(classNum) {
+    const data = studentsDB[classNum];
+    if (!data) return;
+
+    showPage('page-class-detail');
+
+    document.getElementById('classTitleText').textContent = `فصل 1/${classNum} - ${data.name}`;
+    document.getElementById('classBoysCount').textContent = `👦 ${data.boys.length}`;
+    document.getElementById('classGirlsCount').textContent = `👧 ${data.girls.length}`;
+    document.getElementById('boysCountBadge').textContent = data.boys.length + ' طالب';
+    document.getElementById('girlsCountBadge').textContent = data.girls.length + ' طالبة';
+
+    // Build Schedule (ONCE - merged table only)
+    const sched = scheduleData[classNum]?.lessons || {};
+    let schedHTML = '';
+    for (const [day, lessons] of Object.entries(sched)) {
+        schedHTML += `<tr><td class="day-cell">${day}</td>`;
+        lessons.forEach(l => schedHTML += `<td>${l}</td>`);
+        schedHTML += '</tr>';
+    }
+    document.getElementById('lessonsScheduleBody').innerHTML = schedHTML;
+
+    // Build Students
+    document.getElementById('boysList').innerHTML = data.boys.map((n,i) => `<div class="student-item"><span class="student-number">${i+1}</span><span>${n}</span></div>`).join('');
+    document.getElementById('girlsList').innerHTML = data.girls.map((n,i) => `<div class="student-item"><span class="student-number">${i+1}</span><span>${n}</span></div>`).join('');
+
+    // Reset to first tab
+    document.querySelectorAll('.tab-button').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === 0));
+}
+
+function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+}
+
+/* ==========================================
+    SEARCH
+========================================== */
+function handleSearch(query) {
+    const clearBtn = document.getElementById('searchClear');
+    const resultsContainer = document.getElementById('searchResults');
+
+    if (!query.trim()) {
+        clearBtn.classList.remove('show');
+        resultsContainer.innerHTML = '';
+        return;
+    }
+
+    clearBtn.classList.add('show');
+    let results = [];
+
+    for (let c = 1; c <= 8; c++) {
+        studentsDB[c].boys.forEach(name => { if (name.includes(query)) results.push({ name, class: c, gender: 'male' }); });
+        studentsDB[c].girls.forEach(name => { if (name.includes(query)) results.push({ name, class: c, gender: 'female' }); });
+    }
+
+    if (results.length === 0) {
+        resultsContainer.innerHTML = `<div class="no-results"><div class="icon">🔍</div><p>لم يتم العثور على نتائج لـ "${query}"</p></div>`;
+    } else {
+        resultsContainer.innerHTML = results.map((r, i) => `
+            <div class="search-result-card" style="animation-delay: ${i * 0.05}s">
+                <div class="search-result-info">
+                    <div class="search-result-avatar ${r.gender}">${r.gender === 'male' ? '👦' : '👧'}</div>
+                    <div>
+                        <div class="search-result-name">${highlightText(r.name, query)}</div>
+                        <div class="search-result-class">فصل 1/${r.class} - ${studentsDB[r.class].name}</div>
+                    </div>
+                </div>
+                <button class="btn-view" onclick="openClassDetail(${r.class})">عرض الجدول</button>
+            </div>
+        `).join('');
+    }
+}
+
+function highlightText(text, query) {
+    return text.replace(new RegExp(`(${query})`, 'gi'), '<mark style="background:#fff3cd;padding:0 2px;border-radius:2px;">$1</mark>');
+}
+
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchClear').classList.remove('show');
+    document.getElementById('searchResults').innerHTML = '';
+}
+
+function filterStudents(input, listId) {
+    const query = input.value;
+    const items = document.getElementById(listId).querySelectorAll('.student-item');
+    items.forEach(item => {
+        const name = item.querySelector('span:last-child').textContent;
+        item.style.display = name.includes(query) ? 'flex' : 'none';
+    });
+}
+
+/* ==========================================
+    ISLAMIC MODAL
+========================================== */
+function openIslamicModal() {
+    document.getElementById('islamicModal').classList.add('show');
+    document.getElementById('islamicBadge').style.display = 'none';
+}
+
+function closeIslamicModal() { document.getElementById('islamicModal').classList.remove('show'); }
+
+function switchIslamicTab(tabId, btn) {
+    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+}
+
+function initIslamicModal() {
+    // Quran
+    const surahs = ["الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم"];
+    document.getElementById('quranList').innerHTML = surahs.map((s, i) => `
+        <li class="quran-item">
+            <span class="quran-num">${i+1}</span>
+            <span class="quran-name">سورة ${s}</span>
+            <a href="https://quran.com/${i+1}" target="_blank" class="quran-link">📖 قراءة و 🔊 استماع</a>
+        </li>
+    `).join('');
+
+    // Daily Quiz
+    const quizzes = [
+        { q: "كم عدد سور القرآن الكريم؟", o: ["110","114","120","112"], a: 1 },
+        { q: "من هو أول مؤذن في الإسلام؟", o: ["بلال بن رباح","عمر بن الخطاب","أبو بكر الصديق","علي بن أبي طالب"], a: 0 },
+        { q: "ما هي أطول سورة في القرآن الكريم؟", o: ["آل عمران","النساء","البقرة","الأنعام"], a: 2 },
+        { q: "كم عدد أركان الإسلام؟", o: ["3","4","5","6"], a: 2 },
+        { q: "في أي سنة هجرية كانت غزوة بدر الكبرى؟", o: ["1 هـ","2 هـ","3 هـ","4 هـ"], a: 1 },
+        { q: "من هو خاتم الأنبياء والمرسلين؟", o: ["عيسى عليه السلام","موسى عليه السلام","محمد ﷺ","إبراهيم عليه السلام"], a: 2 },
+        { q: "ما هي الصلاة الوسطى المذكورة في القرآن؟", o: ["العصر","الظهر","العشاء","الفجر"], a: 0 },
+        { q: "كم عدد الصلوات المفروضة في اليوم والليلة؟", o: ["3","4","5","6"], a: 2 }
+    ];
+    const day = new Date().getDate();
+    const quiz = quizzes[(day - 1) % quizzes.length];
+    document.getElementById('quizQuestion').textContent = quiz.q;
+    document.getElementById('quizOptions').innerHTML = quiz.o.map((opt, i) => `<div class="quiz-option" onclick="checkAnswer(this, ${i}, ${quiz.a})">${opt}</div>`).join('');
+    document.getElementById('quizResult').textContent = '';
+}
+
+function checkAnswer(el, chosen, correct) {
+    document.querySelectorAll('.quiz-option').forEach(o => o.style.pointerEvents = 'none');
+    if (chosen === correct) {
+        el.classList.add('correct');
+        document.getElementById('quizResult').innerHTML = '<span style="color:var(--success-600)">✅ إجابة صحيحة! بارك الله فيك</span>';
+    } else {
+        el.classList.add('wrong');
+        document.querySelectorAll('.quiz-option')[correct].classList.add('correct');
+        document.getElementById('quizResult').innerHTML = '<span style="color:var(--danger-500)">❌ إجابة خاطئة، الإجابة الصحيحة محددة بالأخضر</span>';
+    }
+}
+
+/* ==========================================
+    TASBEEH
+========================================== */
+let tasbeehCount = 0;
+let tasbeehGoal = 33;
+
+function incrementTasbeeh() {
+    if (tasbeehCount < tasbeehGoal) {
+        tasbeehCount++;
+        document.getElementById('tasbeehCount').textContent = tasbeehCount;
+        const progress = (tasbeehCount / tasbeehGoal) * 100;
+        document.getElementById('tasbeehProgressFill').style.width = progress + '%';
+
+        if (tasbeehCount === tasbeehGoal) {
+            document.getElementById('tasbeehTargetMsg').className = 'tasbeeh-target completed';
+            document.getElementById('tasbeehTargetMsg').innerHTML = '✅ أحسنت! أكملت التسبيح';
+            showToast('🎉 ما شاء الله! أكملت التسبيح', 'success');
+        }
+    }
+}
+
+function resetTasbeeh() {
+    tasbeehCount = 0;
+    document.getElementById('tasbeehCount').textContent = 0;
+    document.getElementById('tasbeehProgressFill').style.width = '0%';
+    document.getElementById('tasbeehTargetMsg').className = 'tasbeeh-target';
+    document.getElementById('tasbeehTargetMsg').innerHTML = `الهدف: <span id="tasbeehGoal">${tasbeehGoal}</span> تسبيحة`;
+}
+
+function setTasbeehGoal(goal) {
+    tasbeehGoal = goal;
+    resetTasbeeh();
+    document.getElementById('tasbeehGoal').textContent = goal;
+}
+
+/* ==========================================
+    AI CHAT
+========================================== */
+let chatOpen = false;
+
+function toggleChat() {
+    chatOpen = !chatOpen;
+    document.getElementById('aiChatPanel').classList.toggle('show', chatOpen);
+}
+
+function sendChatMessage() {
+    const input = document.getElementById('chatInputField');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    addChatMessage(msg, 'user');
+    input.value = '';
+
+    const typingEl = document.createElement('div');
+    typingEl.className = 'chat-msg bot';
+    typingEl.id = 'typingIndicator';
+    typingEl.innerHTML = `<div class="chat-msg-avatar">🤖</div><div><div class="chat-msg-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div></div>`;
+    document.getElementById('chatMessagesArea').appendChild(typingEl);
+    scrollChat();
+
+    setTimeout(() => {
+        const t = document.getElementById('typingIndicator');
+        if (t) t.remove();
+        addChatMessage(getAIResponse(msg), 'bot');
+    }, 800 + Math.random() * 1000);
+}
+
+function addChatMessage(text, type) {
+    const area = document.getElementById('chatMessagesArea');
+    const now = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+    area.innerHTML += `
+        <div class="chat-msg ${type}">
+            <div class="chat-msg-avatar">${type === 'bot' ? '🤖' : '👤'}</div>
+            <div>
+                <div class="chat-msg-bubble">${text}</div>
+                <div class="chat-msg-time">${now}</div>
+            </div>
+        </div>`;
+    scrollChat();
+}
+
+function scrollChat() {
+    const area = document.getElementById('chatMessagesArea');
+    area.scrollTop = area.scrollHeight;
+}
+
+function getAIResponse(msg) {
+    const m = msg.toLowerCase();
+    if (m.includes('جدول') || m.includes('حصص') || m.includes('مواد')) return "📅 الجداول متاحة في صفحة كل فصل. اختار الفصل من صفحة الفصول وهتشوف جدول الحصص بالتفصيل!";
+    if (m.includes('اسم') || m.includes('بحث') || m.includes('فصل')) return "🔍 ممكن تبحث عن اسمك في خانة البحث اللي فوق، وهيطلعلك الفصل بتاعك!";
+    if (m.includes('مدرسة') || m.includes('اخصاص')) return "🏫 مدرسة الاخصاص الثانوية - بتقدم تعليم متميز لطلابها!";
+    if (m.includes('مدير') || m.includes('ادارة') || m.includes('فكري')) return "👨‍💼 إدارة المدرسة: أستاذ فكري هاشم الزادي";
+    if (m.includes('تصميم') || m.includes('احمد')) return "🎨 الموقع من تصميم الطالب احمد حسين منصور";
+    if (m.includes('قرآن') || m.includes('سبحة') || m.includes('دين') || m.includes('إسلام')) return "🕌 اضغط على زرار 'الركن الإسلامي' فيه المصحف والسبحة والسؤال اليومي!";
+    if (m.includes('بومودورو') || m.includes('مؤقت') || m.includes('مذاكرة')) return "⏰ في مؤقت بومودورو في صفحة الفصول ممكن تستخدمه للمذاكرة!";
+    if (m.includes('سلام') || m.includes('شكرا') || m.includes('تمام')) return "😊 العفو! لو محتاج أي حاجة تاني أنا موجود!";
+    if (m.includes('اهلا') || m.includes('هلا') || m.includes('هاي')) return "👋 أهلاً بيك! إزاي أقدر أساعدك؟";
+    return "🤔 سؤال حلو! ممكن توضح أكتر؟ أقدر أساعدك في: الجداول، الأسماء، أو معلومات المدرسة.";
+}
+
+/* ==========================================
+    TOAST NOTIFICATIONS
+========================================== */
+function showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    const icons = { success: '✅', error: '❌', warning: '⚠️', info: 'ℹ️' };
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `<span class="toast-icon">${icons[type]}</span><span class="toast-message">${message}</span><button class="toast-close" onclick="this.parentElement.classList.add('removing'); setTimeout(()=>this.parentElement.remove(), 400)">✕</button>`;
+    container.appendChild(toast);
+    setTimeout(() => { toast.classList.add('removing'); setTimeout(() => toast.remove(), 400); }, 5000);
+}
+
+/* ==========================================
+    PARTICLES CANVAS
+========================================== */
+function initParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const particles = [];
+    const count = 70;
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            r: Math.random() * 2.5 + 0.5,
+            alpha: Math.random() * 0.6 + 0.1
+        });
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p, i) => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0) p.x = canvas.width;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (p.y > canvas.height) p.y = 0;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+            ctx.fill();
+
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[j].x - p.x;
+                const dy = particles[j].y - p.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 130) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(255,255,255,${0.1 * (1 - dist / 130)})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+/* ==========================================
+    KEYBOARD SHORTCUTS
+========================================== */
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        if (chatOpen) toggleChat();
+        if (document.getElementById('islamicModal').classList.contains('show')) closeIslamicModal();
+        if (document.getElementById('confirmDialog').classList.contains('show')) closeDialog();
+    }
+});
+
+/* ==========================================
+    SERVICE WORKER REGISTRATION (Optional)
+========================================== */
+if ('serviceWorker' in navigator) {
+    // navigator.serviceWorker.register('/sw.js');
+}
+
+/* ==========================================
+    END OF APPLICATION
+========================================== */
+console.log('%c🏫 مدرسة الاخصاص الثانوية', 'font-size:24px; font-weight:bold; color:#2980b9;');
+console.log('%cتصميم الطالب احمد حسين منصور', 'font-size:14px; color:#f39c12;');
+</script>
+</body>
+</html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+</body>
+</html>
